@@ -3,7 +3,6 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
-import transformLinks from "./vite-plugin-transform-links.mjs"
 
 const SERVER_PORT = 3000;
 // the url to access your blog during local development
@@ -27,9 +26,6 @@ export default defineConfig({
   },
   site: BASE_URL,
   prefetch: true,
-  vite: {
-      plugins: [transformLinks()]
-  },
   prefetch: true,
     integrations: [
         tailwind(),

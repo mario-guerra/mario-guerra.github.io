@@ -9,7 +9,6 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
 import heroImage from "@images/mario-chipset.jpg";
-import codeImage from "@images/Code-snippets-scaled.jpg";
 import avatarImage from "@images/mario-avatar-300x300.png";
 
 const blogEntries: CollectionEntry<"blog">[] = await getCollection("blog");
@@ -29,9 +28,9 @@ const recentPosts: CollectionEntry<"blog">[] = sortedPosts.slice(0, 3);
     title="It's time for an upgrade"
     subTitle="Hi, I’m Mario Guerra, Product Manager for TypeSpec at Microsoft. I create tools and frameworks that empower developers to build faster, smarter, and more effectively."
     primaryBtn="Learn More"
-    primaryBtnURL="/marioguerra.xyz/about"
+    primaryBtnURL="/about"
     secondaryBtn="Contact Me"
-    secondaryBtnURL="/marioguerra.xyz/contact"
+    secondaryBtnURL="/contact"
     src={heroImage}
     alt="Time for an upgrade graphic"
   />
@@ -40,7 +39,7 @@ const recentPosts: CollectionEntry<"blog">[] = sortedPosts.slice(0, 3);
     title="About me"
     subTitle="With a proven track record in developer productivity, I specialize in bringing innovative tools to life, including TypeSpec at Microsoft. My passion for generative AI and modern build practices drives me to create solutions that bridge the gap between teams and technology. Outside of work, I’m an advocate for continuous learning, fitness, and sharing insights to help others succeed."
     primaryBtn="Learn More"
-    primaryBtnURL="/marioguerra.xyz/about"
+    primaryBtnURL="/about"
     src={avatarImage}
     alt="Mario Guerra Portrait"
   />
