@@ -34,18 +34,19 @@ const pageTitle = `Contact | ${SITE.title}`;
           I'm available for consulting on a limited basis, with an emphasis on applications involving generative AI.
         </p>
         <p class="text-neutral-700 dark:text-neutral-400">
-          Take a look at my <a href="/services" class="text-primary-600 dark:text-primary-400 hover:underline">Services</a> page for more info.
-        </p>
-        <p class="text-neutral-700 dark:text-neutral-400">
           Please provide details about your project needs and the best way to reach you. How can I help your software project succeed?
         </p>
-    
+
       <form
+        id="contactForm"
         method="POST"
         action="https://submit-form.com/X2aGOKKt9"
         class="mt-8"
       >
-        <input type="hidden" name="_honey" style="display:none" />
+         <div id="websiteDetailsContainer">
+           <label id="websiteDetailsLabel" for="websiteDetails">Website Details</label>
+            <input type="text" name="websiteDetails" id="websiteDetails" />
+         </div>
         <TextInput label="Name" name="name" required />
         <EmailContactInput label="Email" name="email" required />
         <TextAreaInput label="Comment or Message" name="message" required rows={5} />
@@ -66,3 +67,72 @@ const pageTitle = `Contact | ${SITE.title}`;
     </div>
   </section>
 </MainLayout>
+
+<script>
+  function generateRandomString(length: number) {
+      const characters = 'abcdefghijklmnopqrstuvwxyz';
+      let result = '';
+      for (let i = 0; i < length; i++) {
+          result += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return result;
+   }
+
+
+ const form = document.getElementById('contactForm');
+ const websiteDetailsContainer = document.getElementById('websiteDetailsContainer');
+
+  const randomInputName = generateRandomString(10);
+  const randomClassName = generateRandomString(10);
+
+ const websiteDetailsLabel = document.getElementById('websiteDetailsLabel');
+ const websiteDetails = document.getElementById('websiteDetails') as HTMLInputElement;
+ if (websiteDetails) {
+    websiteDetails.id = randomInputName;
+    websiteDetails.name = randomInputName;
+    if (websiteDetailsLabel) {
+        websiteDetailsLabel.setAttribute('for', randomInputName);
+    }
+ }
+   if (websiteDetailsContainer) {
+       websiteDetailsContainer.classList.add(randomClassName);
+   }
+    const style = document.createElement('style');
+    style.innerHTML = `.${randomClassName} { display: none !important; }`;
+    document.head.appendChild(style);
+
+
+    const formStartTime = new Date().getTime();
+    if (form) {
+        form.addEventListener('submit', function(event) {
+      const submissionTime = new Date().getTime() - formStartTime;
+       if (websiteDetails.value) {
+            event.preventDefault();
+            return;
+        }
+        if (submissionTime < 1000) {
+            event.preventDefault();
+            return;
+        }
+        const humanCheckbox = document.getElementById('human') as HTMLInputElement;
+        if(humanCheckbox && !humanCheckbox.checked) {
+             event.preventDefault();
+             return;
+        }
+    const jsInput = document.createElement('input');
+    jsInput.type = 'hidden';
+    jsInput.name = 'js_input';
+    jsInput.value = 'js_present';
+
+   if (!document.getElementById('js_present_input')) {
+    form.appendChild(jsInput);
+   }
+
+
+   if(!document.querySelector('[name="js_input"]')) {
+    event.preventDefault()
+       return
+    }
+  });
+}
+</script>
