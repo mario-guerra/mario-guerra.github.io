@@ -40,7 +40,6 @@ const pageTitle = `Contact | ${SITE.title}`;
       <form
         id="contactForm"
         method="POST"
-        action="https://submit-form.com/X2aGOKKt9"
         class="mt-8"
       >
          <div id="websiteDetailsContainer">
@@ -67,7 +66,6 @@ const pageTitle = `Contact | ${SITE.title}`;
     </div>
   </section>
 </MainLayout>
-
 <script>
   function generateRandomString(length: number) {
       const characters = 'abcdefghijklmnopqrstuvwxyz';
@@ -78,61 +76,68 @@ const pageTitle = `Contact | ${SITE.title}`;
       return result;
    }
 
-
- const form = document.getElementById('contactForm');
- const websiteDetailsContainer = document.getElementById('websiteDetailsContainer');
-
-  const randomInputName = generateRandomString(10);
-  const randomClassName = generateRandomString(10);
-
- const websiteDetailsLabel = document.getElementById('websiteDetailsLabel');
- const websiteDetails = document.getElementById('websiteDetails') as HTMLInputElement;
- if (websiteDetails) {
-    websiteDetails.id = randomInputName;
-    websiteDetails.name = randomInputName;
-    if (websiteDetailsLabel) {
-        websiteDetailsLabel.setAttribute('for', randomInputName);
-    }
- }
-   if (websiteDetailsContainer) {
-       websiteDetailsContainer.classList.add(randomClassName);
-   }
-    const style = document.createElement('style');
-    style.innerHTML = `.${randomClassName} { display: none !important; }`;
-    document.head.appendChild(style);
-
-
-    const formStartTime = new Date().getTime();
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
     if (form) {
+        const part1 = 'aHR0cHM6Ly9zdWI=';
+        const part2 = 'bWl0LWZvcm0uY29t';
+        const part3 = 'L1gyYUdPS0t0OQ==';
+        const someplace = atob(part1) + atob(part2) + atob(part3);
+        (form as HTMLFormElement).action = someplace;
+
+        const websiteDetailsContainer = document.getElementById('websiteDetailsContainer');
+        const randomInputName = generateRandomString(10);
+        const websiteDetailsLabel = document.getElementById('websiteDetailsLabel');
+        const websiteDetails = document.getElementById('websiteDetails') as HTMLInputElement;
+        if (websiteDetails) {
+            websiteDetails.id = randomInputName;
+            websiteDetails.name = randomInputName;
+            if (websiteDetailsLabel) {
+                websiteDetailsLabel.setAttribute('for', randomInputName);
+            }
+        }
+        if (websiteDetailsContainer) {
+            websiteDetailsContainer.style.display = 'none';
+        }
+
+        const formStartTime = new Date().getTime();
+        const fields = form.querySelectorAll('input, textarea');
+        fields.forEach(field => {
+            if ((field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement) && field.name && field.name !== 'js_input' && field.name !== 'human') {
+                const randomName = generateRandomString(10);
+                field.name = randomName;
+            }
+        });
+
         form.addEventListener('submit', function(event) {
-      const submissionTime = new Date().getTime() - formStartTime;
-       if (websiteDetails.value) {
-            event.preventDefault();
-            return;
-        }
-        if (submissionTime < 1000) {
-            event.preventDefault();
-            return;
-        }
-        const humanCheckbox = document.getElementById('human') as HTMLInputElement;
-        if(humanCheckbox && !humanCheckbox.checked) {
-             event.preventDefault();
-             return;
-        }
-    const jsInput = document.createElement('input');
-    jsInput.type = 'hidden';
-    jsInput.name = 'js_input';
-    jsInput.value = 'js_present';
+            const submissionTime = new Date().getTime() - formStartTime;
+            if (submissionTime < 5000) {
+                event.preventDefault();
+                return;
+            }
+            if (websiteDetails.value) {
+                event.preventDefault();
+                return;
+            }
+            const humanCheckbox = document.getElementById('human') as HTMLInputElement;
+            if(humanCheckbox && !humanCheckbox.checked) {
+                event.preventDefault();
+                return;
+            }
+            const jsInput = document.createElement('input');
+            jsInput.type = 'hidden';
+            jsInput.name = 'js_input';
+            jsInput.value = 'js_present';
 
-   if (!document.getElementById('js_present_input')) {
-    form.appendChild(jsInput);
-   }
+            if (!document.getElementById('js_present_input')) {
+                form.appendChild(jsInput);
+            }
 
-
-   if(!document.querySelector('[name="js_input"]')) {
-    event.preventDefault()
-       return
+            if(!document.querySelector('[name="js_input"]')) {
+                event.preventDefault()
+                return
+            }
+        });
     }
   });
-}
 </script>
