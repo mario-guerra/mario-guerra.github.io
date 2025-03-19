@@ -24,7 +24,7 @@ const footerLinks = [
 // An object of links for social icons
 const socialLinks = {
   linkedin: "https://www.linkedin.com/in/mario-guerra/",
-  x: "https://twitter.com/_marioguerra_",
+x: "https://x.com/_marioguerra_",
   github: "https://github.com/mario-guerra",
 };
 

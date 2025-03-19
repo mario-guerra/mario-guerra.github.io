@@ -16,13 +16,13 @@ const {
 } = Astro.props as Props;
 ---
 
-<section class="py-12 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white">
+<section class="py-12 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-neutral-900 dark:text-neutral-100">
   <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-3xl font-extrabold mb-4">{title}</h2>
     <p class="text-lg mb-8">{description}</p>
     <a 
       href={buttonLink} 
-      class="inline-block bg-yellow-500 text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-yellow-400 transition-all"
+      class="sl-link-button secondary"
     >
       {buttonText}
     </a>
