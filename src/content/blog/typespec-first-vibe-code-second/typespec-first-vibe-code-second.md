@@ -33,9 +33,24 @@ VibeSpec [GitHub repo](https://github.com/mario-guerra/vibespec) is a fun projec
 3. **Scaffold working code** with TypeSpec's generators
 4. **Build your implementation** on this solid foundation (manually or with AI assistance)
 
+## Live Demo: Task Tracking App in Minutes
+
+I recently demoed this approach by creating a task tracking app:
+
+1. **Quick Requirements Gathering**: Described tasks with properties (title, priority, due date, stakeholders)
+2. **Instant TypeSpec Generation**: The AI generated a TypeSpec file with models, enums, and endpoints in seconds
+3. **Code Scaffolding**: I used TypeSpec's [new code generation feature](https://typespec.io/blog/2025-03-31-typespec-1-0-release/) to scaffold a working service in minutes
+4. **Ready to Implement**: The generated code is ready for vibe coding to implement the business logic 👍
+
+
+The entire process - from idea to scaffold - took just minutes.
+
+Watch the demo on YouTube:
+[![TypeSpec First, Vibe Code Second](https://img.youtube.com/vi/mONKY7sESe0/0.jpg)](https://www.youtube.com/watch?v=mONKY7sESe0)
+
 ## The Magic: The System Prompt
 
-The key to generating correct TypeSpec is the prompt. Here's the exact prompt from vibespec.py:
+The conversational elements I show in the demo are cool, but unnecessary. The real key to generating correct TypeSpec is the prompt. Here's the exact system prompt I used in the VibeSpec script that interacts with the LLM:
 
 **System prompt**  
 
@@ -295,20 +310,6 @@ model InternalServerError {
   message: string;
 }
 ```
-
-## Live Demo: Task Tracking App in Minutes
-
-I recently demoed this approach by creating a task tracking app:
-
-1. **Quick Requirements Gathering**: Described tasks with properties (title, priority, due date, stakeholders)
-2. **Instant TypeSpec Generation**: The AI generated a TypeSpec file with models, enums, and endpoints in seconds
-3. **Code Scaffolding**: I used TypeSpec's [new code generation feature](https://typespec.io/blog/2025-03-31-typespec-1-0-release/) to scaffold a working service in minutes
-4. **Ready to Implement**: The generated code is ready for vibe coding to implement the business logic 👍
-
-
-The entire process - from idea to scaffold - took just minutes. 
-Watch the demo on YouTube:
-[![TypeSpec First, Vibe Code Second](https://img.youtube.com/vi/mONKY7sESe0/0.jpg)](https://www.youtube.com/watch?v=mONKY7sESe0)
 
 ## Try It Yourself!
 
