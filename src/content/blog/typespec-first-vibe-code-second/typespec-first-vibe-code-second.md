@@ -26,7 +26,7 @@ Think of it like building a house: asking a builder to construct a house without
 
 ## The Solution: TypeSpec as Your Foundation
 
-VibeSpec [GitHub repo](https://github.com/mario-guerra/vibespec) is a fun project I created that combines the speed of AI code generation with the structure of TypeSpec to create a rock-solid foundation for your services:
+[VibeSpec](https://github.com/mario-guerra/vibespec) is a fun project I created that combines the speed of AI code generation with the structure of TypeSpec to create a rock-solid foundation for your services:
 
 1. **Describe your API** in natural language to an LLM
 2. **Generate syntactically correct TypeSpec** using an effective prompt
@@ -50,7 +50,9 @@ Watch the demo on YouTube:
 
 ## The Magic: The System Prompt
 
-The conversational elements I show in the demo are cool, but unnecessary. The real key to generating correct TypeSpec is the prompt. Here's the exact system prompt I used in the VibeSpec script that interacts with the LLM:
+The conversational elements I show in the demo are cool, but unnecessary. The real key to generating correct TypeSpec is the prompt. Here's the exact system prompt I used in the VibeSpec script that interacts with the LLM.
+
+_NOTE - the two code examples included in the prompt are crucial, ensuring the LLM has sufficient context to produce error-free TypeSpec._ 
 
 **System prompt**  
 
@@ -311,10 +313,12 @@ model InternalServerError {
 }
 ```
 
+**End of system prompt**
+
 ## Try It Yourself!
 
-1. Copy the prompt template above
-2. Use with ChatGPT, Claude, or your LLM of choice
+1. Copy the system prompt
+2. Use it with ChatGPT, Claude, or your LLM of choice
 3. Save the generated TypeSpec and [scaffold your project](https://typespec.io/docs/getting-started/code-generation-csharp/)
 4. Vibe on that solid foundation!
 
