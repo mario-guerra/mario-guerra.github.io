@@ -5,6 +5,7 @@ const navBarLinks = [
   { name: "Blog", url: "/blog" },
   { name: "Contact", url: "/contact" },
   { name: "API Guidelines", url: "/api-guidelines" },
+  { name: "Videos", url: "/videos" },
 ];
 // An array of links for footer
 const footerLinks = [

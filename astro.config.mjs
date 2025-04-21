@@ -17,6 +17,11 @@ if (isBuild) {
 export default defineConfig({
   vite: {
     publicDir: 'public',
+    resolve: {
+      alias: {
+        '@data_files': './src/data_files',
+      },
+    },
   },
   content: {
     collections: {

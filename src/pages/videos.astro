@@ -1,0 +1,67 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import CardVideo from "@components/ui/cards/CardVideo.astro";
+import CardVideoFeatured from "@components/ui/cards/CardVideoFeatured.astro";
+import videosData from "../data_files/videos.json";
+
+const { featured, videos } = videosData;
+---
+
+<MainLayout>
+  <div slot="blog">
+  title="Videos | Mario Guerra"
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://marioguerra.xyz/videos",
+    url: "https://marioguerra.xyz/videos",
+    name: "Videos | Mario Guerra",
+    description:
+      "Explore videos by Mario Guerra on various technical topics, including TypeSpec, scalable APIs, and more.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://marioguerra.xyz",
+      name: "Mario Guerra",
+      description:
+        "Product Manager for TypeSpec at Microsoft, specializing in increasing developer productivity through generative AI, modern build tools, and industry best practices.",
+    },
+    inLanguage: "en-US",
+  }}
+>
+  <section
+    class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
+  >
+    <!-- Page header -->
+    <div class="mx-auto max-w-3xl text-left sm:text-center">
+      <h1
+        class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
+      >
+        Videos
+      </h1>
+      <p
+        class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
+      >
+        Explore videos by Mario Guerra on various technical topics, including TypeSpec, scalable APIs, and more.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured video -->
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <CardVideoFeatured video={featured} />
+  </section>
+
+  <!-- Videos grid -->
+  <section
+    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      {videos.map((video) => (
+        <CardVideo video={video} />
+      ))}
+    </div>
+  </section>
+  </div>
+</MainLayout>

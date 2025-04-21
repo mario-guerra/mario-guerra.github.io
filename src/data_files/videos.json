@@ -1,0 +1,24 @@
+{
+  "featured": {
+    "title": "TypeSpec 1.0 RC: Design APIs Faster Today, Scale Easier Tomorrow",
+    "description": "Discover how TypeSpec 1.0 RC revolutionizes API development by letting you generate server code, client libraries, and documentation from a single, concise definition.",
+    "url": "https://youtu.be/mV-llh3O3W8?feature=shared"
+  },
+  "videos": [
+    {
+      "title": "TypeSpec First, Vibe Code Second",
+      "description": "In this demo, I introduce VibeSpec - a fun side project that demonstrates how to use TypeSpec as a foundation for more effective AI-assisted coding.",
+      "url": "https://youtu.be/mONKY7sESe0?feature=shared"
+    },
+    {
+      "title": "TypeSpec 101",
+      "description": "First part in a series of tutorial videos on writing API specs using TypeSpec.",
+      "url": "https://youtu.be/y0LOXYklsMg?feature=shared"
+    },
+    {
+      "title": "Audio Alchemy - Translate and Transcribe with Azure OpenAI",
+      "description": " In this episode, Mario Guerra really gets into how to translate and transcribe audio using Azure Cognitive Services and Azure OpenAI.",
+      "url": "https://www.youtube.com/live/ILdr9Tnq6_o?feature=shared&t=173"
+    }
+  ]
+}
