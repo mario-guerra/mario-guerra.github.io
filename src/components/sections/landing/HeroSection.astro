@@ -49,27 +49,21 @@ interface Props {
     <!-- Title and description -->
     <div>
       <!-- Each h1 and p tag renders a portion of the title and subTitle defined above -->
-      <h1
-        class="block text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl lg:text-6xl lg:leading-tight"
+<h1
+        class="text-4xl font-bold mb-4 text-neutral-800 dark:text-neutral-200"
       >
-        <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
-        <Fragment set:html={title} />
+        Helping Teams Build Better Software
       </h1>
-      {subTitle &&
       <p
-        class="mt-3 text-pretty text-lg leading-relaxed text-neutral-700 dark:text-neutral-400 lg:w-4/5"
+        class="text-gray-400 mb-6"
       >
-        {subTitle}
+        Hi, I’m Mario Guerra, a Product Manager at Microsoft for TypeSpec. I specialize in creating tools and processes that help developers ship high-quality APIs faster—making software development easier and more reliable for teams of all sizes.
       </p>
     }
       <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
-      <div class="mt-7 grid w-full gap-3 sm:inline-flex">
-        {primaryBtn && 
-        <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />
-        }
-        {secondaryBtn && 
-        <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} class="sl-link-button secondary" />
-        }
+<div class="space-x-4">
+        <a href="#about" class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">Learn More</a>
+        <a href="#contact" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Contact Me</a>
       </div>
 
       <!-- Review Section: This section presents avatars, review ratings and the number of reviews -->
@@ -82,14 +76,14 @@ interface Props {
     <div class="flex w-full">
         <div class="top-12 overflow-hidden">
       {src && alt &&
-      <Image
-          src={src}
-          alt={alt}
-          class="h-full w-full object-cover object-center"
-          draggable={"false"}
-          loading={"eager"}
-          format={"webp"}
-      />
+<Image
+  src={src}
+  alt={alt}
+  class="h-full w-full object-cover object-center"
+  draggable={"false"}
+  loading={"eager"}
+  format={"webp"}
+/>
       }
       </div>
     </div>

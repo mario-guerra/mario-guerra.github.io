@@ -21,8 +21,8 @@ const finalViewAllLink = viewAllLink ?? "/blog";
 
 <section class="py-12 bg-white dark:bg-neutral-800">
   <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-8">{finalTitle}</h2>
-    {finalDescription && <p class="text-gray-600 dark:text-gray-300 mb-4">{finalDescription}</p>}
+<h2 class="text-3xl font-bold mb-4 text-neutral-800 dark:text-neutral-200">Recent Blog Posts</h2>
+    <p class="text-gray-400 mb-6">My most recent articles on generative AI, software, productivity, and more.</p>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {Array.isArray(posts) && posts.map((blogEntry) => (
@@ -36,7 +36,7 @@ const finalViewAllLink = viewAllLink ?? "/blog";
           <div class="p-6">
             <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{blogEntry.data.title}</h3>
             <p class="mt-2 text-gray-600 dark:text-gray-300">{blogEntry.data.description}</p>
-            <a href={`/blog/${blogEntry.slug}`} class="mt-4 inline-block text-primary-600 dark:text-primary-400 hover:underline">Read more</a>
+<a href={`/blog/${blogEntry.slug}`} class="mt-4 inline-block text-neutral-800 dark:text-neutral-200 hover:underline">Read more</a>
           </div>
         </article>
       ))}

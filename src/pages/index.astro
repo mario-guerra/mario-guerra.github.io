@@ -7,6 +7,8 @@ import BlogSection from "@components/sections/landing/BlogSection.astro";
 import AboutMeSection from "@components/sections/landing/AboutMeSection.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import PortfolioSection from "@components/sections/landing/PortfolioSection.astro";
+import TestimonialsSection from "@components/sections/landing/TestimonialsSection.astro";
 
 import heroImage from "@images/mario-chipset.webp";
 import avatarImage from "@images/mario-avatar-300x300.png";
@@ -43,6 +45,12 @@ const recentPosts: CollectionEntry<"blog">[] = sortedPosts.slice(0, 3);
     src={avatarImage}
     alt="Mario Guerra Portrait"
   />
+
+  <!-- Portfolio Section -->
+  <PortfolioSection slot="portfolio" />
+
+  <!-- Testimonials Section -->
+  <TestimonialsSection slot="testimonials" />
 
   <!-- Call-to-Action Section -->
   <CTASection slot="call-to-action"

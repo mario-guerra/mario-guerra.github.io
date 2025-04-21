@@ -21,6 +21,7 @@ export default defineConfig({
   content: {
     collections: {
       blog: './src/content/blog',
+      guidelines: './src/content/guidelines',
     },
   },
   site: BASE_URL,

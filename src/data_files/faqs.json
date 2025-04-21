@@ -1,29 +1,29 @@
 {
-  "subTitle": "Ask us anything about our brand and products, and get factual responses.",
+  "subTitle": "Ask me anything about TypeSpec, API design, and product management.",
   "faqs": [
     {
-      "question": "What types of tools are included in the Starter Kit?",
-      "answer": "The Starter Kit features essential hand and power tools for diverse DIY projects, including hammers, drills, screwdrivers, and a variety of fasteners. It's a curated selection to help beginners and experienced DIYers alike tackle most home improvement tasks."
+      "question": "What is TypeSpec?",
+      "answer": "TypeSpec is a language for designing APIs. It enables teams to describe their APIs in a clear, concise manner that can be used to generate documentation, client libraries, and server implementations in multiple programming languages. It helps ensure consistency and quality across API development."
     },
     {
-      "question": "Can I upgrade from the Starter Kit to the Professional Toolbox?",
-      "answer": "Absolutely! You can upgrade to the Professional Toolbox at any time to access a wider range of high-quality tools, enjoy priority customer support, and receive exclusive content. Contact our support team for a seamless transition."
+      "question": "How does TypeSpec improve developer productivity?",
+      "answer": "TypeSpec enhances developer productivity by providing a single source of truth for API design, reducing inconsistencies, automating code generation, and simplifying documentation. This allows developers to focus on business logic rather than API boilerplate code and cross-language compatibility."
     },
     {
-      "question": "What discounts are available for bulk orders through the Professional Toolbox plan?",
-      "answer": "Professional Toolbox members are entitled to exclusive discounts on bulk orders, the percentage of which may vary depending on the order volume. Get in touch with us to discuss your needs, and we'll provide a tailored discount structure."
+      "question": "What role does generative AI play in your work?",
+      "answer": "As a Product Manager for TypeSpec, I explore how generative AI can further enhance API design and development workflows. This includes leveraging AI for generating TypeSpec definitions, identifying potential issues in API designs, and automating repetitive tasks in the API development lifecycle."
     },
     {
-      "question": "What kind of customer support can I expect?",
-      "answer": "All our customers receive dedicated email support. With the Starter Kit, you'll receive our standard support, while the Professional Toolbox plan upgrades you to priority support, meaning faster response times and specialized assistance."
+      "question": "What is your approach to product management?",
+      "answer": "My approach to product management centers on deeply understanding developer needs and pain points. I focus on data-driven decision making, continuous feedback loops, and close collaboration with engineering teams to deliver tools that meaningfully improve developer productivity and experience."
     },
     {
-      "question": "How current are the online resources and tutorials?",
-      "answer": "We regularly update our online resources and tutorials to reflect the latest trends in DIY and construction, as well as introductions to new tools and techniques. Our material aims to be comprehensive and user-friendly for all skill levels."
+      "question": "How can TypeSpec benefit enterprise API development?",
+      "answer": "For enterprises, TypeSpec offers significant advantages including standardization across large API portfolios, improved governance, consistent documentation, and faster onboarding of new team members. It also facilitates better collaboration between API producers and consumers across organizational boundaries."
     },
     {
-      "question": "Does ScrewFast offer services for large-scale construction projects?",
-      "answer": "Yes, our Enterprise Solutions are designed for larger companies requiring comprehensive services. We provide consultation, planning, and supply of high-grade tools and materials, as well as staffing solutions for substantial construction needs. Contact us for a customized quote."
+      "question": "What industry best practices do you advocate for in API design?",
+      "answer": "I advocate for API-first development, consistent naming conventions, thorough documentation, semantic versioning, comprehensive testing, and designing with evolution in mind. These practices help create APIs that are intuitive, reliable, and maintainable over their entire lifecycle."
     }
   ]
 }

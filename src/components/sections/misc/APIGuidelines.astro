@@ -1,0 +1,111 @@
+---
+const { content } = Astro.props;
+
+// Function to generate a table of contents
+function generateTOC(content) {
+  const headings = content.match(/^##\s.+$/gm) || [];
+  return headings.map((heading) => {
+    const text = heading.replace(/^##\s/, "").trim();
+    const id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    return { text, id };
+  });
+}
+
+const toc = generateTOC(content);
+---
+<div class="api-guidelines bg-gray-50 dark:bg-neutral-800 rounded-lg shadow-md p-6">
+  <!-- Table of Contents -->
+  <nav class="toc">
+    <h2 class="text-neutral-800 dark:text-neutral-200">Table of Contents</h2>
+    <ul>
+      {toc.map((item) => (
+        <li key={item.id} class="text-neutral-700 dark:text-neutral-400">
+          <a href={`#${item.id}`} class="text-neutral-800 dark:text-neutral-200 hover:underline">
+            {item.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <!-- Content -->
+    <article>
+      {content.split("\n").map((line) => {
+        if (line.startsWith("## ")) {
+          const text = line.replace(/^##\s/, "").trim();
+          const id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+          return <h2 id={id} class="text-neutral-800 dark:text-neutral-200">{text}</h2>;
+        } else if (line.startsWith("# ")) {
+          return <h1 class="text-neutral-800 dark:text-neutral-200">{line.replace(/^#\s/, "").trim()}</h1>;
+        } else if (line.trim() === "") {
+          return <br />;
+        } else {
+          return <p class="text-neutral-700 dark:text-neutral-400">{line}</p>;
+        }
+      })}
+    </article>
+</div>
+
+<style>
+.api-guidelines {
+  padding: 2rem;
+}
+
+.toc {
+  margin-bottom: 2rem;
+}
+
+.toc h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+}
+
+.toc li {
+  margin-bottom: 0.5rem;
+}
+
+.toc a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}
+
+article h1, article h2 {
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+article p {
+  margin: 1rem 0;
+  color: var(--sl-color-gray-1);
+}
+
+article h1, article h2 {
+  color: inherit;
+  font-weight: bold;
+}
+
+article p {
+  color: inherit;
+}
+
+article h1 {
+  class: "text-neutral-800 dark:text-neutral-200";
+}
+
+article h2 {
+  class: "text-neutral-800 dark:text-neutral-200";
+}
+
+article p {
+  class: "text-neutral-700 dark:text-neutral-400";
+}
+</style>
