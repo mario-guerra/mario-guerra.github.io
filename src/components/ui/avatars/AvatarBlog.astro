@@ -3,6 +3,7 @@
 import { Image } from "astro:assets";
 
 import type { CollectionEntry } from "astro:content";
+import avatar from "src/images/Mario_Guerra_avatar.png";
 
 const { blogEntry } = Astro.props;
 
@@ -14,7 +15,7 @@ interface Props {
 <div class="flex-shrink-0">
   <Image
     class="size-[46px] rounded-full border-2 border-neutral-50"
-    src={blogEntry.data.image}
+    src={avatar}
     alt={`Image for ${blogEntry.data.title}`}
     draggable={"false"}
     draggable={"false"}
