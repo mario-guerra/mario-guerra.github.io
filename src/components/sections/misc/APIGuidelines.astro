@@ -2,7 +2,7 @@
 const { content } = Astro.props;
 
 // Function to generate a table of contents
-function generateTOC(content) {
+function generateTOC(content: string) {
   const headings = content.match(/^##\s.+$/gm) || [];
   return headings.map((heading) => {
     const text = heading.replace(/^##\s/, "").trim();
@@ -19,7 +19,7 @@ const toc = generateTOC(content);
     <h2 class="text-neutral-800 dark:text-neutral-200">Table of Contents</h2>
     <ul>
       {toc.map((item) => (
-        <li key={item.id} class="text-neutral-700 dark:text-neutral-400">
+        <li class="text-neutral-700 dark:text-neutral-400">
           <a href={`#${item.id}`} class="text-neutral-800 dark:text-neutral-200 hover:underline">
             {item.text}
           </a>
@@ -30,7 +30,7 @@ const toc = generateTOC(content);
 
   <!-- Content -->
     <article>
-      {content.split("\n").map((line) => {
+      {content.split("\n").map((line: string) => {
         if (line.startsWith("## ")) {
           const text = line.replace(/^##\s/, "").trim();
           const id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-");
