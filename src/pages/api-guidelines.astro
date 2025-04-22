@@ -2,6 +2,8 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import APIGuidelines from "@/components/sections/misc/APIGuidelines.astro";
 import fs from "fs";
+import { Image } from "astro:assets";
+import avatarImage from "@images/API_Design.jpeg";
 
 // Read the content of the markdown file
 const content = fs.readFileSync("./src/content/guidelines/api_guidelines.md", "utf-8");
@@ -10,7 +12,16 @@ const content = fs.readFileSync("./src/content/guidelines/api_guidelines.md", "u
 <MainLayout title="API Design Guidelines">
   <div slot="about-me">
 <h1 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200 mb-4 text-center">API Design Guidelines</h1>
-<img src="/src/images/API_Design.jpeg" alt="API Design Hero Image" class="w-2/3 h-auto mb-8 mx-auto" />
+<div class="flex justify-center">
+  <Image
+    src={avatarImage}
+    alt="Mario Guerra Portrait"
+    class="max-w-[600px] w-full object-cover object-center rounded-lg mx-auto"
+    draggable={"false"}
+    loading={"eager"}
+    format={"avif"}
+  />
+</div>
 <APIGuidelines content={content} />
   </div>
 </MainLayout>
