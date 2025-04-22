@@ -4,6 +4,7 @@ import ThemeIcon from "@components/ThemeIcon.astro";
 import NavLink from "@components/ui/links/NavLink.astro";
 import enStrings from "@utils/navigation.ts";
 import BrandLogo from "@components/BrandLogo.astro";
+import { HSThemeAppearance } from "@utils/utils";
 
 // Select the correct translation based on the page's lang prop:
 const strings = enStrings;
@@ -26,7 +27,28 @@ const homeUrl = "/";
         href={homeUrl}
         aria-label="Brand"
       >
-        <BrandLogo class="h-auto w-24" />
+        <script>
+          const HSThemeAppearance = {
+            init() {
+              const defaultTheme = "default";
+              let theme = localStorage.getItem("hs_theme") || defaultTheme;
+              const htmlEl = document.querySelector("html");
+              if (htmlEl && htmlEl.classList.contains("dark")) return;
+              this.setAppearance(theme);
+            },
+            setAppearance(theme: string) {
+              const htmlEl = document.querySelector("html");
+              if (htmlEl) {
+                htmlEl.classList.add(theme);
+              }
+            },
+            getAppearance() {
+              return localStorage.getItem("hs_theme") || "default";
+            },
+          };
+          HSThemeAppearance.init();
+        </script>
+        <BrandLogo class="h-auto w-24" theme={HSThemeAppearance.getAppearance()} />
       </a>
       <!-- Collapse toggle for smaller screens -->
       <div class="ml-auto mr-5 md:hidden">

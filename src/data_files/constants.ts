@@ -1,4 +1,4 @@
-import ogImageSrc from "@images/social.png";
+import ogImageSrc from "@images/mario-chipset.png";
 
 export const SITE = {
   title: "Mario Guerra",

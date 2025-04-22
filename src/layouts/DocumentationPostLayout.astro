@@ -1,0 +1,293 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+// Props for the DocumentationPostLayout
+interface Props {
+  title: string;
+  description: string;
+  entry?: any;
+}
+
+const { title, description, entry } = Astro.props;
+const heroImage = entry?.data?.heroImage || null;
+---
+
+<MainLayout title={title}>
+  <div slot="hero">
+    <article class="docs-article mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <header class="mb-8">
+        {heroImage && (
+          <div class="mb-6 overflow-hidden rounded-lg shadow-md">
+            <img src={heroImage} alt={title} class="w-full h-auto object-cover" />
+          </div>
+        )}
+        <h1 class="text-4xl font-bold text-neutral-800 dark:text-neutral-200">
+          {title}
+        </h1>
+        <p class="mt-2 text-neutral-600 dark:text-neutral-400">{description}</p>
+      </header>
+      <div class="docs-content">
+        <slot />
+      </div>
+    </article>
+  </div>
+</MainLayout>
+
+<style is:global>
+  /* Base styling for documentation */
+  .docs-article {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    padding-bottom: 4rem;
+  }
+  
+  .docs-content {
+    color: #333;
+  }
+  
+  .dark .docs-content {
+    color: #eee;
+  }
+  
+  /* Headers */
+  .docs-content h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1a202c;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  
+  .dark .docs-content h1 {
+    color: #f7fafc;
+    border-bottom-color: #2d3748;
+  }
+  
+  .docs-content h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1a202c;
+  }
+  
+  .dark .docs-content h2 {
+    color: #f7fafc;
+  }
+  
+  .docs-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #1a202c;
+  }
+  
+  .dark .docs-content h3 {
+    color: #f7fafc;
+  }
+  
+  .docs-content h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #1a202c;
+  }
+  
+  .dark .docs-content h4 {
+    color: #f7fafc;
+  }
+  
+  /* Text elements */
+  .docs-content p {
+    margin-bottom: 1.25rem;
+    color: #4a5568;
+  }
+  
+  .dark .docs-content p {
+    color: #e2e8f0;
+  }
+  
+  .docs-content strong {
+    font-weight: 600;
+    color: #2d3748;
+  }
+  
+  .dark .docs-content strong {
+    color: #f7fafc;
+  }
+  
+  /* Lists */
+  .docs-content ul, .docs-content ol {
+    margin-bottom: 1.25rem;
+    margin-left: 1.5rem;
+    color: #4a5568;
+  }
+  
+  .dark .docs-content ul, .dark .docs-content ol {
+    color: #e2e8f0;
+  }
+  
+  .docs-content ul {
+    list-style-type: disc;
+  }
+  
+  .docs-content ul ul {
+    list-style-type: circle;
+    margin-top: 0.25rem;
+  }
+  
+  .docs-content ol {
+    list-style-type: decimal;
+  }
+  
+  .docs-content li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .docs-content li p {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Blockquotes */
+  .docs-content blockquote {
+    border-left: 4px solid #4299e1;
+    padding: 0.5rem 0 0.5rem 1rem;
+    margin: 1.5rem 0;
+    background-color: #ebf8ff;
+    border-radius: 0.25rem;
+    color: #2c5282;
+    font-style: italic;
+  }
+  
+  .dark .docs-content blockquote {
+    background-color: rgba(66, 153, 225, 0.1);
+    color: #90cdf4;
+    border-left-color: #90cdf4;
+  }
+  
+  .docs-content blockquote p {
+    color: inherit;
+    margin-bottom: 0.5rem;
+  }
+  
+  .docs-content blockquote p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Links */
+  .docs-content a {
+    color: #3182ce;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+  }
+  
+  .docs-content a:hover {
+    color: #2c5282;
+    text-decoration: none;
+  }
+  
+  .dark .docs-content a {
+    color: #90cdf4;
+  }
+  
+  .dark .docs-content a:hover {
+    color: #63b3ed;
+  }
+  
+  /* Code blocks - with !important to ensure styles are applied */
+  .docs-content :not(pre) > code {
+    font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace !important;
+    background-color: #1e293b !important;
+    color: #e2e8f0 !important;
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 0.25rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  .docs-content pre {
+    background-color: #1e293b !important;
+    color: #e2e8f0 !important;
+    padding: 1.25rem !important;
+    border-radius: 0.5rem !important;
+    overflow-x: auto !important;
+    margin: 1.5rem 0 !important;
+    font-size: 0.875rem !important;
+    border: 1px solid #334155 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+  }
+  
+  .docs-content pre code {
+    background-color: transparent !important;
+    padding: 0 !important;
+    font-size: inherit !important;
+    color: inherit !important;
+    border: none !important;
+    display: block !important;
+    line-height: 1.7 !important;
+  }
+  
+  /* Tables */
+  .docs-content table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+  
+  .docs-content th {
+    font-weight: 600;
+    color: #1a202c;
+    background-color: #f7fafc;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  
+  .dark .docs-content th {
+    color: #f7fafc;
+    background-color: #2d3748;
+    border-bottom-color: #4a5568;
+  }
+  
+  .docs-content td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #4a5568;
+  }
+  
+  .dark .docs-content td {
+    border-bottom-color: #4a5568;
+    color: #e2e8f0;
+  }
+  
+  .docs-content tr:nth-child(even) {
+    background-color: #f7fafc;
+  }
+  
+  .dark .docs-content tr:nth-child(even) {
+    background-color: #2d3748;
+  }
+  
+  /* Horizontal rule */
+  .docs-content hr {
+    height: 1px;
+    background-color: #e2e8f0;
+    border: none;
+    margin: 2.5rem 0;
+  }
+  
+  .dark .docs-content hr {
+    background-color: #4a5568;
+  }
+  
+  /* Utility classes for spacing */
+  .docs-content .mt-0 { margin-top: 0; }
+  .docs-content .mb-0 { margin-bottom: 0; }
+  .docs-content .my-6 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+</style>

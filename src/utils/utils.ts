@@ -12,4 +12,19 @@ function capitalize(str:string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-  export { formatDate, capitalize };
+  const HSThemeAppearance = {
+    init() {
+      const defaultTheme = "default";
+      let theme = typeof window !== "undefined" && localStorage.getItem("hs_theme") || defaultTheme;
+      if (document.querySelector("html").classList.contains("dark")) return;
+      this.setAppearance(theme);
+    },
+    setAppearance(theme) {
+      document.querySelector("html").classList.add(theme);
+    },
+    getAppearance() {
+      return typeof window !== "undefined" && localStorage.getItem("hs_theme") || "default";
+    },
+  };
+
+  export { formatDate, capitalize, HSThemeAppearance };
