@@ -4,10 +4,9 @@ const { video } = Astro.props;
 
 <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 sm:items-center">
   <div class="sm:order-2">
-    <div class="relative rounded-lg aspect-w-16 aspect-h-9 sm:aspect-w-auto sm:aspect-h-auto">
+    <div class="relative rounded-lg w-full h-0 pb-[56.25%]">
       <iframe
-        width="560"
-        height="315"
+        class="absolute top-0 left-0 w-full h-full"
         src={`https://www.youtube.com/embed/${new URL(video.url).pathname.split('/').pop()}`}
         title={`Featured video: ${video.title}`}
         frameborder="0"
