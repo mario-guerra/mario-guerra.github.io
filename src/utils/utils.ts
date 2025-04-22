@@ -16,11 +16,15 @@ function capitalize(str:string): string {
     init() {
       const defaultTheme = "default";
       let theme = typeof window !== "undefined" && localStorage.getItem("hs_theme") || defaultTheme;
-      if (document.querySelector("html").classList.contains("dark")) return;
+      const htmlElement = document.querySelector("html");
+      if (htmlElement && htmlElement.classList.contains("dark")) return;
       this.setAppearance(theme);
     },
-    setAppearance(theme) {
-      document.querySelector("html").classList.add(theme);
+    setAppearance(theme: string): void {
+      const htmlElement: HTMLElement | null = document.querySelector("html");
+      if (htmlElement) {
+      htmlElement.classList.add(theme);
+      }
     },
     getAppearance() {
       return typeof window !== "undefined" && localStorage.getItem("hs_theme") || "default";
