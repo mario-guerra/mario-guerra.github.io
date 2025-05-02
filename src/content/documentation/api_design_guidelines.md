@@ -1,32 +1,97 @@
 ---
-title: "REST API Design Guidelines"
-description: "Best practices for designing high-quality, maintainable, and performant REST APIs."
-heroImage: "/assets/images/API_Design.jpeg"
-slug: "api_guidelines"
+title: "API Design Guidelines"
+description: "Technical guidelines for designing high-quality, maintainable, and performant REST APIs."
+heroImage: "/assets/images/API_Design_Guidelines.jpeg"
+slug: "api_design_guidelines"
 ---
 
 ## Introduction
 
-This document outlines best practices for designing high-quality, maintainable, and performant REST APIs. They reflect industry standards and lessons learned from working with first-party and third-party developers using TypeSpec to build real-world APIs at scale.  
+This document outlines technical best practices for designing high-quality, maintainable, and performant REST APIs. They reflect industry standards and lessons learned from working with first-party and third-party developers to build real-world APIs at scale.
+
+These guidelines focus on the technical aspects of API design to help developers create consistent, usable, and reliable APIs. For strategic and organizational aspects of API programs, see the [API Strategy and Governance Guide](/documentation/api_strategy_governance), and for implementation guidance, see the [API Lifecycle Management Guide](/documentation/api_lifecycle_management).
 
 > _**NOTE:** These guidelines are not meant to represent or inform any particular cloud service implementation, they are meant to be generic. However, I've noted where Azure does things a specific way where applicable, mainly for my own reference._
 
 ---
 
-## Core Principles
+## Core Design Principles
 
 1. **API-First Design** 
    * Design your API before implementation
    * Use tools like TypeSpec to define your API contract
+   * Consider both internal and external consumption patterns
 
 2. **Consistency** 
    * Apply uniform patterns across all endpoints
+   * Ensure consistency with enterprise-wide API standards
+   * Provide consistent experiences for API consumers
 
 3. **Simplicity** 
    * Keep your API as simple as possible while meeting requirements
+   * Design for the consumer's needs, not your implementation
+   * Differentiate internal service APIs from partner/external APIs
 
 4. **Evolution** 
    * Design for growth without breaking existing clients
+   * Plan for long-term API lifecycle management
+   * Balance backward compatibility with innovation
+
+---
+
+## API Design Guidelines
+
+### Consistency Principles
+
+* **Naming Conventions**
+  * Use domain-driven naming that reflects the business context
+    * *Names should map to business capabilities rather than implementation details*
+    * *Avoid technical jargon that obscures the business purpose*
+  * Maintain consistent casing and plurality patterns
+    * *Use singular nouns for resources, plural for collections*
+    * *Apply camelCase or snake_case consistently across all services*
+  * Establish glossary of approved terms and concepts
+    * *Standardize terminology across APIs to prevent cognitive load*
+    * *Align API vocabulary with industry-standard terminology*
+
+### Resource Modeling
+
+* **Resource Representations**
+  * Model resources based on business entities, not database tables
+    * *The public contract should hide implementation details*
+    * *Resources should represent meaningful business objects with clear lifecycles*
+  * Balance between normalization and denormalization
+    * *Optimize representations for consumption rather than storage*
+    * *Consider embedding frequently accessed related data to reduce round trips*
+  * Design for evolvability through extensions
+    * *Include extension points for future capabilities*
+    * *Use properties that allow for capability discovery*
+
+### URL Design
+
+* **Path Structure**
+  * Create hierarchical paths that reflect resource relationships
+    * *Express ownership and containment through path structure*
+    * *Limit path depth to maintain understandability*
+  * Use path parameters for identity, query parameters for filtering
+    * *Resource identifiers belong in the path*
+    * *Optional or variable selection criteria belong in query string*
+  * Establish conventions for collection pagination and filtering
+    * *Standardize pagination parameters across all collection endpoints*
+    * *Create consistent filtering patterns that compose well*
+
+### Method Usage
+
+* **HTTP Methods**
+  * Apply HTTP methods according to their semantic meaning
+    * *GET for retrieval, POST for creation, PUT for replacement, PATCH for updates*
+    * *Maintain idempotency where appropriate (GET, PUT, DELETE)*
+  * Define consistent success and error responses
+    * *2xx responses should have consistent structure*
+    * *Error responses should provide actionable information*
+  * Support bulk operations for efficiency
+    * *Enable batch processing for common operations*
+    * *Maintain atomicity guarantees for batch operations*
 
 ---
 
@@ -169,12 +234,6 @@ Use consistent error structure across all endpoints:
 * Localize error messages when appropriate for your audience
 * Ensure error handling doesn't leak security-sensitive information
 
-> **Azure-Specific Approach** (for reference):
-> * Azure does not include the HTTP status code in the response body
-> * In Azure, error codes are well-defined, stable contract elements that clients can switch/case on
-> * Error messages in Azure are intended only for logging and debugging, not for programmatic use
-> * Azure typically uses a standardized error format across all services to ensure consistency
-
 ---
 
 ## Pagination, Filtering, and Sorting
@@ -184,7 +243,7 @@ Use consistent error structure across all endpoints:
 * Implement pagination for collection endpoints that can return large datasets
 * Common pagination approaches:
   * Use query parameters like `skip` and `top` (simple and effective)
-  * Return a "next link" URL for the client to retrieve the next page (Azure's approach)
+  * Return a "next link" URL for the client to retrieve the next page
 * Consider whether including total count is feasible for your data storage technology
   > **Note:** Total counts often require scanning the entire dataset, which can be impractical or expensive with certain data stores
 * Set sensible defaults and maximum page sizes
@@ -195,13 +254,13 @@ Use consistent error structure across all endpoints:
   ```
   ?status=active&priority=high
   ```
-  > **Note:** Some systems (like Azure) may use a domain-specific query language like `?filter=status eq 'active' and priority eq 'high'`
+  > **Note:** Some systems may use a domain-specific query language like `?filter=status eq 'active' and priority eq 'high'`
 
 * Use query parameters for sorting: 
   ```
   ?sort=created_at&order=desc
   ```
-  > **Note:** Consider the performance implications of sorting, especially on large datasets. Sorting can be an expensive operation that increases latency and resource consumption, particularly when dealing with distributed data stores.
+  > **Note:** Consider the performance implications of sorting, especially on large datasets.
 
 * Document all supported filter and sort options
 * For complex filtering needs, ensure your approach is well-documented and consistent
@@ -214,41 +273,49 @@ Use consistent error structure across all endpoints:
 
 | Approach | Example | Pros | Cons |
 |----------|---------|------|------|
-| URL path | `/v1/resources` | Explicit, easily testable | Suggests different resource identities across versions |
-| Custom header | `API-Version: 1` | Cleaner URLs | Doesn't work well for browser-based GET requests |
-| Accept header | `Accept: application/vnd.company.v1+json` | RESTful | Similar browser limitations as custom headers |
-| Query parameter | `?api-version=2023-01-01` | Browser-friendly, Azure's approach | Parameters may conflict with resource parameters |
+| URL path | `/v1/resources` | Explicit, easily testable, widely used | Changes resource identity in strict REST interpretation |
+| Custom header | `API-Version: 1` | Cleaner URLs | Less discoverable, doesn't work well for browser requests |
+| Accept header | `Accept: application/vnd.company.v1+json` | RESTful | Similar browser limitations, more complex for developers |
+| Query parameter | `?api-version=2023-01-01` | Browser-friendly, simple | Parameters may conflict with resource filtering |
 
-> **Note on URL path versioning:** This approach can be problematic as it suggests different resource identities across versions. Resources should ideally have stable URLs regardless of API version, allowing a resource created with v1 to be accessible via v2 endpoints as the same resource, not a different one.
+> **Note on URL path versioning:** While this approach technically suggests different resource identities across versions in strict REST interpretation, it remains one of the most widely implemented and developer-friendly approaches. If used, ensure that resource references across versions are well-documented.
 
 ### 2. Versioning Best Practices
 
 * Version from the beginning
 * Consider how you'll manage version compatibility
 * Maintain backward compatibility where possible
-* When introducing breaking changes in a new major version, consider running multiple API versions side by side for a transition period
-* Consider your API consumers' needs when choosing a strategy
-* Be consistent in your versioning approach across APIs
+* When introducing breaking changes in a new major version:
+  * Consider running multiple API versions side by side during transition
+  * Provide clear migration guides between versions
+  * Offer tooling to help identify usage of deprecated features
+  * Consider the operational cost of maintaining multiple versions
 
----
+### 3. Migration Strategies Between Versions
 
-## Security
+* **Incremental Adoption:**
+  * Allow clients to opt into new versions feature by feature
+  * Use feature flags or capability negotiation where appropriate
+  * Consider a hybrid approach during transition periods
 
-### 1. Authentication and Authorization
+* **Dependency Management:**
+  * Consider how versioned APIs depend on each other
+  * Document cross-service version compatibility
+  * Test version combinations to ensure interoperability
 
-* Use standard protocols (OAuth 2.0, JWT)
-* Require HTTPS for all endpoints
-* Implement proper token validation
-* Apply least privilege principle
+### 4. Choosing a Versioning Strategy
 
-### 2. Data Protection
+* **Consider your clients' preferences and technical constraints:**
+  * Some clients may prefer URL versioning for its explicitness
+  * Developer tooling often works better with URL versioning
+  * Browser-based applications may need query parameter versioning
 
-* Never expose sensitive data in URLs
-* Validate all inputs against injection attacks
-* Implement rate limiting to prevent abuse
-* Use appropriate security headers
+* **Consider your operational model:**
+  * Some versioning strategies are easier to implement in certain platforms
+  * Balance theoretical purity with practical implementation
 
----
+* **Aim for consistency across your API portfolio:**
+  * Using different versioning approaches across APIs increases client complexity
 
 ## Performance Optimization
 
@@ -314,16 +381,13 @@ Use consistent error structure across all endpoints:
 
 * Store comprehensive metadata (name, type, size, checksums)
 * Consider whether to use separate endpoints for metadata operations vs. content operations
-  > **Azure approach:** Azure storage uses a single endpoint strategy - in a GET request, metadata comes back in response headers and binary content in the body
 
 #### Downloading Files
 
 * For binary data, implement partial content (HTTP Range) support to enable efficient downloading
 * Support HTTP Range requests for all binary content, not just media files
-  > **Note:** Range requests enable more efficient download patterns. If a download of 100KB fails after 25KB, the client can keep what was received and request only the remaining 75KB
 * Return appropriate Content-Type headers matching the file type
 * Consider including Content-Disposition headers when appropriate
-  > **Note:** Content-Disposition headers tell the client how to handle the response (e.g., `attachment; filename="example.pdf"` instructs browsers to download the file rather than display it inline, and specifies the suggested filename)
 * Consider carefully whether to implement image transformations via query parameters, as these can add complexity
 
 ---
@@ -342,9 +406,7 @@ Use consistent error structure across all endpoints:
 ### 2. Stream Design Best Practices
 
 * Consider throttling mechanisms for request rates
-  > **Note:** Throttling is typically applied to new incoming HTTP requests. For long-lived connections like SSE or WebSockets, throttling becomes more challenging once the connection is established. This is an advantage of periodic polling, as each request can be properly throttled
 * Design for stateless connections to improve scalability
-  > **Note:** Maintaining state (like remembering the last event a client received) can limit service scalability. Stateless designs are preferable for highly scalable services
 * Consider both streaming and batch access patterns
 * Include timestamps for ordering
 * Document latency expectations
@@ -356,78 +418,12 @@ Use consistent error structure across all endpoints:
 * Consider retry policies and failure handling
 * Require HTTPS with verification
 
-> **Note:** Webhooks can present challenges with firewalls, client reliability, and error handling. Services must handle various failure scenarios, including unresponsive clients and potential infinite loops. Consider webhooks only when necessary and implement proper safeguards
-
----
-
-## API Management
-
-### 1. Rate Limiting
-
-* Use standard headers:
-  * `X-RateLimit-Limit`: Total requests allowed
-  * `X-RateLimit-Remaining`: Requests remaining
-  * `X-RateLimit-Reset`: Reset timestamp
-* Return 429 status with Retry-After header when exceeded
-* Consider different limits for different operations
-
-### 2. Idempotency and Concurrency
-
-* Support idempotency keys for non-idempotent operations
-* Use ETags and If-Match headers for optimistic concurrency
-* Return appropriate status codes for version conflicts:
-  * 412 Precondition Failed
-  * 409 Conflict
-  * 304 Not Modified
-
-### 3. Observability
-
-* Include unique request IDs in responses
-* Use correlation IDs for cross-service tracing
-* Provide health check endpoints
-* Consider including API version information in responses where it helps with troubleshooting
-
----
-
-## Documentation
-
-### 1. API Documentation
-
-* Maintain complete, up-to-date documentation
-* Include examples for all endpoints
-* Document error codes and scenarios
-* Use OpenAPI/Swagger specifications
-* Provide change management information
-
-### 2. Error Handling
-
-* Define standard error types
-* Ensure consistent error formats
-* Include actionable information
-* Document retry strategies
-
----
-
-## Testing and Quality Assurance
-
-### 1. Comprehensive Testing
-
-* Unit test all endpoints
-* Implement realistic integration tests
-* Test edge cases and error conditions
-* Conduct performance tests under load
-
-### 2. Monitoring
-
-* Log all API interactions
-* Monitor usage, performance, and errors
-* Set up alerts for abnormal patterns
-* Track deprecated feature usage
+> **Note:** Webhooks can present challenges with firewalls, client reliability, and error handling. Services must handle various failure scenarios, including unresponsive clients and potential infinite loops. Consider webhooks only when necessary and implement proper safeguards.
 
 ---
 
 ## Wrap up
 
-These guidelines provide a foundation for building robust, developer-friendly APIs. Treat them as living documents that evolve with technology and organizational needs. Always prioritize clarity, consistency, and ease of use in your API design.
+These technical guidelines provide a foundation for building robust, developer-friendly APIs. Follow these guidelines to ensure your APIs are consistent, maintainable, and provide a great developer experience. For guidance on API strategy and governance, see the [API Strategy and Governance Guide](/documentation/api_strategy_governance), and for implementation guidance, see the [API Lifecycle Management Guide](/documentation/api_lifecycle_management).
 
 > **Remember:** An API is a user interface for developers—design it with the same care as any user-facing product.
