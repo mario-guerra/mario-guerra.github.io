@@ -87,7 +87,7 @@ The single most common reason API initiatives fail is insufficient planning. Whe
   * Invest in upskilling your teams before starting
     * *API design training pays enormous dividends in reduced rework*
   * Balance domain expertise with API knowledge
-    * *Domain experts who don't understand APIs create technically problematic designs*
+    * *Domain experts who don't understand APIs can create technically problematic designs*
     * *API experts without domain knowledge miss business nuances*
 
 * **Tooling & Infrastructure Planning**
@@ -101,6 +101,10 @@ The single most common reason API initiatives fail is insufficient planning. Whe
     * *Operational tools: API gateways, monitoring solutions, and analytics platforms*
   * Anticipate scale and growth
     * *Infrastructure that works for 5 APIs often buckles at 50*
+      * *Connection pools, threads, and shared services hit capacity limits as APIs multiply*
+      * *Cross-cutting concerns like authentication and logging create exponential overhead*
+      * *Monitoring complexity increases dramatically with each added API and integration point*
+      * *Interdependencies between APIs create cascading failure points that are difficult to isolate*
     * *Ensure your API management solutions offer multi-region deployment, rate limiting, and caching*
   * Make build vs. buy decisions strategically
     * *Custom-built tools require ongoing maintenance and evolution*
@@ -120,6 +124,8 @@ The single most common reason API initiatives fail is insufficient planning. Whe
     * *Document specific, actionable guidelines (authentication requirements, versioning policies, error handling standards)*
     * *Provide concrete examples for common design decisions (resource naming, pagination patterns)*
     * *Create decision frameworks to help teams resolve design questions independently*
+      * *Decision frameworks are structured guidance tools like flowcharts, decision trees, or checklists that guide teams through common API design decisions without requiring central team involvement*
+      * *Examples include authentication method selectors, pagination strategy guides, and error handling decision trees*
   * Establish a distributed API coach network for scaling governance
     * *Central teams cannot review every API in large organizations*
     * *Train API experts embedded within delivery teams to champion standards*
