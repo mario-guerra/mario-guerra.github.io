@@ -2,10 +2,7 @@
 title: "API Design Guidelines"
 description: "Technical guidelines for designing high-quality, maintainable, and performant REST APIs."
 heroImage: "/assets/images/API_Design_Guidelines.jpeg"
-slug: "api_design_guidelines"
 ---
-
-## Introduction
 
 This document outlines technical best practices for designing high-quality, maintainable, and performant REST APIs. They reflect industry standards and lessons learned from working with first-party and third-party developers to build real-world APIs at scale.
 

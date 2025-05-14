@@ -2,10 +2,7 @@
 title: "API Lifecycle Management"
 description: "Guidelines for implementing, maintaining, and evolving APIs throughout their lifecycle."
 heroImage: "/assets/images/API_Lifecycle_Management.jpeg"
-slug: "api_lifecycle_management"
 ---
-
-## Introduction
 
 The lifecycle of an API encompasses far more than just its technical implementation. Organizations that treat APIs as strategic assets rather than mere technical interfaces consistently outperform those that don't. This document distills lessons from the field into practical guidance for implementing, maintaining, and evolving APIs throughout their lifecycle.
 
