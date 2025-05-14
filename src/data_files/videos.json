@@ -1,8 +1,8 @@
 {
   "featured": {
-    "title": "TypeSpec 1.0 RC: Design APIs Faster Today, Scale Easier Tomorrow",
-    "description": "Discover how TypeSpec 1.0 RC revolutionizes API development by letting you generate server code, client libraries, and documentation from a single, concise definition.",
-    "url": "https://youtu.be/mV-llh3O3W8?feature=shared"
+    "title": "TypeSpec First, AI Second: Building a Translation Service with Blueprint-Driven Development",
+    "description": "Learn how I built a complete audio translation and transcription service by combining TypeSpec for structured API design with AI-assisted development.",
+    "url": "https://youtu.be/mp5pnAzHw3k?feature=shared"
   },
   "videos": [
     {
