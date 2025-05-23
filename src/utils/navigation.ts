@@ -10,13 +10,7 @@ const navBarLinks = [
 // An array of links for footer
 const footerLinks = [
   {
-    section: "Ecosystem",
-    links: [
-      { name: "TypeSpec", url: "https://typespec.io" },
-    ],
-  },
-  {
-    section: "Company",
+    section: "Links",
     links: [
       { name: "About", url: "/about" },
       { name: "Blog", url: "/blog" },
