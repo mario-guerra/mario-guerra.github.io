@@ -113,11 +113,25 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
           "How do you make a programmer’s heart race? Say, ‘Your code compiled with no warnings.’",
           "What’s a programmer’s favorite hangout place? Foo Bar.",
           "How many programmers does it take to change a light bulb? None, that’s a hardware problem.",
+          "Why did the PowerPoint presentation cross the road? To get to the other slide.",
+          "Why are Assembly programmers always soaking wet? They work below C-level.",
+          "What do you call eight hobbits? A hobbyte.",
+          "What’s a computer's favorite pickup line? 'Are you a Wi-Fi hotspot? Because I'm feeling a connection.'",
+          "How do you know a programmer is an extrovert? They look at *your* shoes when they talk to you.",
+          "Why did the PowerPoint presentation cross the road? To get to the other slide.",
+          "Why did the quantum computer break up with the classical computer? It was too predictable.",
+          "What do you call a programmer who doesn't comment their code? A mystery writer.",
+          "Why did the computer get a ticket? It had a bad driver.",
         ];
         
         const jokeElement = document.getElementById("tech-dad-joke");
         if (jokeElement) {
-          const randomIndex = Math.floor(Math.random() * techDadJokes.length);
+          function seededRandom(seed: number) {
+          let x = Math.sin(seed++) * 10000;
+          return x - Math.floor(x);
+        }
+        const seed = new Date().getTime(); // Use system time as seed
+        const randomIndex = Math.floor(seededRandom(seed) * techDadJokes.length);
           jokeElement.textContent = techDadJokes[randomIndex];
         }
       });
