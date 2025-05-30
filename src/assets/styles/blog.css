@@ -43,15 +43,21 @@ article {
   }
   
   /* Links */
-  article a {
-    color: var(--sl-color-accent);
-    text-decoration: none;
-    border-bottom: 1px solid var(--sl-color-accent);
+  article a,
+  .prose a {
+    color: var(--sl-color-accent) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    border-bottom: 2px solid var(--sl-color-accent) !important;
+    transition: all 0.2s ease-in-out !important;
+    padding-bottom: 1px !important;
   }
   
-  article a:hover {
-    color: var(--sl-color-accent-high);
-    border-bottom-color: var(--sl-color-accent-high);
+  article a:hover,
+  .prose a:hover {
+    color: var(--sl-color-accent-high) !important;
+    border-bottom-color: var(--sl-color-accent-high) !important;
+    background-color: rgba(0, 123, 255, 0.1) !important;
   }
   
   /* Code Blocks */
@@ -81,4 +87,88 @@ article {
   article pre code span {
       background-color: transparent !important;
       border: none !important;
+  }
+  
+  /* Resource Links Section */
+  .resource-links,
+  article .resource-links,
+  .prose .resource-links {
+    margin-top: 3em !important;
+    padding: 1.5em !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px !important;
+    background-color: #f8f9fa !important;
+    color: #333333 !important; /* Ensuring text is dark regardless of theme */
+  }
+  
+  .resource-links h2,
+  article .resource-links h2,
+  .prose .resource-links h2 {
+    margin-top: 0 !important;
+    color: #0056b3 !important;
+    font-size: 1.5em !important;
+    border-top: none !important;
+    padding-top: 0 !important;
+    margin-bottom: 1em !important;
+  }
+  
+  .resource-links ul,
+  article .resource-links ul,
+  .prose .resource-links ul {
+    margin-top: 1em !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+  }
+  
+  .resource-links li,
+  article .resource-links li,
+  .prose .resource-links li {
+    margin-bottom: 1.5em !important;
+    padding-left: 0 !important;
+    color: #333333 !important; /* Ensuring list items are dark */
+    display: grid !important;
+    grid-template-columns: minmax(200px, auto) 1fr !important;
+    gap: 1.5em !important;
+    align-items: center !important;
+  }
+  
+  .resource-links a,
+  article .resource-links a,
+  .prose .resource-links a {
+    display: block !important;
+    width: 100% !important; /* Take full width of the column */
+    text-align: center !important;
+    font-weight: 600 !important;
+    padding: 0.8em 1em !important;
+    border-radius: 4px !important;
+    border-bottom: none !important;
+    background-color: #0056b3 !important;
+    color: white !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    white-space: normal !important;
+    margin: 0 !important;
+  }
+  
+  .resource-links a:hover,
+  article .resource-links a:hover,
+  .prose .resource-links a:hover {
+    background-color: #003d80 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* Fix for description text alignment */
+  .resource-links li::marker {
+    display: none !important;
+  }
+  
+  @media (max-width: 640px) {
+    /* Stack columns on small screens */
+    .resource-links li,
+    article .resource-links li,
+    .prose .resource-links li {
+      grid-template-columns: 1fr !important;
+      gap: 0.5em !important;
+    }
   }
