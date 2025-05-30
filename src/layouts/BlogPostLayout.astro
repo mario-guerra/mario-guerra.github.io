@@ -17,7 +17,11 @@ const heroImage = post.data.image ? post.data.image : null;
 const pageTitle = `${post.data.title} | My Blog`;
 ---
 
-<MainLayout title={pageTitle}>
+<MainLayout
+  title={pageTitle}
+  description={post.data.description}
+  image={heroImage}
+>
     <section
         slot="blog"
         class="mx-auto max-w-3xl px-1 pb-1 pt-1 sm:px-1 lg:px-1 lg:pt-1"

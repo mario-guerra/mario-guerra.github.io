@@ -17,6 +17,9 @@ const defaultProps = {
 const {
   meta = defaultProps.meta,
   structuredData = defaultProps.structuredData,
+  title,
+  description,
+  image,
 } = Astro.props;
 
 // Define the metadata for your website and individual pages
@@ -24,10 +27,10 @@ const URL = `${Astro.site}`; // Set the website URL in astro.config.mjs
 const author = SITE.author;
 const canonical = Astro.url.href;
 const basePath = Astro.url.pathname;
-const ogTitle = OG.title;
-const ogDescription = OG.description;
+const ogTitle = Astro.props.title || OG.title;
+const ogDescription = Astro.props.description || OG.description;
 const socialImageRes = await getImage({
-  src: OG.image,
+  src: Astro.props.image || OG.image,
   width: 1200,
   height: 600,
 });

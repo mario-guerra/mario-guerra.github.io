@@ -5,7 +5,14 @@ import FooterSection from "@components/sections/navbar&footer/FooterSection.astr
 import { SITE } from "@data/constants";
 
 // Setting expected props
-const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
+const {
+  title = SITE.title,
+  meta,
+  structuredData,
+  lang = "en",
+  description,
+  image
+} = Astro.props;
 
 // Interface to type-check the properties
 interface Props {
@@ -13,12 +20,14 @@ interface Props {
   meta?: string;
   structuredData?: object;
   lang?: string;
+  description?: string;
+  image?: any;
 }
 ---
 
 <html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16 dark">
   <head>
-    <Meta meta={meta} structuredData={structuredData} />
+    <Meta meta={meta} structuredData={structuredData} title={title} description={description} image={image} />
     <title>{title}</title>
     <script is:inline>
       if (
