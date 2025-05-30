@@ -14,7 +14,7 @@ const { blogEntry } = Astro.props;
   data-astro-prefetch
 >
   <div
-    class="relative h-[350px] w-full flex-shrink-0 overflow-hidden rounded-xl before:absolute before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-neutral-900/[.7]"
+    class="relative h-[350px] w-full flex-shrink-0 overflow-hidden rounded-xl before:absolute before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-neutral-900/[.9] before:via-neutral-900/[.7] before:to-neutral-900/[.4]"
   >
     <Image
       class="absolute start-0 top-0 size-full object-cover transition duration-500 group-hover:scale-110"
@@ -30,10 +30,10 @@ const { blogEntry } = Astro.props;
         <AvatarBlog blogEntry={blogEntry} />
 
         <div class="ms-2.5 sm:ms-4">
-          <h4 class="font-bold text-neutral-50">
+          <h4 class="font-bold text-white drop-shadow-sm">
             {blogEntry.data.author}
           </h4>
-          <p class="text-xs text-neutral-50/[.8]">
+          <p class="text-xs text-white/[.9] drop-shadow-sm">
             {formatDate(blogEntry.data.date)}
           </p>
         </div>
@@ -43,11 +43,11 @@ const { blogEntry } = Astro.props;
   <div class="absolute inset-x-0 bottom-0 z-10">
     <div class="flex h-full flex-col p-4 sm:p-6">
       <h3
-        class="text-balance text-lg font-bold text-neutral-50 group-hover:text-neutral-50/[.8] sm:text-3xl"
+        class="text-balance text-lg font-bold text-white group-hover:text-white/[.9] sm:text-3xl drop-shadow-md"
       >
         {blogEntry.data.title}
       </h3>
-      <p class="mt-2 text-pretty text-neutral-50/[.8]">
+      <p class="mt-2 text-pretty text-white/[.95] font-medium drop-shadow-md">
         {blogEntry.data.description}
       </p>
     </div>

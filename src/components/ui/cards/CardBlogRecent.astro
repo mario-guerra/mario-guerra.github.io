@@ -12,7 +12,7 @@ const { blogEntry } = Astro.props;
   <div class="sm:order-2">
     <div class="relative rounded-lg pt-[50%] sm:pt-[100%]">
       <Image
-        class="absolute start-0 top-0 size-full rounded-xl object-cover"
+        class="absolute start-0 top-0 size-full rounded-xl object-cover shadow-lg transition-all duration-300 hover:shadow-xl"
         src={blogEntry.data.image}
         alt={`Image for ${blogEntry.data.title}`}
         draggable={false}
