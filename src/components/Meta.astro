@@ -39,7 +39,8 @@ if (Astro.props.image) {
     height: 630, // Twitter prefers this height for cards
     format: 'jpeg', // Ensure consistent format for social media
   });
-  socialImage = new URL(socialImageRes.src, Astro.url.origin).toString();
+  // Create absolute URL by direct string concatenation
+  socialImage = `${Astro.url.origin}${socialImageRes.src}`;
 } else {
   const socialImageRes = await getImage({
     src: OG.image,
@@ -47,7 +48,8 @@ if (Astro.props.image) {
     height: 630,
     format: 'jpeg',
   });
-  socialImage = new URL(socialImageRes.src, Astro.url.origin).toString();
+  // Create absolute URL by direct string concatenation
+  socialImage = `${Astro.url.origin}${socialImageRes.src}`;
 }
 
 const languages: { [key: string]: string } = {
