@@ -5,9 +5,9 @@
  * Run it with: node scripts/test-twitter-card.js <url-of-your-blog-post>
  */
 
-const https = require('https');
-const http = require('http');
-const { URL } = require('url');
+import https from 'https';
+import http from 'http';
+import { URL } from 'url';
 
 if (process.argv.length < 3) {
   console.log('Usage: node test-twitter-card.js <url-of-your-blog-post>');
