@@ -1,10 +1,10 @@
 import ogImageSrc from "@images/mario-chipset.png";
 
 export const SITE = {
-  title: "Mario Guerra",
-  tagline: "Product Manager",
+  title: "Mario Guerra | AI-Powered Developer Tools & API Design Expert",
+  tagline: "Product Manager for AI-Powered Developer Experiences",
   description: "Product Manager for TypeSpec at Microsoft, specializing in increasing developer productivity through generative AI, modern build tools, and industry best practices.",
-  description_short: "Product Manager at Microsoft, enhancing developer productivity with generative AI, modern tools, and best practices.",
+  description_short: "AI-powered developer tools and API design expertise to boost developer experience and productivity.",
   url: "https://marioguerra.xyz",
   author: "Mario Guerra",
 };
