@@ -15,7 +15,9 @@ image: "./distributed-system.jpg"
 slug: "temporal-in-ten-minutes"
 ---
 
-Picture this: It's 2 AM and your e-commerce checkout system just crashed mid-transaction. Without the right safeguards, customers would be stuck with pending payments, your database could end up in an inconsistent state, and your monitoring alerts would be firing off notifications demanding immediate attention. 
+Picture this: It's 2 AM and your e-commerce checkout system just crashed mid-transaction. 
+
+Without the right safeguards, chaos would ensue. Customers would be stuck with pending payments. Your database could end up in an inconsistent state. Meanwhile, monitoring alerts would flood your phone demanding immediate attention as the system frantically scrambles to undo what it already did.
 
 What do you do? 😱
 
