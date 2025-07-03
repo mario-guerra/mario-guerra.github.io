@@ -1,27 +1,8 @@
-# build output
-dist/
-# generated types
-.astro/
-.idea/
-
-# dependencies
-node_modules/
-
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-
-# environment variables
-.env
-.env.production
-
-# macOS-specific files
+node_modules
 .DS_Store
-
-# temporary directories
-.tmp/
-.temp/
-temp/
+dist
+.env
+out
+.vscode
+.next
+.tmp
