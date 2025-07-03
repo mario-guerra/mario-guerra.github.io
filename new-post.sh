@@ -30,7 +30,7 @@ author: "Mario Guerra"
 category: "Development"
 tags: ["Tag1", "Tag2", "Tag3"]
 blogpost: false
-coverImage: "/portfolio-website/images/blog/$SLUG-cover.jpg"
+coverImage: "/images/blog/$SLUG-cover.jpg"
 ---
 
 # $TITLE
@@ -56,4 +56,4 @@ echo "1. Update the excerpt"
 echo "2. Set the appropriate category"
 echo "3. Update the tags"
 echo "4. Add a cover image at public/images/blog/$SLUG-cover.jpg"
-echo "   (This will be referenced as /portfolio-website/images/blog/$SLUG-cover.jpg in the markdown)"
+echo "   (This will be referenced as /images/blog/$SLUG-cover.jpg in the markdown)"

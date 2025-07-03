@@ -6,7 +6,7 @@ author: ""
 category: ""
 tags: [blog]
 blogpost: false
-coverImage: "/portfolio-website/images/blog/api-lifecycle-management/API_Lifecycle_Management.jpeg"
+coverImage: "/images/blog/api-lifecycle-management/API_Lifecycle_Management.jpeg"
 ---
 
 

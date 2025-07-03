@@ -6,7 +6,7 @@ author: ""
 category: ""
 tags: [blog]
 blogpost: false
-coverImage: "/portfolio-website/images/blog/api-strategy-and-governance/API_Strategy_Governance.jpeg"
+coverImage: "/images/blog/api-strategy-and-governance/API_Strategy_Governance.jpeg"
 ---
 
 

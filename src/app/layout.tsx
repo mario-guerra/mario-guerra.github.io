@@ -18,14 +18,14 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mario Guerra | AI-Powered Developer Tools & API Design Expert",
+    default: "Mario Guerra | AI-Powered Developer Tools & DX Design Expert",
     template: "%s | Mario Guerra Portfolio",
   },
-  description: "Professional portfolio website showcasing web development projects and skills",
-  metadataBase: new URL("https://example.com"),
+  description: "Professional portfolio website showcasing AI development projects and DX design skills",
+  metadataBase: new URL("https://marioguerra.xyz"),
   icons: {
-    icon: '/portfolio-website/mario-initial.svg',
-    shortcut: '/portfolio-website/mario-initial.svg',
+    icon: '/mario-initial.svg',
+    shortcut: '/mario-initial.svg',
   },
 };
 

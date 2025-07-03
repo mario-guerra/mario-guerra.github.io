@@ -6,7 +6,7 @@ author: "Mario Guerra"
 category: "Artificial Intelligence"
 tags: [blog]
 blogpost: true
-coverImage: "/portfolio-website/images/blog/typespec-first-vibe-code-second-build-apis-that-last/TypeSpec_First_Vibe_Second.jpeg"
+coverImage: "/images/blog/typespec-first-vibe-code-second-build-apis-that-last/TypeSpec_First_Vibe_Second.jpeg"
 ---
 
 

@@ -6,7 +6,7 @@ author: "Mario Guerra"
 category: "API Design"
 tags: [blog]
 blogpost: true
-coverImage: "/portfolio-website/images/blog/promoting-apis-from-plumbing-to-products/APIs_From_Plumbing_to_Products.jpeg"
+coverImage: "/images/blog/promoting-apis-from-plumbing-to-products/APIs_From_Plumbing_to_Products.jpeg"
 ---
 
 Most software users never directly interact with an API. They tap buttons, swipe screens, and navigate menus without knowing about the underlying services exchanging data behind the scenes. This invisibility makes it easy for organizations to treat APIs as technical afterthoughts.

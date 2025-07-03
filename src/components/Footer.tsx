@@ -122,7 +122,7 @@ export default function Footer() {
                 <SiX className="h-5 w-5" />
               </a>
               <a
-                href="/portfolio-website/contact"
+                href="/contact"
                 className="text-foreground/80 hover:text-primary"
                 aria-label="Email"
               >

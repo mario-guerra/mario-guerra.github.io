@@ -6,7 +6,7 @@ author: "Mario Guerra"
 category: "Artificial Intelligence"
 tags: [blog]
 blogpost: true
-coverImage: "/portfolio-website/images/blog/building-intelligent-chatbots-with-microsoft-teams-data/Teams-Channel-Data-Export-Title-Pic.jpg"
+coverImage: "/images/blog/building-intelligent-chatbots-with-microsoft-teams-data/Teams-Channel-Data-Export-Title-Pic.jpg"
 ---
 
 

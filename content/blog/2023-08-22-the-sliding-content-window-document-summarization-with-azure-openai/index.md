@@ -6,7 +6,7 @@ author: "Mario Guerra"
 category: "Artificial Intelligence"
 tags: [blog]
 blogpost: true
-coverImage: "/portfolio-website/images/blog/the-sliding-content-window-document-summarization-with-azure-openai/Summarizing-Documents-with-Azure-OpenAI.jpg"
+coverImage: "/images/blog/the-sliding-content-window-document-summarization-with-azure-openai/Summarizing-Documents-with-Azure-OpenAI.jpg"
 ---
 
 

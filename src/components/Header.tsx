@@ -41,7 +41,7 @@ export default function Header() {
         >
           {mounted && (
             <Image 
-              src={theme === "light" ? "/portfolio-website/images/logos/icon-light.svg" : "/portfolio-website/images/logos/icon-dark.svg"} 
+              src={theme === "light" ? "/images/logos/icon-light.svg" : "/images/logos/icon-dark.svg"} 
               alt="Mario Guerra Logo" 
               width={32} 
               height={32} 

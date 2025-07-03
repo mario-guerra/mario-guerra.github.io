@@ -6,7 +6,7 @@ author: "Mario Guerra"
 category: "Artificial Intelligence"
 tags: [blog]
 blogpost: true
-coverImage: "/portfolio-website/images/blog/building-a-translation-service-with-typespec-and-ai-a-blueprint-approach/TypeSpec-AI-Translation-Service.jpeg"
+coverImage: "/images/blog/building-a-translation-service-with-typespec-and-ai-a-blueprint-approach/TypeSpec-AI-Translation-Service.jpeg"
 ---
 
 

@@ -10,7 +10,7 @@ export default function Icon() {
   return new Response(null, {
     status: 302,
     headers: {
-      'Location': '/portfolio-website/mario-initial.svg',
+      'Location': '/mario-initial.svg',
       'Content-Type': contentType,
     },
   });

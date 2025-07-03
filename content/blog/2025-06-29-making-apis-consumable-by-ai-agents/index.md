@@ -6,7 +6,7 @@ author: ""
 category: ""
 tags: [blog]
 blogpost: false
-coverImage: "/portfolio-website/images/blog/making-apis-consumable-by-ai-agents/Making_APIs_Consumable_by_AI_Agents.jpeg"
+coverImage: "/images/blog/making-apis-consumable-by-ai-agents/Making_APIs_Consumable_by_AI_Agents.jpeg"
 ---
 
 

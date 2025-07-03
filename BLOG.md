@@ -109,7 +109,7 @@ If you want to keep the original directory after importing, use the `-k` flag:
 Post-specific images should be stored in the `public/images/blog/` directory. Since the site is configured with a base path of `/portfolio-website`, you must include this prefix in all image references:
 
 ```markdown
-![Alt text](/portfolio-website/images/blog/your-image.jpg)
+![Alt text](/images/blog/your-image.jpg)
 ```
 
 ### Image Directory Structure
@@ -128,7 +128,7 @@ public/
 And reference them as:
 
 ```markdown
-![Alt text](/portfolio-website/images/blog/your-post-slug/image1.jpg)
+![Alt text](/images/blog/your-post-slug/image1.jpg)
 ```
 
 ## Formatting Guide
@@ -138,8 +138,8 @@ The blog supports standard Markdown syntax as well as GitHub Flavored Markdown (
 - **Headers**: Use # symbols (# for h1, ## for h2, etc.)
 - **Emphasis**: Use *italics* or **bold**
 - **Lists**: Use - or * for bullet points, or 1. for numbered lists
-- **Links**: Use [text](url) - for internal links, include the base path: [About](/portfolio-website/about)
-- **Images**: Use ![alt text](image-url) - always include the base path: ![Image](/portfolio-website/images/...)
+- **Links**: Use [text](url) - for internal links, include the base path: [About](/about)
+- **Images**: Use ![alt text](image-url) - always include the base path: ![Image](/images/...)
 - **Code blocks**: Use triple backticks with optional language name
 - **Tables**: Use GitHub-style tables
 - **Task lists**: Use - [ ] for unchecked and - [x] for checked items

@@ -51,27 +51,27 @@ const featuredProjects = [
 		title: "Modern Portfolio Website",
 		description: "A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS, created entirely using AI pair programming with Cline + GPT-4.1 and GitHub Copilot + Claude 3.7.",
 		tags: ["Next.js", "TypeScript", "Tailwind CSS", "Markdown", "Responsive Design"],
-		imageUrl: "/portfolio-website/images/avatars/Chad_Jipiti_Avatar.jpg",
+		imageUrl: "/images/avatars/Chad_Jipiti_Avatar.jpg",
 		githubUrl: "https://github.com/mario-guerra/portfolio-website",
-		liveUrl: "https://marioguerra.xyz/portfolio-website/",
+		liveUrl: "https://marioguerra.xyz/portfolio-website",
 	},
 	{
 		id: 2,
 		title: "VibeSpec",
 		description: "VibeSpec is an AI-powered assistant that helps you create API definitions using TypeSpec from natural language descriptions. It converts your service ideas into structured, well-documented TypeSpec definitions that are ready to implement.",
 		tags: ["Azure OpenAI", "Azure Cognitive Services", "TypeSpec", "Python"],
-		imageUrl: "/portfolio-website/images/blog/typespec-first-vibe-code-second-build-apis-that-last/TypeSpec_First_Vibe_Second.jpeg",
+		imageUrl: "/images/blog/typespec-first-vibe-code-second-build-apis-that-last/TypeSpec_First_Vibe_Second.jpeg",
 		githubUrl: "https://github.com/mario-guerra/vibespec",
-		liveUrl: "/portfolio-website/blog/typespec-first-vibe-code-second-build-apis-that-last",
+		liveUrl: "https://youtu.be/mONKY7sESe0",
 	},
 	{
 		id: 3,
 		title: " Audio Translation Service",
 		description: "A translation service that converts audio recordings between languages using Azure AI services, designed with TypeSpec as the blueprint and AI-assisted development.",
 		tags: ["TypeSpec", "Azure Cognitive Services", "API Design", "AI-Assisted Development", "C#"],
-		imageUrl: "/portfolio-website/images/blog/building-a-translation-service-with-typespec-and-ai-a-blueprint-approach/TypeSpec-AI-Translation-Service.jpeg",
+		imageUrl: "/images/blog/building-a-translation-service-with-typespec-and-ai-a-blueprint-approach/TypeSpec-AI-Translation-Service.jpeg",
 		githubUrl: "https://github.com/mario-guerra/translation-service",
-		liveUrl: "/portfolio-website/blog/building-a-translation-service-with-typespec-and-ai-a-blueprint-approach",
+		liveUrl: "https://youtu.be/mp5pnAzHw3k",
 	},
 ];
 
@@ -89,7 +89,10 @@ export default function Home() {
                   Developer Experience Elevated Through AI & Human-Centered Design
                 </h1>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                  Hi, I'm Mario Guerra. I create intelligent tools that transform how developers build software, delivering measurable productivity gains and higher quality code. By merging human-centered design principles with strategic AI capabilities, I turn complex workflows into intuitive, efficient experiences for teams of all sizes.
+                  Hi, I'm Mario Guerra. I create intelligent tools that transform how developers build software, delivering measurable productivity gains and higher quality code.
+                </p>
+                <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                  By merging human-centered design principles with strategic AI capabilities, I turn complex workflows into intuitive, efficient experiences for teams of all sizes.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -170,9 +173,9 @@ export default function Home() {
                   <Link 
                     href={project.liveUrl} 
                     className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary/80"
-                    aria-label={`View ${project.title} live demo`}
+                    aria-label={`View ${project.title} Info`}
                   >
-                    <span>Live Demo</span>
+                    <span>Demo</span>
                     <FiExternalLink className="h-4 w-4" />
                   </Link>
                 </div>

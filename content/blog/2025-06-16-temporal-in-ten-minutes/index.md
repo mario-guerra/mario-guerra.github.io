@@ -6,7 +6,7 @@ author: "Mario Guerra"
 category: "Distributed Systems"
 tags: ["temporal", "workflow-orchestration", "microservices", "distributed-systems", "technology"]
 blogpost: true
-coverImage: "/portfolio-website/images/blog/temporal-in-ten-minutes/distributed-system.jpg"
+coverImage: "/images/blog/temporal-in-ten-minutes/distributed-system.jpg"
 ---
 
 Picture this: It's 2 AM and your e-commerce checkout system just crashed mid-transaction. 
@@ -147,7 +147,7 @@ Let's see how this works in practice with a payment processing workflow:
 
 <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
 
-![Temporal Workflow Sequence Diagram showing how a payment processing workflow handles failure recovery through event replay](/portfolio-website/images/blog/temporal-in-ten-minutes/workflow-diagram.png)
+![Temporal Workflow Sequence Diagram showing how a payment processing workflow handles failure recovery through event replay](/images/blog/temporal-in-ten-minutes/workflow-diagram.png)
 
 </div>
 

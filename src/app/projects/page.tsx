@@ -1,4 +1,4 @@
-// filepath: /Users/mariog/portfolio_website/portfolio-website/src/app/projects/page.tsx
+// filepath: /Users/mariog/portfolio_website/src/app/projects/page.tsx
 "use client";
 
 import Image from "next/image";
@@ -13,9 +13,9 @@ const projects = [
     title: "Modern Portfolio Website",
     description: "A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS, created entirely using AI pair programming with Cline + GPT-4.1 and GitHub Copilot + Claude 3.7.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Markdown", "Responsive Design"],
-    imageUrl: "/portfolio-website/images/avatars/Chad_Jipiti_Avatar.jpg",
+    imageUrl: "/images/avatars/Chad_Jipiti_Avatar.jpg",
     githubUrl: "https://github.com/mario-guerra/portfolio-website",
-    liveUrl: "https://marioguerra.xyz/portfolio-website/",
+    liveUrl: "https://marioguerra.xyz/portfolio-website",
     featured: false,
   },
   {
@@ -23,9 +23,9 @@ const projects = [
     title: "VibeSpec",
     description: "VibeSpec is an AI-powered assistant that helps you create API definitions using TypeSpec from natural language descriptions. It converts your service ideas into structured, well-documented TypeSpec definitions that are ready to implement.",
     tags: ["Azure OpenAI", "Azure Cognitive Services", "TypeSpec", "Python"],
-    imageUrl: "/portfolio-website/images/blog/typespec-first-vibe-code-second-build-apis-that-last/TypeSpec_First_Vibe_Second.jpeg",
+    imageUrl: "/images/blog/typespec-first-vibe-code-second-build-apis-that-last/TypeSpec_First_Vibe_Second.jpeg",
     githubUrl: "https://github.com/mario-guerra/vibespec",
-    liveUrl: "/portfolio-website/blog/typespec-first-vibe-code-second-build-apis-that-last",
+    liveUrl: "/blog/typespec-first-vibe-code-second-build-apis-that-last",
     featured: true,
   },
   {
@@ -33,9 +33,9 @@ const projects = [
     title: "AI-Powered Audio Translation Service",
     description: "A translation service that converts audio recordings between languages using Azure AI services, designed with TypeSpec as the blueprint and AI-assisted development.",
     tags: ["TypeSpec", "Azure Cognitive Services", "API Design", "AI-Assisted Development", "C#"],
-    imageUrl: "/portfolio-website/images/blog/building-a-translation-service-with-typespec-and-ai-a-blueprint-approach/TypeSpec-AI-Translation-Service.jpeg",
+    imageUrl: "/images/blog/building-a-translation-service-with-typespec-and-ai-a-blueprint-approach/TypeSpec-AI-Translation-Service.jpeg",
     githubUrl: "https://github.com/mario-guerra/translation-service",
-    liveUrl: "/portfolio-website/blog/building-a-translation-service-with-typespec-and-ai-a-blueprint-approach",
+    liveUrl: "/blog/building-a-translation-service-with-typespec-and-ai-a-blueprint-approach",
     featured: false,
   },
   {
@@ -43,9 +43,9 @@ const projects = [
     title: "The Sliding Content Window",
     description: "A Python-based document summarization tool that uses Azure OpenAI and a sliding context window technique to generate cohesive summaries of large documents without exceeding token limits.",
     tags: ["Python", "Azure OpenAI", "NLP", "Document Processing"],
-    imageUrl: "/portfolio-website/images/blog/the-sliding-content-window-document-summarization-with-azure-openai/Summarizing-Documents-with-Azure-OpenAI.jpg",
+    imageUrl: "/images/blog/the-sliding-content-window-document-summarization-with-azure-openai/Summarizing-Documents-with-Azure-OpenAI.jpg",
     githubUrl: "https://github.com/mario-guerra/azure-openai-doc-summarizer",
-    liveUrl: "/portfolio-website/blog/the-sliding-content-window-document-summarization-with-azure-openai",
+    liveUrl: "/blog/the-sliding-content-window-document-summarization-with-azure-openai",
     featured: false,
   },
   {
@@ -53,9 +53,9 @@ const projects = [
     title: "Building RAG-Enhanced Chatbots from Microsoft Teams Channel Data",
     description: "Turn Microsoft Teams conversations into smart chatbots that automatically answer frequently asked questions, saving developer time and preserving team knowledge.",
     tags: ["Microsoft Graph API", "Azure OpenAI", "RAG", "Microsoft Teams", "Knowledge Mining"],
-    imageUrl: "/portfolio-website/images/blog/building-intelligent-chatbots-with-microsoft-teams-data/Teams-Channel-Data-Export-Title-Pic.jpg",
+    imageUrl: "/images/blog/building-intelligent-chatbots-with-microsoft-teams-data/Teams-Channel-Data-Export-Title-Pic.jpg",
     githubUrl: "https://github.com/mario-guerra/teams-channel-content-export",
-    liveUrl: "/portfolio-website/blog/building-intelligent-chatbots-with-microsoft-teams-data",
+    liveUrl: "/blog/building-intelligent-chatbots-with-microsoft-teams-data",
     featured: false,
   },
   {
@@ -63,7 +63,7 @@ const projects = [
     title: "Azure SDK Copilot Extension for VS Code",
     description: "A VS Code extension with a chat interface that uses RAG to answer questions about Azure SDKs by querying a vector database of GitHub repo READMEs.",
     tags: ["TypeScript", "Python", "VS Code Extension", "RAG", "Semantic Kernel", "Azure OpenAI"],
-    imageUrl: "/portfolio-website/images/projects/github_copilot_chatbot/GH_Copilot_AZSDK.jpeg",
+    imageUrl: "/images/projects/github_copilot_chatbot/GH_Copilot_AZSDK.jpeg",
     githubUrl: "https://github.com/mario-guerra/azsdkchatbot",
     liveUrl: "https://github.com/mario-guerra/azsdkchatbot",
     featured: false,

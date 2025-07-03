@@ -24,7 +24,7 @@ fi
 # Configuration
 BLOG_CONTENT_DIR="/Users/mariog/Work/portfolio_website/content/blog"
 PUBLIC_IMAGES_DIR="/Users/mariog/Work/portfolio_website/public/images/blog"
-BASE_PATH="/portfolio-website"
+BASE_PATH="."
 KEEP_ORIGINAL=false
 
 # Check for command-line options

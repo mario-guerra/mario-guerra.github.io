@@ -6,7 +6,7 @@ author: ""
 category: ""
 tags: [blog]
 blogpost: false
-coverImage: "/portfolio-website/images/blog/api-design-guidelines/API_Design.jpeg"
+coverImage: "/images/blog/api-design-guidelines/API_Design.jpeg"
 ---
 
 
