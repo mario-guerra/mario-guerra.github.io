@@ -58,7 +58,7 @@ const featuredProjects = [
 	{
 		id: 2,
 		title: "VibeSpec",
-		description: "VibeSpec is an AI-powered assistant that helps you create API definitions using TypeSpec from natural language descriptions. It converts your service ideas into structured, well-documented TypeSpec definitions that are ready to implement.",
+		description: "Vibespec is an AI-powered agent that helps you create API definitions using TypeSpec from natural language descriptions. It converts your service ideas into structured, well-documented TypeSpec definitions that are ready to implement.",
 		tags: ["Azure OpenAI", "Azure Cognitive Services", "TypeSpec", "Python"],
 		imageUrl: "/images/blog/typespec-first-vibe-code-second-build-apis-that-last/TypeSpec_First_Vibe_Second.jpeg",
 		githubUrl: "https://github.com/mario-guerra/vibespec",
