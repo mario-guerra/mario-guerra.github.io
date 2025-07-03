@@ -18,7 +18,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mario Guerra | AI-Powered Developer Tools & DX Design Expert",
+    default: "Mario Guerra | AI-Powered Developer Tools & DX Design",
     template: "%s | Mario Guerra Portfolio",
   },
   description: "Professional portfolio website showcasing AI development projects and DX design skills",
