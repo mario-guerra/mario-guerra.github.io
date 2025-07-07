@@ -2,24 +2,31 @@
 'use client';
 
 import Script from 'next/script';
-import { useEffect } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 // Replace this with your actual Google Analytics Measurement ID when ready for production
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX';
 
 export default function GoogleAnalytics() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const [searchParams, setSearchParams] = useState('');
+
+  // Get search params on client side only
+  useEffect(() => {
+    setSearchParams(window.location.search);
+  }, [pathname]);
 
   useEffect(() => {
-    const url = pathname + searchParams.toString();
+    if (pathname) {
+      const url = pathname + searchParams;
 
-    // Check if window.gtag is defined (script has loaded)
-    if (window.gtag) {
-      window.gtag('config', GA_MEASUREMENT_ID, {
-        page_path: url,
-      });
+      // Check if window.gtag is defined (script has loaded)
+      if (window.gtag) {
+        window.gtag('config', GA_MEASUREMENT_ID, {
+          page_path: url,
+        });
+      }
     }
   }, [pathname, searchParams]);
 

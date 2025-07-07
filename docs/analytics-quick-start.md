@@ -32,6 +32,8 @@ If you prefer a quicker solution:
 3. Also update the same in `src/hooks/useAnalytics.ts`
 4. Commit and push to deploy
 
+> **Note:** We've updated the implementation to avoid the `useSearchParams()` Suspense boundary error by using `window.location.search` instead. This ensures the site builds correctly with static generation.
+
 ## Verify It's Working
 
 1. Visit your live site at marioguerra.xyz

@@ -4,7 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
+import ClientAnalytics from "@/components/ClientAnalytics";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -40,7 +40,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
-        <GoogleAnalytics />
+        <ClientAnalytics />
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
             <Header />

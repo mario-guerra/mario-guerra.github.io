@@ -1,8 +1,8 @@
 // src/hooks/useAnalytics.ts
 'use client';
 
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 // Replace this with your actual Google Analytics Measurement ID when ready for production
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX';
@@ -17,11 +17,16 @@ type EventOptions = {
 
 export function usePageView() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const [searchParams, setSearchParams] = useState('');
+  
+  // Get search params on client side only
+  useEffect(() => {
+    setSearchParams(window.location.search);
+  }, [pathname]);
   
   useEffect(() => {
     if (pathname && window.gtag) {
-      const url = pathname + searchParams.toString();
+      const url = pathname + searchParams;
       
       window.gtag('config', GA_MEASUREMENT_ID, {
         page_path: url,
