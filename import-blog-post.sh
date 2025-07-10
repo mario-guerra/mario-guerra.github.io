@@ -22,8 +22,8 @@ if [ "${DEBUG:-0}" -eq 1 ]; then
 fi
 
 # Configuration
-BLOG_CONTENT_DIR="/Users/mariog/Work/portfolio_website/content/blog"
-PUBLIC_IMAGES_DIR="/Users/mariog/Work/portfolio_website/public/images/blog"
+BLOG_CONTENT_DIR="/Users/mariog/Work/mario-guerra.github.io/content/blog"
+PUBLIC_IMAGES_DIR="/Users/mariog/Work/mario-guerra.github.io/public/images/blog"
 BASE_PATH="."
 KEEP_ORIGINAL=false
 
