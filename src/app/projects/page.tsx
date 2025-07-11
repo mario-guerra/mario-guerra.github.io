@@ -26,7 +26,7 @@ const projects = [
     imageUrl: "/images/blog/typespec-first-vibe-code-second-build-apis-that-last/TypeSpec_First_Vibe_Second.jpeg",
     githubUrl: "https://github.com/mario-guerra/vibespec",
     liveUrl: "/blog/typespec-first-vibe-code-second-build-apis-that-last",
-    featured: true,
+    featured: false,
   },
   {
     id: 3,
