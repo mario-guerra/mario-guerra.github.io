@@ -204,7 +204,7 @@ export default function Resume() {
           pdf.text(summaryLines, margin, yPos);
           yPos += (lineHeight * summaryLines.length) + 3; // Less spacing between paragraphs
           
-          const summaryText2 = "At Microsoft, I spearheaded the zero-to-one launch of TypeSpec—a high-level API language and code-gen framework now adopted by over 30% of Azure services to produce SDKs for C#, Java, .NET, JavaScript, Rust, and Go — cutting SDK development and API review time by 30%.";
+          const summaryText2 = "At Microsoft, I spearheaded the zero-to-one launch of TypeSpec, a high-level API language and code-gen framework now adopted by over 30% of Azure services to produce SDKs for C#, Java, .NET, JavaScript, Rust, and Go, cutting SDK development and API review time by 30%.";
           // Use the same textWidth for consistent paragraph formatting
           const summaryLines2 = pdf.splitTextToSize(summaryText2, textWidth);
           pdf.text(summaryLines2, margin, yPos);
@@ -588,9 +588,10 @@ export default function Resume() {
                     and fostering vibrant open source communities, driving collaboration and adoption across diverse developer ecosystems.
                   </p>
                   <p className="mt-2 text-foreground/80">
-                    At Microsoft, I spearheaded the zero-to-one launch of TypeSpec—a high-level API language and code-gen framework 
-                    now adopted by over 30% of Azure services to produce SDKs for C#, Java, .NET, JavaScript, Rust, and Go — cutting 
-                    SDK development and API review time by 30%, with a plan to convert all Azure services to TypeSpec.
+                    At Microsoft, I spearheaded the zero-to-one launch of TypeSpec, a high-level API language and code-gen framework now adopted by over 30% of Azure services to produce SDKs for C#, Java, .NET, JavaScript, Rust, and Go, cutting SDK development and API review time by 30%, with a plan to convert all Azure services to TypeSpec.
+                  </p>
+                  <p className="mt-2 text-foreground/80">
+                    Interested in product leadership opportunities AI-driven companies building developer-first solutions.
                   </p>
                 </div>
               </div>
