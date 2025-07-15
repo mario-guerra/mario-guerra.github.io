@@ -86,7 +86,7 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter text-foreground sm:text-5xl xl:text-6xl/none">
-                  Developer Experience Elevated Through AI & Human-Centered Design
+                  Human-Centered, AI-Enhanced Products & Services
                 </h1>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
                   Hi, I'm Mario Guerra. I create intelligent tools that transform how developers build software, delivering measurable productivity gains and higher quality code.

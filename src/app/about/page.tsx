@@ -26,7 +26,7 @@ export default function AboutPage() {
                   Currently at Microsoft, I lead the TypeSpec API Definition Language project, an open-source language that has been adopted by over 30% of Azure services to produce SDKs across multiple programming languages, cutting development and review time by 30%.
                 </p>
                 <p>
-                  I specialize in creating developer-first products that measurably boost productivity and accelerate software delivery. By integrating human-centered design with cutting-edge AI capabilities, I transform complex development workflows into intuitive, efficient, and reliable experiences.
+                  I specialize in creating AI-enhanced products that measurably boost productivity and accelerate software delivery. By integrating human-centered design with cutting-edge AI capabilities, I transform complex development workflows into intuitive, efficient, and reliable experiences.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
