@@ -1,6 +1,22 @@
----
 title: "MLOps for Developers, Not Data Scientists"
 excerpt: "A practical guide to MLOps for developers who want to build reliable, scalable, and safe AI features, without becoming data scientists."
+
+---
+
+## The Machine Learning Lifecycle (And Why It Matters) 🔄
+
+Understanding the Machine Learning Lifecycle 🔄
+
+Before we get too deep, let’s zoom out for a second. Every AI feature you build goes through a lifecycle—just like regular software, but with a few extra twists:
+
+1. **Data Collection & Labeling**: Gathering and prepping the data your model will learn from (and yes, data quality matters more than you think).
+2. **Training**: Teaching the model to do its thing.
+3. **Validation & Testing**: Making sure it actually works (and doesn’t just memorize your training data).
+4. **Deployment**: Shipping the model into production, where real users (and real weirdness) live.
+5. **Monitoring**: Watching for drift, weird outputs, and performance drops.
+6. **Retraining & Updating**: Feeding in new data, fixing issues, and keeping things fresh.
+
+MLOps is about making this whole cycle repeatable, reliable, and (mostly) painless for developers.
 date: "2025-07-21"
 author: "Mario Guerra"
 category: "AI Engineering"
@@ -37,6 +53,8 @@ If you're a developer who's started working with large language model APIs, buil
 
 _Think of MLOps as **DevOps for AI**._
 
+---
+
 Just like you wouldn't deploy a web app without CI/CD, monitoring, and version control, you shouldn't deploy AI without the right operational practices. 
 
 The good news is, you already have the skillz to pay these bills, we just have to map them to the shiny new world of AI.
@@ -44,6 +62,21 @@ The good news is, you already have the skillz to pay these bills, we just have t
 ---
 
 ## What MLOps Really Means for Working Developers
+
+---
+
+## CI/CD for ML: Not Just for Web Apps 🚦
+
+How CI/CD Pipelines Work for ML 🚦
+
+You already know CI/CD for code. For ML, it’s the same idea, but you’re also testing data, models, and outputs—not just code. A solid ML pipeline might include:
+
+- **Data validation**: Catching bad or unexpected data before it breaks your model.
+- **Automated model testing**: Running tests on new models to check accuracy, fairness, and edge cases.
+- **Model registry**: Keeping track of which model version is running in production (so you can roll back if things go sideways).
+- **Automated deployment**: Shipping new models with the same confidence as a code deploy.
+
+If you’re using GitHub Actions, Azure Pipelines, or any CI/CD tool, you’re already halfway there—just add steps for your data and models.
 
 Let's strip away the jargon. MLOps is about three simple things.
 
@@ -78,6 +111,19 @@ Your existing development skills translate directly to working with AI.
 | **🧪 Testing** | Write tests for AI outputs, prompts, edge cases, and failure scenarios |
 | **📊 Monitoring** | Track AI accuracy, costs, response times, and error rates |
 | **🚀 Deployment** | Use Docker and Kubernetes to deploy AI models just like regular services |
+
+---
+
+## Data Management: Your Model Is Only as Good as Your Data 📦
+
+Treat Data as a First-Class Citizen 📦
+
+You’ve heard “garbage in, garbage out.” In MLOps, data is a first-class citizen. That means:
+
+- **Version your data** just like code (DVC is your friend).
+- **Track data lineage** so you know where every bit came from.
+- **Validate and clean** your data before training—don’t trust raw inputs!
+- **Plan for re-labeling and updates** as your use case evolves.
 
 ---
 
@@ -121,7 +167,7 @@ You want to add an AI-powered feature to your existing application, but integrat
 
 🚫 **Don't ignore user feedback about AI outputs**, since metrics alone won't tell the full story
 
-🚫 **Don't hardcode API keys or secrets in your codebase**, which should go without saying but it still happens ¯\_(ツ)_/¯ 
+🚫 **Don't hardcode API keys or secrets in your codebase**, which should go without saying but it still happens 🤦🏻‍♂️
 
 ### Scenario 3: Processing Documents with AI 📄
 You're building a system that uses AI to extract data from documents, because the cool chatbot featured you rolled out in Scenario 1 is providing lousy answers (ask me how I know 🙄), and now you need to enhance that chatbot's out-of-date base knowledge via retrieval-augmented generation.
@@ -133,6 +179,61 @@ You're building a system that uses AI to extract data from documents, because th
 ✅ **Monitor accuracy** by comparing AI outputs to expected results
 
 ✅ **Use a vector database** to store and retrieve document embeddings for better context in AI responses
+
+---
+
+## Monitoring Keeps Your Model on Track 📉
+
+Keep Your Model on Track with Monitoring 📉
+
+Monitoring isn’t just about uptime. With AI, you need to watch for:
+
+- **Model drift**: When your model’s predictions get worse over time because the world (or your data) changed.
+- **Data drift**: When the data your model sees in production starts looking different from what it saw during training.
+- **Performance metrics**: Accuracy, latency, error rates, and cost.
+- **Alerting**: Set up alerts for sudden drops in accuracy or weird spikes in usage.
+
+So yeah, don’t just monitor the infrastructure, monitor the model’s behavior as well. 
+
+---
+
+
+## Collaboration Makes MLOps Work 🧑‍💻🤝🧑‍🔬
+
+MLOps isn’t a solo sport. Developers, data scientists, and ops folks all have a role. Make life easier by:
+
+- **Sharing experiment tracking** (MLflow, Weights & Biases, etc.)
+- **Documenting handoff processes** between dev and data science
+- **Using shared tools** for versioning, monitoring, and deployment
+
+The more you collaborate, the less you’ll want to throw your laptop out the window.
+
+---
+
+
+## Security and Compliance for AI Features 🔒
+
+AI features can introduce new risks. Beyond API keys, think about:
+
+- **Model security**: Protect against adversarial attacks and prompt injection.
+- **Data privacy**: Don’t leak sensitive info in prompts, logs, or outputs.
+- **Compliance**: Know the rules for your industry (GDPR, HIPAA, etc.) and bake checks into your pipeline.
+
+Safe AI is good AI (and keeps your legal team happy).
+
+---
+
+
+## How to Test AI Systems 🧪🤔
+
+Testing AI is a little weird. You’re not just checking if the code runs—you’re checking if the outputs make sense. Watch out for:
+
+- **Non-determinism**: The same input might give different outputs. Test with multiple seeds or runs.
+- **Test data leakage**: Make sure your test data isn’t sneaking into your training set.
+- **Fairness and bias**: Test for edge cases and unintended consequences.
+- **Manual review**: Sometimes, a human in the loop is the only way to catch subtle issues.
+
+Automate what you can, but don’t be afraid to get hands-on with your tests.
 
 ✅ **Use a SoTA RAG pattern** RAG is a rapidly evolving field, which has moved beyond simple document retrieval to more advanced techniques like graph-based retrieval, hybrid approaches, multimodal retrieval, and more. It's worthwhile spending some time researching the latest tools and techniques in RAG to ensure you're using the best approach for your use case.
 
