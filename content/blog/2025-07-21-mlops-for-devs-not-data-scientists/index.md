@@ -184,8 +184,6 @@ You're building a system that uses AI to extract data from documents, because th
 
 ## Monitoring Keeps Your Model on Track 📉
 
-Keep Your Model on Track with Monitoring 📉
-
 Monitoring isn’t just about uptime. With AI, you need to watch for:
 
 - **Model drift**: When your model’s predictions get worse over time because the world (or your data) changed.
