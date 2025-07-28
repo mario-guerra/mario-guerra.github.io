@@ -1,6 +1,16 @@
+---
 title: "MLOps for Developers, Not Data Scientists"
 excerpt: "A practical guide to MLOps for developers who want to build reliable, scalable, and safe AI features, without becoming data scientists."
-
+date: "2025-07-21"
+author: "Mario Guerra"
+category: "AI Engineering"
+tags:
+  - mlops
+  - ai
+  - developer-tools
+  - devops
+blogpost: true
+coverImage: "/images/blog/mlops-for-devs-not-data-scientists/mlops-for-devs.jpeg"
 ---
 
 ## The Machine Learning Lifecycle (And Why It Matters) 🔄
