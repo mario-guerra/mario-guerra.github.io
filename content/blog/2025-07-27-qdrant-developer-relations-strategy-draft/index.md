@@ -64,6 +64,19 @@ Qdrant stands out for its **high performance**, **open-source foundation**, and 
   - Ensure community feedback directly informs product priorities
   - Create transparent communication channels
 
+## How We Prioritize
+
+Every DevRel initiative is evaluated by its impact on the developer journey, alignment with business goals, and data-driven evidence. If a request does not move the needle for our community or product, we say no so we can say yes to what matters most.
+
+- Set and communicate clear DevRel priorities that align with business objectives. Be willing to say no to requests that do not support strategic goals.
+- Work closely with Engineering, Product, and Marketing to share feedback and align priorities, acting as a bridge between technical and business teams.
+- Regularly sync with internal teams to ensure developer needs are addressed and that DevRel efforts are coordinated and impactful.
+- Collaborate on content marketing, SEO, and outreach strategies to maximize the reach and effectiveness of DevRel initiatives.
+
+## Why I am Ready to Lead This
+
+At Microsoft, I grew the TypeSpec open-source community to over 5,000 stars and drove 30+ percent Azure service adoption (with a plan in place for 100% adoption by end of year) by focusing on developer experience, content, and advocacy. I prototyped RAG-based Copilot extensions using Qdrant, and I know what it takes to build, scale, and inspire technical communities. I am excited to bring this playbook and my passion for AI developer tools to Qdrant.
+
 ## 90-Day Action Plan
 
 > The following phased approach is designed to deliver **quick wins**, deepen **technical engagement**, and empower **community leaders**, while ensuring that feedback directly informs both product and DevRel priorities.
