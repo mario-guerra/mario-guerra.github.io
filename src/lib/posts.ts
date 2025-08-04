@@ -98,7 +98,6 @@ export async function getPostBySlug(slug: string) {
     .use(remarkGfm)
     .use(remarkRehype)
     .use(rehypeSlug)
-    .use(rehypeAutolinkHeadings, { behavior: 'wrap' })
     .use(rehypeStringify)
     .process(content);
 
