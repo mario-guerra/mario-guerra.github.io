@@ -2,8 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-import html from 'remark-html';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 // Define the posts directory
 const postsDirectory = path.join(process.cwd(), 'content/blog');
@@ -90,12 +93,15 @@ export async function getPostBySlug(slug: string) {
   // Use gray-matter to parse the post metadata section
   const { data, content } = matter(fileContents);
   
-  // Use remark to convert markdown into HTML string
+  // Use remark to convert markdown into HTML string with heading anchors (rehype)
   const processedContent = await remark()
-    .use(html, { sanitize: false })
     .use(remarkGfm)
+    .use(remarkRehype)
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings, { behavior: 'wrap' })
+    .use(rehypeStringify)
     .process(content);
-    
+
   const contentHtml = processedContent.toString();
   
   // Combine the data with the slug and content
