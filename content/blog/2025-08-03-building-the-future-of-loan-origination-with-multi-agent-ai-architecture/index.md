@@ -116,7 +116,7 @@ Let's explore how this multi-agent system actually works, including the complexi
 
 ### Simplified Agent Ecosystem with Clear Interfaces
 
-Based on rigorous analysis, we've optimized our platform to employ **four core specialized AI agents** instead of six, reducing complexity while maintaining functionality. Each agent operates as an independent module with well-defined APIs, enabling seamless updates without cascading disruptions.
+After careful consideration, I've optimized the platform to employ **four core specialized AI agents** rather than an initial count of six, reducing complexity while maintaining functionality. Each agent operates as an independent module with well-defined APIs, enabling seamless updates without cascading disruptions.
 
 #### 🔍 Unified Document and Data Intelligence Agent
 **Primary Role** - Transform unstructured documents into structured, actionable data while performing initial risk assessment
@@ -194,7 +194,7 @@ Based on rigorous analysis, we've optimized our platform to employ **four core s
 Each agent operates as an independent module with well-defined APIs, enabling seamless updates or replacements without cascading disruptions. This modularity simplifies debugging and enhances maintainability across the board.
 
 **Automated Testing and CI/CD Pipelines**
-We leverage comprehensive automated testing—unit, integration, and end-to-end—coupled with CI/CD pipelines to catch issues early and deploy updates with confidence. This ensures system integrity as complexity grows.
+We leverage comprehensive automated testing (unit, integration, and end-to-end) coupled with CI/CD pipelines to catch issues early and deploy updates with confidence. This ensures system integrity as complexity grows.
 
 **Advanced Observability**
 Real-time monitoring tools provide deep visibility into agent performance and system health, empowering rapid issue resolution and sustained reliability. Our observability stack includes:
