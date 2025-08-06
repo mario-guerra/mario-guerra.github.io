@@ -27,12 +27,6 @@ Before we get too deep, let’s zoom out for a second. Every AI feature you buil
 6. **Retraining & Updating**: Feeding in new data, fixing issues, and keeping things fresh.
 
 MLOps is about making this whole cycle repeatable, reliable, and (mostly) painless for developers.
-date: "2025-07-21"
-author: "Mario Guerra"
-category: "AI Engineering"
-tags: [mlops, ai, developer-tools, devops]
-blogpost: true
-coverImage: "/images/blog/mlops-for-devs-not-data-scientists/mlops-for-devs.jpeg"
 ---
 
 ## The Face When Your Boss Says "Add Some AI..." 😱
