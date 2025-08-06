@@ -13,9 +13,7 @@ blogpost: true
 coverImage: "/images/blog/mlops-for-devs-not-data-scientists/mlops-for-devs.jpeg"
 ---
 
-## The Machine Learning Lifecycle (And Why It Matters) 🔄
-
-Understanding the Machine Learning Lifecycle 🔄
+## The Machine Learning Lifecycle (And Why It Matters)
 
 Before we get too deep, let’s zoom out for a second. Every AI feature you build goes through a lifecycle—just like regular software, but with a few extra twists:
 
