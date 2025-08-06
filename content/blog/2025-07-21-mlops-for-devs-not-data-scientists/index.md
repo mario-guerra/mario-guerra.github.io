@@ -69,16 +69,14 @@ The good news is, you already have the skillz to pay these bills, we just have t
 
 ## CI/CD for ML: Not Just for Web Apps 🚦
 
-How CI/CD Pipelines Work for ML 🚦
-
-You already know CI/CD for code. For ML, it’s the same idea, but you’re also testing data, models, and outputs—not just code. A solid ML pipeline might include:
+You already know CI/CD for code. For ML, it’s the same idea, but you’re also testing data, models, and outputs, not just code. A solid ML pipeline might include:
 
 - **Data validation**: Catching bad or unexpected data before it breaks your model.
 - **Automated model testing**: Running tests on new models to check accuracy, fairness, and edge cases.
 - **Model registry**: Keeping track of which model version is running in production (so you can roll back if things go sideways).
 - **Automated deployment**: Shipping new models with the same confidence as a code deploy.
 
-If you’re using GitHub Actions, Azure Pipelines, or any CI/CD tool, you’re already halfway there—just add steps for your data and models.
+If you’re using GitHub Actions, Azure Pipelines, or any CI/CD tool, you’re already halfway there, just add steps for your data and models.
 
 Let's strip away the jargon. MLOps is about three simple things.
 
@@ -86,7 +84,7 @@ Let's strip away the jargon. MLOps is about three simple things.
 > Your AI features should work consistently, just like your regular code. No mysterious failures or unpredictable outputs that leave users confused.
 
 > ### Making your AI scalable  
-> When your AI-powered feature gets popular (_and it *will* get popular, right?_), it should handle the load without breaking your budget or performance.
+> When your AI-powered feature gets popular (_and it WILL get popular, right?_), it should handle the load without breaking your budget or performance.
 
 > ### Making your AI safe
 > Your AI shouldn't leak sensitive data, generate harmful content, or behave in ways that hurt your users or business.
@@ -124,7 +122,7 @@ You’ve heard “garbage in, garbage out.” In MLOps, data is a first-class ci
 
 - **Version your data** just like code (DVC is your friend).
 - **Track data lineage** so you know where every bit came from.
-- **Validate and clean** your data before training—don’t trust raw inputs!
+- **Validate and clean** your data before training, don’t trust raw inputs!
 - **Plan for re-labeling and updates** as your use case evolves.
 
 ---
@@ -151,11 +149,11 @@ You're building a customer service chatbot, because having a chatbot is pretty m
 🚫 **Don't overlook the impact of tone and phrasing in responses**, since this can affect the user experience
 
 #### Scenario 2: Adding AI to Existing Apps 📱
-You want to add an AI-powered feature to your existing application, but integrating AI into existing apps is all the rage these days. Here's how to do it without losing your mind.
+You want to add an AI-powered feature to your existing application, because integrating AI into existing apps is all the rage these days. Here's how to do it without losing your mind.
 
 ✅ **Start small** with one feature and well-defined success metrics
 
-✅ **Use managed services if you can** like OpenAI or AWS Bedrock instead of training your own models, because who has time (or budget) for that??
+✅ **Use managed services if you can** like OpenAI or AWS Bedrock instead of training your own models, because that process is time consuming, expensive, and not necessary for most use cases
 
 ✅ **Implement logging and monitoring** to track how users interact with the AI features
 
@@ -181,6 +179,16 @@ You're building a system that uses AI to extract data from documents, because th
 ✅ **Monitor accuracy** by comparing AI outputs to expected results
 
 ✅ **Use a vector database** to store and retrieve document embeddings for better context in AI responses
+
+✅ **Plan for reindexing** when document formats change or accuracy drops
+
+✅ **Use a SoTA RAG pattern** RAG is a rapidly evolving field, which has moved beyond simple document retrieval to more advanced techniques like graph-based retrieval, hybrid approaches, multimodal retrieval, and more. It's worthwhile spending some time researching the latest tools and techniques in RAG to ensure you're using the best approach for your use case.
+
+🚫 **Don't assume your AI will understand every document format**, always validate and preprocess your inputs
+
+🚫 **Don't rely solely on automated accuracy metrics**, manually review outputs periodically
+
+🚫 **Don't skip legal or compliance checks when handling sensitive document data**, since this could really come back to bite you later
 
 ---
 
@@ -226,7 +234,7 @@ Safe AI is good AI (and keeps your legal team happy).
 
 ## How to Test AI Systems 🧪🤔
 
-Testing AI is a little weird. You’re not just checking if the code runs—you’re checking if the outputs make sense. Watch out for:
+Testing AI is a little weird. You’re not just checking if the code runs, you’re checking if the outputs make sense. Watch out for:
 
 - **Non-determinism**: The same input might give different outputs. Test with multiple seeds or runs.
 - **Test data leakage**: Make sure your test data isn’t sneaking into your training set.
@@ -234,16 +242,6 @@ Testing AI is a little weird. You’re not just checking if the code runs—you�
 - **Manual review**: Sometimes, a human in the loop is the only way to catch subtle issues.
 
 Automate what you can, but don’t be afraid to get hands-on with your tests.
-
-✅ **Use a SoTA RAG pattern** RAG is a rapidly evolving field, which has moved beyond simple document retrieval to more advanced techniques like graph-based retrieval, hybrid approaches, multimodal retrieval, and more. It's worthwhile spending some time researching the latest tools and techniques in RAG to ensure you're using the best approach for your use case.
-
-✅ **Plan for reindexing** when document formats change or accuracy drops
-
-🚫 **Don't assume your AI will understand every document format**, always validate and preprocess your inputs
-
-🚫 **Don't rely solely on automated accuracy metrics**, manually review outputs periodically
-
-🚫 **Don't skip legal or compliance checks when handling sensitive document data**, since this could really come back to bite you later
 
 ---
 
@@ -293,7 +291,4 @@ MLOps isn't about becoming an ML expert overnight. It's about applying your exis
 The AI revolution needs great developers who can build reliable, scalable, and safe AI applications. With the right approach to MLOps, you can be one of them. 
 
 Because let's face it, *someone* has to prevent the AI apocalypse, and it might as well be you. 😉
-
 ---
-
-> **💡 Remember this:** You don't need to boil the ocean. You just need to make your AI a little more reliable, scalable, and safe, one step at a time.
