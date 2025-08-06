@@ -15,7 +15,7 @@ coverImage: "/images/blog/mlops-for-devs-not-data-scientists/mlops-for-devs.jpeg
 
 ## The Machine Learning Lifecycle (And Why It Matters)
 
-Before we get too deep, let’s zoom out for a second. Every AI feature you build goes through a lifecycle—just like regular software, but with a few extra twists:
+Before we get too deep, let’s zoom out for a second. Every AI feature you build goes through a lifecycle. Just like regular software, but with a few extra twists:
 
 1. **Data Collection & Labeling**: Gathering and prepping the data your model will learn from (and yes, data quality matters more than you think).
 2. **Training**: Teaching the model to do its thing.
