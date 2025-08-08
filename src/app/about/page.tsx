@@ -23,7 +23,7 @@ export default function AboutPage() {
                   Hello! I'm Mario Guerra, a Technical Product Manager with over 15 years of experience driving innovation in developer tools, APIs, AI-driven solutions, and scalable infrastructure.
                 </p>
                 <p>
-                  Currently at Microsoft, I lead the TypeSpec API Definition Language project, an open-source language that has been adopted by over 30% of Azure services to produce SDKs across multiple programming languages, cutting development and review time by 30%.
+                  Formerly at Microsoft, I led the TypeSpec API Definition Language project, an open-source language that has been adopted by over a third of Azure services to produce SDKs across multiple programming languages, cutting development and review time by 30%.
                 </p>
                 <p>
                   I specialize in creating AI-enhanced products that measurably boost productivity and accelerate software delivery. By integrating human-centered design with cutting-edge AI capabilities, I transform complex development workflows into intuitive, efficient, and reliable experiences.
