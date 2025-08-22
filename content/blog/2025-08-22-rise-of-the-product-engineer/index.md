@@ -13,6 +13,8 @@ Have you ever wished you could short circuit the long feedback loop between idea
 
 ## What a Product Engineer Does
 
+A product engineer is not really a new category and I don't claim to have coined the term, I'm only observing that's becoming more important in the era of AI. 
+
 A product engineer finds the shape of a product by talking to real users and then building something quick enough to test with them. The idea is simple and it changes how decisions are made. Instead of guessing what users want, we run a small experiment. We record conversations and turn raw feedback into working artifacts. We build a demo and we ask the user to interact with it. If they like it, we refine. If they do not, we iterate. The goal is to produce a validated artifact that reduces ambiguity for the team that will build the final production version.
 
 ## Why This Role Matters Now
