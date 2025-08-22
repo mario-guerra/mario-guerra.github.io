@@ -87,7 +87,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         {post.author && (
           <div className="flex items-center gap-3 mb-8">
             <Image
-              src="/images/avatars/Mario_Guerra_avatar.png"
+              src="/images/avatars/Mario_Guerra_avatar_new.png"
               alt={post.author}
               width={48}
               height={48}

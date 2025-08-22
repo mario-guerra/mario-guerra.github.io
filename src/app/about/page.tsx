@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight, FiFileText, FiLinkedin, FiGithub, FiMail, FiYoutube } from "react-icons/fi";
 import { SiX } from "react-icons/si";
-import avatarImage from "../../../public/images/avatars/Mario_Guerra_avatar.png";
+import avatarImage from "../../../public/images/avatars/Mario_Guerra_avatar_new.png";
 
 export default function AboutPage() {
   return (

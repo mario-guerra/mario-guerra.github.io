@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FiArrowRight, FiGithub, FiExternalLink, FiCode, FiLayout, FiCpu, FiDatabase, FiServer, FiGlobe, FiEdit, FiLayers, FiFeather, FiSettings, FiFileText, FiTerminal } from "react-icons/fi";
 import { SiTypescript, SiPython, SiSharp, SiNextdotjs, SiTailwindcss } from "react-icons/si";
-import avatarImage from "../../public/images/avatars/Mario_Guerra_avatar.png";
+import avatarImage from "../../public/images/avatars/Mario_Guerra_avatar_new.png";
 
 // Define skill icon type
 type SkillIconType = 
@@ -116,8 +116,8 @@ export default function Home() {
                 <Image
                   src={avatarImage}
                   alt="Mario Guerra"
-                  width={500}
-                  height={500}
+                  width={375}
+                  height={375}
                   className="aspect-square rounded-full object-cover"
                   priority
                 />
