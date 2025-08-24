@@ -145,7 +145,7 @@ export default function Resume() {
           
           // Add name and title
           addText("Mario Guerra", 20, "bold"); // Reduced name font size
-          addText("Technical Product Manager", 14, "normal"); // Reduced title font size
+          addText("Technical Product Leader", 14, "normal"); // Reduced title font size
           yPos += 10; // Less spacing after title
           
           // Add contact information in a single line with better spacing and formatting with hyperlinks
@@ -196,7 +196,7 @@ export default function Resume() {
           pdf.setFontSize(10); // Smaller font size for summary
           pdf.setFont("helvetica", "normal");
           
-          const summaryText = "Technical Product Manager with over 15 years of experience driving innovation in developer tools, APIs, AI-driven solutions, and scalable infrastructure. Proven ability to lead cross-functional teams, influence stakeholders, and deliver impactful solutions that align technical capabilities with business needs.";
+          const summaryText = "Technical Product Leader with over 15 years of experience driving innovation in developer tools, APIs, AI-driven solutions, and scalable infrastructure. Proven ability to lead cross-functional teams, influence stakeholders, and deliver impactful solutions that align technical capabilities with business needs.";
           // Use the exact contentWidth for text wrapping, ensure it fills the available space
           // Explicitly set the width to be slightly less than contentWidth to account for any internal padding
           const textWidth = contentWidth - 3; // Smaller buffer to use more space
@@ -539,7 +539,7 @@ export default function Resume() {
                     <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                       Mario Guerra
                     </h1>
-                    <p className="text-foreground/80">Technical Product Manager & AI Enthusiast</p>
+                    <p className="text-foreground/80">Technical Product Leader & AI Enthusiast</p>
                   </div>
                   <div className="flex flex-col gap-2 sm:items-end">
                     {!isPrinting && (
@@ -580,7 +580,7 @@ export default function Resume() {
                 <h2 className="text-xl font-bold">Professional Summary</h2>
                 <div className="border-l-2 border-primary pl-4">
                   <p className="text-foreground/80">
-                    Technical Product Manager with over 15 years of experience driving innovation in developer tools, APIs, 
+                    Technical Product Leader with over 15 years of experience driving innovation in developer tools, APIs,
                     AI-driven solutions, and scalable infrastructure. Proven ability to lead cross-functional teams, influence 
                     stakeholders, and deliver impactful solutions that align technical capabilities with business needs. Skilled 
                     in designing intuitive, secure, and scalable APIs, leveraging Azure technologies, and applying data-driven 

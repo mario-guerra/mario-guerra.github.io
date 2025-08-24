@@ -20,7 +20,7 @@ export default function AboutPage() {
               </div>
               <div className="max-w-[600px] space-y-4 text-foreground/90">
                 <p>
-                  Hello! I'm Mario Guerra, a Technical Product Manager with over 15 years of experience driving innovation in developer tools, APIs, AI-driven solutions, and scalable infrastructure.
+                  Hello! I'm Mario Guerra, a Technical Product Leader with over 15 years of experience driving innovation in developer tools, APIs, AI-driven solutions, and scalable infrastructure.
                 </p>
                 <p>
                   Formerly at Microsoft, I led the TypeSpec API Definition Language project, an open-source language that has been adopted by over a third of Azure services to produce SDKs across multiple programming languages, cutting development and review time by 30%.
