@@ -7,15 +7,15 @@ import { SiTypescript, SiPython, SiSharp, SiNextdotjs, SiTailwindcss } from "rea
 import avatarImage from "../../public/images/avatars/Mario_Guerra_avatar_new.png";
 
 // Define skill icon type
-type SkillIconType = 
-  | "SiTypescript" | "SiPython" | "SiSharp" | "SiNextdotjs" | "SiTailwindcss" 
-  | "SiMicrosoftazure" | "FiCode" | "FiCpu" | "FiEdit" | "FiLayers" 
-  | "FiServer" | "FiSettings" | "FiGlobe" | "FiFeather" | "FiLayout" 
+type SkillIconType =
+  | "SiTypescript" | "SiPython" | "SiSharp" | "SiNextdotjs" | "SiTailwindcss"
+  | "SiMicrosoftazure" | "FiCode" | "FiCpu" | "FiEdit" | "FiLayers"
+  | "FiServer" | "FiSettings" | "FiGlobe" | "FiFeather" | "FiLayout"
   | "FiDatabase" | "FiTerminal" | "FiFileText";
 
 // Function to get the right icon component
 const getSkillIcon = (iconType: SkillIconType) => {
-  switch(iconType) {
+  switch (iconType) {
     case "SiTypescript": return <SiTypescript className="h-6 w-6" />;
     case "SiPython": return <SiPython className="h-6 w-6" />;
     case "SiSharp": return <SiSharp className="h-6 w-6" />;
@@ -46,33 +46,33 @@ interface Skill {
 
 // Featured projects data
 const featuredProjects = [
-	{
-		id: 1,
-		title: "Modern Portfolio Website",
-		description: "A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS, created entirely using AI pair programming with Cline + GPT-4.1 and GitHub Copilot + Claude 3.7.",
-		tags: ["Next.js", "TypeScript", "Tailwind CSS", "Markdown", "Responsive Design"],
-		imageUrl: "/images/avatars/Chad_Jipiti_Avatar.jpg",
-		githubUrl: "https://github.com/mario-guerra/portfolio-website",
-		liveUrl: "https://marioguerra.xyz/portfolio-website",
-	},
-	{
-		id: 2,
-		title: "VibeSpec",
-		description: "Vibespec is an AI-powered agent that helps you create API definitions using TypeSpec from natural language descriptions. It converts your service ideas into structured, well-documented TypeSpec definitions that are ready to implement.",
-		tags: ["Azure OpenAI", "Azure Cognitive Services", "TypeSpec", "Python"],
-		imageUrl: "/images/blog/typespec-first-vibe-code-second-build-apis-that-last/TypeSpec_First_Vibe_Second.jpeg",
-		githubUrl: "https://github.com/mario-guerra/vibespec",
-		liveUrl: "https://youtu.be/mONKY7sESe0",
-	},
-	{
-		id: 3,
-		title: " Audio Translation Service",
-		description: "A translation service that converts audio recordings between languages using Azure AI services, designed with TypeSpec as the blueprint and AI-assisted development.",
-		tags: ["TypeSpec", "Azure Cognitive Services", "API Design", "AI-Assisted Development", "C#"],
-		imageUrl: "/images/blog/building-a-translation-service-with-typespec-and-ai-a-blueprint-approach/TypeSpec-AI-Translation-Service.jpeg",
-		githubUrl: "https://github.com/mario-guerra/translation-service",
-		liveUrl: "https://youtu.be/mp5pnAzHw3k",
-	},
+  {
+    id: 1,
+    title: "The SOLO Protocol",
+    description: "A comprehensive framework for shifting from 'vibes-based' AI coding to production-grade engineering. It orchestrates AI agents through structured Planning, Execution, Debug, and Memory loops to ensure security, maintainability, and quality.",
+    tags: ["Agentic AI", "Software Architecture", "Methodology", "Prompt Engineering"],
+    imageUrl: "/images/blog/solo-protocol.png",
+    githubUrl: "https://github.com/mario-guerra/solo-protocol-release",
+    liveUrl: "https://marioguerra.xyz/blog/the-solo-protocol",
+  },
+  {
+    id: 2,
+    title: "Modern Portfolio Website",
+    description: "A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS, created entirely using AI pair programming with Cline + GPT-4.1 and GitHub Copilot + Claude 3.7.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Markdown", "Responsive Design"],
+    imageUrl: "/images/avatars/Chad_Jipiti_Avatar.jpg",
+    githubUrl: "https://github.com/mario-guerra/portfolio-website",
+    liveUrl: "https://marioguerra.xyz/portfolio-website",
+  },
+  {
+    id: 3,
+    title: "VibeSpec",
+    description: "Vibespec is an AI-powered agent that helps you create API definitions using TypeSpec from natural language descriptions. It converts your service ideas into structured, well-documented TypeSpec definitions that are ready to implement.",
+    tags: ["Azure OpenAI", "Azure Cognitive Services", "TypeSpec", "Python"],
+    imageUrl: "/images/blog/typespec-first-vibe-code-second-build-apis-that-last/TypeSpec_First_Vibe_Second.jpeg",
+    githubUrl: "https://github.com/mario-guerra/vibespec",
+    liveUrl: "https://youtu.be/mONKY7sESe0",
+  },
 ];
 
 export default function Home() {
@@ -126,7 +126,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* Featured Projects Section */}
       <section className="bg-muted/40 py-16 md:py-24">
         <div className="container px-4 md:px-6 mx-auto">
@@ -162,16 +162,16 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex items-center justify-between border-t border-border p-4">
-                  <Link 
-                    href={project.githubUrl} 
+                  <Link
+                    href={project.githubUrl}
                     className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground"
                     aria-label={`View ${project.title} code on GitHub`}
                   >
                     <FiGithub className="h-4 w-4" />
                     <span>Code</span>
                   </Link>
-                  <Link 
-                    href={project.liveUrl} 
+                  <Link
+                    href={project.liveUrl}
                     className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary/80"
                     aria-label={`View ${project.title} Info`}
                   >
@@ -193,7 +193,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* Skills Section */}
       <section className="py-16 md:py-24">
         <div className="container px-4 md:px-6 mx-auto">
@@ -216,14 +216,14 @@ export default function Home() {
                   { name: "Tailwind CSS", iconType: "SiTailwindcss" },
                   { name: "Azure OpenAI", iconType: "FiCpu" },
                   { name: "Azure Cognitive Services", iconType: "SiMicrosoftazure" },
-                  { name: "TypeSpec", iconType: "FiEdit" },
+                  { name: "Vertex AI", iconType: "FiCpu" },
                   { name: "RAG", iconType: "FiLayers" },
                   { name: "API Design", iconType: "FiServer" },
                   { name: "Semantic Kernel", iconType: "FiSettings" },
                   { name: "Microsoft Graph API", iconType: "FiGlobe" },
                   { name: "NLP", iconType: "FiFeather" },
-                  { name: "VS Code Extension", iconType: "FiCode" },
-                  { name: "Responsive Design", iconType: "FiLayout" },
+                  { name: "Azure", iconType: "SiMicrosoftazure" },
+                  { name: "GCP", iconType: "SiGooglecloud" },
                   { name: "Knowledge Mining", iconType: "FiDatabase" },
                   { name: "AI-Assisted Development", iconType: "FiTerminal" },
                   { name: "Document Processing", iconType: "FiFileText" }
@@ -242,7 +242,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="border-t border-border bg-muted/40 py-16 md:py-24">
         <div className="container px-4 md:px-6 mx-auto">
