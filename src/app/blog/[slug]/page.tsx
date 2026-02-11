@@ -2,6 +2,7 @@ import { getPostBySlug, getAllPosts } from "@/lib/posts";
 import { FiCalendar, FiClock, FiTag } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
+import VersionToggle from "@/components/VersionToggle";
 import "./styles.css";
 
 export const dynamic = 'force-static';
@@ -17,14 +18,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
-  
+
   if (!post) {
     return {
       title: 'Post Not Found',
       description: 'The requested blog post could not be found.'
     };
   }
-  
+
   return {
     title: post.title,
     description: post.excerpt,
@@ -39,14 +40,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
-  
+
   if (!post) {
     return (
       <div className="container mx-auto px-4 py-24 text-center">
         <h1 className="text-3xl font-bold mb-6">Post Not Found</h1>
         <p className="mb-8">The blog post you're looking for doesn't exist or has been moved.</p>
-        <Link 
-          href="/blog" 
+        <Link
+          href="/blog"
           className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
         >
           Back to Blog
@@ -54,12 +55,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       </div>
     );
   }
-  
+
   // Calculate reading time based on content length (rough estimate)
   const wordsPerMinute = 200;
   const wordCount = post.content.split(/\s+/).length;
   const readingTime = Math.ceil(wordCount / wordsPerMinute);
-  
+
   return (
     <article className="container mx-auto px-4 py-12 md:py-24">
       {/* Post Header */}
@@ -71,21 +72,23 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           >
             {post.category}
           </Link>
-          
-          <div className="flex items-center text-sm text-foreground/70">
-            <FiClock className="mr-1 h-4 w-4" />
-            {readingTime} min read
-          </div>
+
+          {!post.shortContent && (
+            <div className="flex items-center text-sm text-foreground/70">
+              <FiClock className="mr-1 h-4 w-4" />
+              {readingTime} min read
+            </div>
+          )}
         </div>
-        
+
         <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl mb-6">
           {post.title}
         </h1>
-        
+
         <p className="text-xl text-foreground/80 mb-8">
           {post.excerpt}
         </p>
-        
+
         {post.author && (
           <div className="flex items-center gap-3 mb-8">
             <Image
@@ -102,7 +105,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </div>
         )}
       </div>
-      
+
       {/* Featured Image */}
       {post.coverImage && (
         <div className="mx-auto max-w-4xl mb-12 rounded-lg overflow-hidden">
@@ -116,12 +119,21 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           />
         </div>
       )}
-      
+
       {/* Post Content */}
-      <div className="mx-auto max-w-3xl prose prose-lg dark:prose-invert prose-headings:font-bold prose-a:text-primary hover:prose-a:text-primary/80 prose-img:rounded-lg">
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div className="mx-auto max-w-3xl">
+        {post.shortContent ? (
+          <VersionToggle
+            longContent={post.content}
+            shortContent={post.shortContent}
+          />
+        ) : (
+          <div className="prose prose-lg dark:prose-invert prose-headings:font-bold prose-a:text-primary hover:prose-a:text-primary/80 prose-img:rounded-lg">
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          </div>
+        )}
       </div>
-      
+
       {/* Tags */}
       {post.tags && (
         <div className="mx-auto max-w-3xl mt-12">
@@ -140,9 +152,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </div>
         </div>
       )}
-      
+
       {/* Related Posts - You would need to implement this */}
-      
+
       {/* Back to Blog Link */}
       <div className="mx-auto max-w-3xl mt-12 text-center">
         <Link

@@ -36,19 +36,19 @@ export function getAllPosts() {
       // Extract the slug from directory name (removing the date prefix)
       const match = dir.match(/^\d{4}-\d{2}-\d{2}-(.+)$/);
       const slug = match ? match[1] : dir;
-      
+
       // Get the full path to the index.md file
       const fullPath = path.join(postsDirectory, dir, 'index.md');
-      
+
       // Read the file content
       const fileContents = fs.readFileSync(fullPath, 'utf8');
-      
+
       // Use gray-matter to parse the post metadata section
       const { data, content } = matter(fileContents);
-      
+
       // Calculate reading time
       const readTime = getReadingTime(content);
-      
+
       // Combine the data with the slug
       return {
         slug,
@@ -67,7 +67,7 @@ export function getAllPosts() {
     })
     // Sort posts by date in descending order
     .sort((a, b) => (new Date(b.date) as any) - (new Date(a.date) as any));
-  
+
   return posts;
 }
 
@@ -79,20 +79,20 @@ export async function getPostBySlug(slug: string) {
     const match = dir.match(/^\d{4}-\d{2}-\d{2}-(.+)$/);
     return match && match[1] === slug;
   });
-  
+
   if (!dirName) {
     return null;
   }
-  
+
   // Get the full path to the index.md file
   const fullPath = path.join(postsDirectory, dirName, 'index.md');
-  
+
   // Read the file content
   const fileContents = fs.readFileSync(fullPath, 'utf8');
-  
+
   // Use gray-matter to parse the post metadata section
   const { data, content } = matter(fileContents);
-  
+
   // Use remark to convert markdown into HTML string with heading anchors (rehype)
   const processedContent = await remark()
     .use(remarkGfm)
@@ -102,11 +102,30 @@ export async function getPostBySlug(slug: string) {
     .process(content);
 
   const contentHtml = processedContent.toString();
-  
+
+  // Check for optional short version
+  const shortPath = path.join(postsDirectory, dirName, 'short.md');
+  let shortContentHtml: string | null = null;
+
+  if (fs.existsSync(shortPath)) {
+    const shortFileContents = fs.readFileSync(shortPath, 'utf8');
+    const { content: shortContent } = matter(shortFileContents);
+
+    const processedShortContent = await remark()
+      .use(remarkGfm)
+      .use(remarkRehype)
+      .use(rehypeSlug)
+      .use(rehypeStringify)
+      .process(shortContent);
+
+    shortContentHtml = processedShortContent.toString();
+  }
+
   // Combine the data with the slug and content
   return {
     slug,
     content: contentHtml,
+    shortContent: shortContentHtml,
     ...data,
     // Ensure we have these fields even if not in frontmatter
     title: data.title || '',
