@@ -210,7 +210,7 @@ export default function ProjectsPage() {
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Interested in working together?</h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                I'm always open to discussing new projects and opportunities.
+                I'm always open to discussing new projects and opportunities through my consulting venture <a href="https://ignitionai.xyz" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">IgnitionAI</a>.
               </p>
             </div>
             <Link
