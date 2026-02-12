@@ -10,6 +10,16 @@ import { useState } from "react";
 const projects = [
   {
     id: 1,
+    title: "The SOLO Protocol",
+    description: "A comprehensive framework for shifting from 'vibes-based' AI coding to production-grade engineering. It orchestrates AI agents through structured Planning, Execution, Debug, and Memory loops to ensure security, maintainability, and quality.",
+    tags: ["Agentic AI", "Software Architecture", "Methodology", "Prompt Engineering"],
+    imageUrl: "/images/blog/solo-protocol.png",
+    githubUrl: "https://github.com/mario-guerra/solo-protocol-release",
+    liveUrl: "/blog/the-solo-protocol",
+    featured: true,
+  },
+  {
+    id: 2,
     title: "Modern Portfolio Website",
     description: "A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS, created entirely using AI pair programming with Cline + GPT-4.1 and GitHub Copilot + Claude 3.7.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Markdown", "Responsive Design"],
@@ -19,7 +29,7 @@ const projects = [
     featured: false,
   },
   {
-    id: 2,
+    id: 3,
     title: "VibeSpec",
     description: "Vibespec is an AI-powered agent that helps you create API definitions using TypeSpec from natural language descriptions. It converts your service ideas into structured, well-documented TypeSpec definitions that are ready to implement.",
     tags: ["Azure OpenAI", "Azure Cognitive Services", "TypeSpec", "Python"],
@@ -29,7 +39,7 @@ const projects = [
     featured: false,
   },
   {
-    id: 3,
+    id: 4,
     title: "AI-Powered Audio Translation Service",
     description: "A translation service that converts audio recordings between languages using Azure AI services, designed with TypeSpec as the blueprint and AI-assisted development.",
     tags: ["TypeSpec", "Azure Cognitive Services", "API Design", "AI-Assisted Development", "C#"],
@@ -39,7 +49,7 @@ const projects = [
     featured: false,
   },
   {
-    id: 4,
+    id: 5,
     title: "The Sliding Content Window",
     description: "A Python-based document summarization tool that uses Azure OpenAI and a sliding context window technique to generate cohesive summaries of large documents without exceeding token limits.",
     tags: ["Python", "Azure OpenAI", "NLP", "Document Processing"],
@@ -49,7 +59,7 @@ const projects = [
     featured: false,
   },
   {
-    id: 5,
+    id: 6,
     title: "Building RAG-Enhanced Chatbots from Microsoft Teams Channel Data",
     description: "Turn Microsoft Teams conversations into smart chatbots that automatically answer frequently asked questions, saving developer time and preserving team knowledge.",
     tags: ["Microsoft Graph API", "Azure OpenAI", "RAG", "Microsoft Teams", "Knowledge Mining"],
@@ -58,29 +68,19 @@ const projects = [
     liveUrl: "/blog/building-intelligent-chatbots-with-microsoft-teams-data",
     featured: false,
   },
-  {
-    id: 6,
-    title: "Azure SDK Copilot Extension for VS Code",
-    description: "A VS Code extension with a chat interface that uses RAG to answer questions about Azure SDKs by querying a vector database of GitHub repo READMEs.",
-    tags: ["TypeScript", "Python", "VS Code Extension", "RAG", "Semantic Kernel", "Azure OpenAI"],
-    imageUrl: "/images/projects/github_copilot_chatbot/GH_Copilot_AZSDK.jpeg",
-    githubUrl: "https://github.com/mario-guerra/azsdkchatbot",
-    liveUrl: "https://github.com/mario-guerra/azsdkchatbot",
-    featured: false,
-  },
 ];
 
 export default function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  
+
   // Get all unique tags
   const allTags = Array.from(new Set(projects.flatMap(project => project.tags)));
-  
+
   // Filter projects based on search and tag filter
   const filteredProjects = projects.filter(project => {
-    const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                         project.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesTag = selectedTag ? project.tags.includes(selectedTag) : true;
     return matchesSearch && matchesTag;
   });
@@ -202,7 +202,7 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="border-t border-border bg-muted/40 py-16 md:py-24">
         <div className="container px-4 md:px-6">
