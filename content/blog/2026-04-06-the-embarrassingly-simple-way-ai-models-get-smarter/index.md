@@ -28,7 +28,7 @@ Some of it is junk. Tangled cables, broken parts, things that should have been t
 
 You didn't add anything to the attic. Everything was already there. But the act of taking inventory changed everything, because now you know what you have. And knowing what you have fundamentally changes how you make decisions.
 
-A recent AI research paper describes something strikingly similar happening inside AI models that write code, and the results should change how you think about AI capability.
+A recent AI [research paper](https://arxiv.org/pdf/2604.01193) describes something strikingly similar happening inside AI models that write code, and the results should change how you think about AI capability.
 
 **A model trained on its own outputs, including wrong ones, with no feedback of any kind, gets dramatically better at solving hard coding problems.**
 
