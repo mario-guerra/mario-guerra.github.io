@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight, FiCalendar, FiClock } from "react-icons/fi";
-import { getAllPosts, getCategories } from "@/lib/posts";
+import { getAllPosts, getCategories, getColorForCategory } from "@/lib/posts";
 
 export const dynamic = 'force-static';
 
@@ -18,22 +18,6 @@ const blogPosts = getAllPosts().map((post, index) => ({
   slug: post.slug,
   blogpost: post.blogpost || false,
 }));
-
-// Helper function to get a color based on category
-function getColorForCategory(category: string = ''): string {
-  const colors: Record<string, string> = {
-    'Development': '9333ea',
-    'React': '4f46e5',
-    'Performance': '0ea5e9',
-    'CSS': '22c55e',
-    'Design': 'f97316',
-    'TypeScript': '0284c7',
-    'JavaScript': 'eab308',
-    'Next.js': '000000',
-  };
-  
-  return colors[category] || '6b7280'; // Default gray if category not found
-}
 
 export default function Blog() {
   // Blog posts

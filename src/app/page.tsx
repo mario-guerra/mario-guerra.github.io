@@ -1,10 +1,9 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { FiArrowRight, FiGithub, FiExternalLink, FiCode, FiLayout, FiCpu, FiDatabase, FiServer, FiGlobe, FiEdit, FiLayers, FiFeather, FiSettings, FiFileText, FiTerminal } from "react-icons/fi";
+import { FiArrowRight, FiGithub, FiExternalLink, FiCode, FiLayout, FiCpu, FiDatabase, FiServer, FiGlobe, FiEdit, FiLayers, FiFeather, FiSettings, FiFileText, FiTerminal, FiClock } from "react-icons/fi";
 import { SiTypescript, SiPython, SiSharp, SiNextdotjs, SiTailwindcss } from "react-icons/si";
 import avatarImage from "../../public/images/avatars/Mario_Guerra_avatar_new.png";
+import { getAllPosts, getColorForCategory } from "@/lib/posts";
 
 // Define skill icon type
 type SkillIconType =
@@ -21,7 +20,7 @@ const getSkillIcon = (iconType: SkillIconType) => {
     case "SiSharp": return <SiSharp className="h-6 w-6" />;
     case "SiNextdotjs": return <SiNextdotjs className="h-6 w-6" />;
     case "SiTailwindcss": return <SiTailwindcss className="h-6 w-6" />;
-    case "SiMicrosoftazure": return <FiServer className="h-6 w-6" />; // Fallback icon for Azure
+    case "SiMicrosoftazure": return <FiServer className="h-6 w-6" />; 
     case "FiCode": return <FiCode className="h-6 w-6" />;
     case "FiCpu": return <FiCpu className="h-6 w-6" />;
     case "FiEdit": return <FiEdit className="h-6 w-6" />;
@@ -38,44 +37,25 @@ const getSkillIcon = (iconType: SkillIconType) => {
   }
 };
 
-// Define skill interface
 interface Skill {
   name: string;
   iconType: SkillIconType;
 }
 
-// Featured projects data
-const featuredProjects = [
-  {
-    id: 1,
-    title: "The SOLO Protocol",
-    description: "A comprehensive framework for shifting from 'vibes-based' AI coding to production-grade engineering. It orchestrates AI agents through structured Planning, Execution, Debug, and Memory loops to ensure security, maintainability, and quality.",
-    tags: ["Agentic AI", "Software Architecture", "Methodology", "Prompt Engineering"],
-    imageUrl: "/images/blog/solo-protocol.png",
-    githubUrl: "https://github.com/mario-guerra/solo-protocol-release",
-    liveUrl: "https://marioguerra.xyz/blog/the-solo-protocol",
-  },
-  {
-    id: 2,
-    title: "Modern Portfolio Website",
-    description: "A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS, created entirely using AI pair programming with Cline + GPT-4.1 and GitHub Copilot + Claude 3.7.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Markdown", "Responsive Design"],
-    imageUrl: "/images/avatars/Chad_Jipiti_Avatar.jpg",
-    githubUrl: "https://github.com/mario-guerra/portfolio-website",
-    liveUrl: "https://marioguerra.xyz/portfolio-website",
-  },
-  {
-    id: 3,
-    title: "VibeSpec",
-    description: "Vibespec is an AI-powered agent that helps you create API definitions using TypeSpec from natural language descriptions. It converts your service ideas into structured, well-documented TypeSpec definitions that are ready to implement.",
-    tags: ["Azure OpenAI", "Azure Cognitive Services", "TypeSpec", "Python"],
-    imageUrl: "/images/blog/typespec-first-vibe-code-second-build-apis-that-last/TypeSpec_First_Vibe_Second.jpeg",
-    githubUrl: "https://github.com/mario-guerra/vibespec",
-    liveUrl: "https://youtu.be/mONKY7sESe0",
-  },
-];
-
 export default function Home() {
+  // Fetch top 3 most recent posts from our Markdown files
+  const recentPosts = getAllPosts().slice(0, 3).map((post, index) => ({
+    id: index + 1,
+    title: post.title,
+    excerpt: post.excerpt,
+    date: new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric' }),
+    readTime: post.readTime || "5 min read", 
+    // Absolute fallback resilience exactly mirroring blog layout
+    imageUrl: post.coverImage || `https://placehold.co/800x450/${getColorForCategory(post.category)}/ffffff?text=${encodeURIComponent(post.category)}`,
+    category: post.category,
+    slug: post.slug,
+  }));
+
   return (
     <>
       {/* Hero Section */}
@@ -127,67 +107,71 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects Section */}
+      {/* Featured Content Section */}
       <section className="bg-muted/40 py-16 md:py-24">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Featured Projects</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Featured Content</h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                A few of my recent AI-enabled projects.
+                My most recent writing and insights.
               </p>
             </div>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-6xl">
-            {featuredProjects.map((project) => (
-              <div key={project.id} className="group relative flex flex-col overflow-hidden rounded-lg border border-border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md">
-                <div className="aspect-video overflow-hidden">
+            {recentPosts.map((post) => (
+              <div
+                key={post.id}
+                className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all hover:shadow-md"
+              >
+                <div className="aspect-video w-full overflow-hidden">
                   <Image
-                    src={project.imageUrl}
-                    alt={project.title}
-                    width={600}
-                    height={400}
+                    src={post.imageUrl}
+                    alt={post.title}
+                    width={800}
+                    height={450}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <div className="flex-1 space-y-4 p-6">
-                  <h3 className="text-xl font-bold">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
-                        {tag}
-                      </span>
-                    ))}
+                <div className="flex flex-1 flex-col p-4">
+                  <div className="flex items-center gap-2 pb-2">
+                    {post.category && (
+                      <div className="rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
+                        {post.category}
+                      </div>
+                    )}
                   </div>
-                </div>
-                <div className="flex items-center justify-between border-t border-border p-4">
-                  <Link
-                    href={project.githubUrl}
-                    className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground"
-                    aria-label={`View ${project.title} code on GitHub`}
-                  >
-                    <FiGithub className="h-4 w-4" />
-                    <span>Code</span>
-                  </Link>
-                  <Link
-                    href={project.liveUrl}
-                    className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary/80"
-                    aria-label={`View ${project.title} Info`}
-                  >
-                    <span>Demo</span>
-                    <FiExternalLink className="h-4 w-4" />
-                  </Link>
+                  <h3 className="text-lg font-bold">
+                    <Link href={`/blog/${post.slug}`} className="hover:text-primary">
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-2 flex-1 line-clamp-2 text-sm text-foreground/80">
+                    {post.excerpt}
+                  </p>
+                  <div className="mt-4 flex items-center justify-between">
+                    <div className="text-xs text-foreground/70 flex items-center">
+                      <FiClock className="mr-1 inline-block h-3 w-3" />
+                      {post.readTime}
+                    </div>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="inline-flex items-center text-sm font-medium text-primary hover:underline"
+                    >
+                      Read More
+                      <FiArrowRight className="ml-1 h-3 w-3" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
           <div className="mt-12 flex justify-center">
             <Link
-              href="/projects"
+              href="/blog"
               className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
             >
-              View All Projects
+              Read The Blog
               <FiArrowRight className="ml-2" />
             </Link>
           </div>

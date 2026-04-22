@@ -146,3 +146,19 @@ export function getReadingTime(content: string) {
   const readingTime = Math.ceil(wordCount / wordsPerMinute);
   return `${readingTime} min read`;
 }
+
+// Helper function to get a color based on category
+export function getColorForCategory(category: string = ''): string {
+  const colors: Record<string, string> = {
+    'Development': '9333ea',
+    'React': '4f46e5',
+    'Performance': '0ea5e9',
+    'CSS': '22c55e',
+    'Design': 'f97316',
+    'TypeScript': '0284c7',
+    'JavaScript': 'eab308',
+    'Next.js': '000000',
+  };
+  
+  return colors[category] || '6b7280'; // Default gray if category not found
+}
