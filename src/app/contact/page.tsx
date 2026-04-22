@@ -94,7 +94,7 @@ export default function Contact() {
         body: JSON.stringify({
           email: formState.email,
           message: formState.message,
-          subject: formState.subject,
+          subject: `[marioguerra.xyz] ${formState.subject}`,
           name: formState.name
         })
       });
