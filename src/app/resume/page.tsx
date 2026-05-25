@@ -204,7 +204,7 @@ export default function Resume() {
           pdf.text(summaryLines, margin, yPos);
           yPos += (lineHeight * summaryLines.length) + 3; // Less spacing between paragraphs
           
-          const summaryText2 = "At Microsoft, I spearheaded the zero-to-one launch of TypeSpec, a high-level API language and code-gen framework now adopted by over 30% of Azure services to produce SDKs for C#, Java, .NET, JavaScript, Rust, and Go, cutting SDK development and API review time by 30%.";
+          const summaryText2 = "At Microsoft, I spearheaded the zero-to-one launch of TypeSpec, a high-level API language and code-gen framework now adopted by over 30% of Azure services to produce SDKs for Java, .NET, JavaScript, Rust, and Go, cutting SDK development and API review time by 30%.";
           // Use the same textWidth for consistent paragraph formatting
           const summaryLines2 = pdf.splitTextToSize(summaryText2, textWidth);
           pdf.text(summaryLines2, margin, yPos);
@@ -462,7 +462,7 @@ export default function Resume() {
             },
             {
               title: "Audio Alchemy: Transcribing and Translating with Azure SDKs",
-              description: "Demonstrates how to translate and transcribe audio using Azure Cognitive Services and Azure OpenAI.",
+              description: "Demonstrates how to translate and transcribe audio using Anthropic and Azure Foundry.",
               url: "https://devblogs.microsoft.com/azure-sdk/transcribing-and-translating-with-azure-sdks/"
             },
             {
@@ -588,7 +588,7 @@ export default function Resume() {
                     and fostering vibrant open source communities, driving collaboration and adoption across diverse developer ecosystems.
                   </p>
                   <p className="mt-2 text-foreground/80">
-                    At Microsoft, I spearheaded the zero-to-one launch of TypeSpec, a high-level API language and code-gen framework now adopted by over 30% of Azure services to produce SDKs for C#, Java, .NET, JavaScript, Rust, and Go, cutting SDK development and API review time by 30%, with a plan to convert all Azure services to TypeSpec.
+                    At Microsoft, I spearheaded the zero-to-one launch of TypeSpec, a high-level API language and code-gen framework now adopted by over 30% of Azure services to produce SDKs for Java, .NET, JavaScript, Rust, and Go, cutting SDK development and API review time by 30%, with a plan to convert all Azure services to TypeSpec.
                   </p>
                   <p className="mt-2 text-foreground/80">
                     Interested in product leadership opportunities AI-driven companies building developer-first solutions.
@@ -933,7 +933,7 @@ export default function Resume() {
                   </div>
                   <div className="rounded-lg border border-border p-4">
                     <h3 className="font-semibold"><a href="https://devblogs.microsoft.com/azure-sdk/transcribing-and-translating-with-azure-sdks/" className="hover:text-primary">Audio Alchemy: Transcribing and Translating with Azure SDKs</a></h3>
-                    <p className="text-foreground/80">Demonstrates how to translate and transcribe audio using Azure Cognitive Services and Azure OpenAI.</p>
+                    <p className="text-foreground/80">Demonstrates how to translate and transcribe audio using Anthropic and Azure Foundry.</p>
                   </div>
                   <div className="rounded-lg border border-border p-4">
                     <h3 className="font-semibold"><a href="https://marioguerra.xyz/documentation/api_strategy_governance/" className="hover:text-primary">API Strategy and Governance</a></h3>

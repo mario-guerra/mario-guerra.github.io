@@ -76,15 +76,26 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="flex items-center justify-center">
-              <div className="relative aspect-square overflow-hidden rounded-full border-2 border-primary bg-background/50 p-2">
-                <Image
-                  src={avatarImage}
-                  alt="Mario Guerra"
-                  width={400}
-                  height={400}
-                  className="aspect-square rounded-full object-cover"
-                  priority
-                />
+              <div className="relative w-full max-w-[400px] aspect-[4/5] border border-border bg-card p-4 flex flex-col group">
+                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-primary -translate-x-px -translate-y-px"></div>
+                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-primary translate-x-px translate-y-px"></div>
+                
+                <div className="flex justify-between items-center mb-4 text-[10px] font-mono text-muted-foreground uppercase border-b border-border/50 pb-2">
+                  <span>ID: MG-77X</span>
+                  <span>STATUS: ACTIVE</span>
+                </div>
+                
+                <div className="relative flex-1 bg-muted overflow-hidden">
+                  <Image
+                    src={avatarImage}
+                    alt="Mario Guerra"
+                    fill
+                    className="object-cover object-center transition-all duration-700 group-hover:scale-105 grayscale-[50%] group-hover:grayscale-[20%]"
+                    priority
+                    sizes="(max-width: 768px) 100vw, 400px"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0),rgba(255,255,255,0.03)_50%,rgba(0,0,0,0.1)_50%,rgba(0,0,0,0))] bg-[length:100%_4px] pointer-events-none opacity-20"></div>
+                </div>
               </div>
             </div>
           </div>
