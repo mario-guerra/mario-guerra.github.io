@@ -4,40 +4,112 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    --background: 0 0% 98%;
+    --foreground: 240 10% 8%;
+    --card: 0 0% 98%;
+    --card-foreground: 240 10% 8%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 240 10% 8%;
+    --primary: 7 100% 56%; /* Vermilion */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 90%;
+    --secondary-foreground: 240 10% 8%;
+    --accent: 240 5% 90%;
+    --accent-foreground: 240 10% 8%;
+    --border: 240 5% 85%;
+    --input: 240 5% 85%;
+    --ring: 7 100% 56%;
+    --radius: 0px; /* Industrial: sharp corners */
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 217.2 91.2% 59.8%;
+    --background: 240 10% 8%; /* Matte Charcoal */
+    --foreground: 240 5% 96%; /* Bone White */
+    --card: 240 10% 8%;
+    --card-foreground: 240 5% 96%;
+    --popover: 240 10% 8%;
+    --popover-foreground: 240 5% 96%;
+    --primary: 7 100% 56%; /* Vermilion */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 12%; /* Muted Steel */
+    --secondary-foreground: 240 5% 96%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 5% 15%;
+    --accent-foreground: 240 5% 96%;
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+    --ring: 7 100% 56%;
+  }
+
+  /* Option B: True Inversion */
+  .theme-invert {
+    --background: 240 10% 8%;
+    --foreground: 240 5% 96%;
+    --card: 240 10% 8%;
+    --card-foreground: 240 5% 96%;
+    --popover: 240 10% 8%;
+    --popover-foreground: 240 5% 96%;
+    --secondary: 240 5% 12%;
+    --secondary-foreground: 240 5% 96%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 5% 15%;
+    --accent-foreground: 240 5% 96%;
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+  }
+
+  .dark .theme-invert {
+    --background: 0 0% 98%;
+    --foreground: 240 10% 8%;
+    --card: 0 0% 98%;
+    --card-foreground: 240 10% 8%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 240 10% 8%;
+    --secondary: 240 5% 90%;
+    --secondary-foreground: 240 10% 8%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 5% 90%;
+    --accent-foreground: 240 10% 8%;
+    --border: 240 5% 85%;
+    --input: 240 5% 85%;
+  }
+
+  /* Restore Global Theme (Double Inversion) */
+  .theme-restore {
+    --background: 0 0% 98%;
+    --foreground: 240 10% 8%;
+    --card: 0 0% 98%;
+    --card-foreground: 240 10% 8%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 240 10% 8%;
+    --secondary: 240 5% 90%;
+    --secondary-foreground: 240 10% 8%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 5% 90%;
+    --accent-foreground: 240 10% 8%;
+    --border: 240 5% 85%;
+    --input: 240 5% 85%;
+  }
+
+  .dark .theme-restore {
+    --background: 240 10% 8%;
+    --foreground: 240 5% 96%;
+    --card: 240 10% 8%;
+    --card-foreground: 240 5% 96%;
+    --popover: 240 10% 8%;
+    --popover-foreground: 240 5% 96%;
+    --secondary: 240 5% 12%;
+    --secondary-foreground: 240 5% 96%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 5% 15%;
+    --accent-foreground: 240 5% 96%;
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
   }
 }
 
@@ -49,11 +121,11 @@ body {
   font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
 }
 
-/* Force dark background and light text for all code blocks */
 pre {
-  background: #222 !important;
-  color: #f8f8f2 !important;
-  border-radius: 6px;
+  background: hsl(var(--secondary)) !important;
+  color: hsl(var(--foreground)) !important;
+  border: 1px solid hsl(var(--border));
+  border-radius: 0;
   padding: 1em;
   font-size: 1em;
   overflow-x: auto;
@@ -70,27 +142,57 @@ pre code {
   .text-balance {
     text-wrap: balance;
   }
-
-  .text-shadow {
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+  
+  .fluid-h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+  }
+  
+  .fluid-h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
   }
 
-  .animated-gradient {
-    background-size: 400% 400%;
-    animation: gradient 8s ease infinite;
+  .fluid-p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+  }
+  
+  /* The Industrial Avatar Filter */
+  .avatar-brutal {
+    filter: grayscale(100%) contrast(115%);
+    mix-blend-mode: luminosity;
   }
 
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
+  /* Reveal animations */
+  .reveal-initial {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
 
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
+  @keyframes telemetry {
+    0% { transform: translateY(0%); }
+    100% { transform: translateY(-50%); }
+  }
+  
+  .animate-telemetry {
+    animation: telemetry 20s steps(30, end) infinite;
+  }
+  
+  .blink {
+    animation: blink 1s step-end infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
   }
 }
