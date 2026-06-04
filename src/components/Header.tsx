@@ -20,7 +20,7 @@ const navItems = [
 
 export default function Header() {
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -29,7 +29,7 @@ export default function Header() {
   }, []);
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
   return (
@@ -41,7 +41,7 @@ export default function Header() {
         >
           {mounted && (
             <Image 
-              src={theme === "light" ? "/images/logos/icon-light.svg" : "/images/logos/icon-dark.svg"} 
+              src={resolvedTheme === "light" ? "/images/logos/icon-light.svg" : "/images/logos/icon-dark.svg"} 
               alt="Mario Guerra Logo" 
               width={32} 
               height={32} 
@@ -72,7 +72,7 @@ export default function Header() {
             className="flex h-9 w-9 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground"
             aria-label="Toggle theme"
           >
-            {mounted && theme === "dark" ? <FiSun className="h-4 w-4" /> : <FiMoon className="h-4 w-4" />}
+            {mounted && resolvedTheme === "dark" ? <FiSun className="h-4 w-4" /> : <FiMoon className="h-4 w-4" />}
           </button>
         </nav>
 
@@ -117,14 +117,14 @@ export default function Header() {
             ))}
             <div className="flex items-center pt-4">
               <span className="mr-2 text-sm font-medium">
-                {theme === "dark" ? "Light Mode" : "Dark Mode"}
+                {resolvedTheme === "dark" ? "Light Mode" : "Dark Mode"}
               </span>
               <button
                 onClick={toggleTheme}
                 className="flex h-8 w-8 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground"
                 aria-label="Toggle theme"
               >
-                {mounted && theme === "dark" ? <FiSun className="h-4 w-4" /> : <FiMoon className="h-4 w-4" />}
+                {mounted && resolvedTheme === "dark" ? <FiSun className="h-4 w-4" /> : <FiMoon className="h-4 w-4" />}
               </button>
             </div>
           </nav>

@@ -19,23 +19,23 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mario Guerra | System Architect & AI Technical Product Leader",
+    default: "Mario Guerra | AI Architect & Technical Product Leader",
     template: "%s | Mario Guerra",
   },
   description: "Principal Technical Product Leader specializing in AI-enhanced engineering, API design, scalable developer tools, and systems architecture. Over 15 years of driving DX innovation.",
-  keywords: ["System Architect", "AI Integration", "API Design", "TypeSpec", "Developer Experience", "Principal Product Manager", "LLMOps", "RAG architectures", "Mario Guerra"],
+  keywords: ["AI Architect", "AI Integration", "API Design", "TypeSpec", "Developer Experience", "Principal Product Manager", "LLMOps", "RAG architectures", "Mario Guerra"],
   metadataBase: new URL("https://marioguerra.xyz"),
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://marioguerra.xyz",
-    title: "Mario Guerra | System Architect & AI Technical Product Leader",
+    title: "Mario Guerra | AI Architect & Technical Product Leader",
     description: "Principal Technical Product Leader specializing in AI-enhanced engineering, API design, and scalable developer tools.",
     siteName: "Mario Guerra Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mario Guerra | System Architect",
+    title: "Mario Guerra | AI Architect",
     description: "AI-enhanced engineering and API design.",
     creator: "@_marioguerra_",
   },
@@ -72,7 +72,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Mario Guerra",
-              "jobTitle": "Principal System Architect & Technical Product Leader",
+              "jobTitle": "Principal AI Architect & Technical Product Leader",
               "url": "https://marioguerra.xyz",
               "sameAs": [
                 "https://linkedin.com/in/mario-guerra",
@@ -80,7 +80,7 @@ export default function RootLayout({
                 "https://x.com/_marioguerra_"
               ],
               "knowsAbout": [
-                "Artificial Intelligence", "API Design", "TypeSpec", 
+                "Artificial Intelligence", "API Design", "TypeSpec",
                 "Developer Experience", "Systems Architecture", "RAG",
                 "LLMOps", "Distributed Systems"
               ]

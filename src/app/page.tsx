@@ -58,10 +58,10 @@ export default function Home() {
       <section className="relative flex min-h-[90vh] flex-col justify-center overflow-hidden border-b border-border py-12 md:py-24">
         {/* Micro-grid for telemetry precision */}
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,hsl(var(--foreground)/0.05)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--foreground)/0.05)_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        
+
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex flex-col lg:grid lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-8 items-center max-w-7xl mx-auto">
-            
+
             {/* Left Content */}
             <div className="flex flex-col space-y-8 w-full">
               <div className="space-y-4">
@@ -69,29 +69,29 @@ export default function Home() {
                 <div className="flex items-center gap-4 text-xs font-mono text-muted-foreground uppercase tracking-widest">
                   <span className="flex items-center gap-2">
                     <span className="h-2 w-2 block bg-primary rounded-none"></span>
-                    System Architect
+                    AI Architect
                   </span>
                   <span className="hidden sm:inline-block border-l border-border h-4"></span>
                   <span className="hidden sm:inline-block">AI-Enhanced Engineering</span>
                 </div>
-                
+
                 {/* Massive Fluid Typography */}
                 <h1 className="fluid-h1 font-bold text-foreground">
                   Human-Centered. <br />
                   <span className="text-primary italic pr-2">Machine-Optimized.</span>
                 </h1>
-                
+
                 <p className="fluid-p max-w-2xl text-muted-foreground font-light">
-                  I architect intelligent tools that transform how developers build software, 
-                  converting complex workflows into intuitive, high-leverage experiences for elite engineering teams.
+                  I architect intelligent tools and systems that transform how teams build products and services,
+                  converting complex workflows into intuitive, high-leverage experiences for builders and operators.
                 </p>
               </div>
-              
+
               {/* Brutalist Buttons */}
-              <div className="flex flex-col min-[400px]:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full items-center sm:justify-start">
                 <Link
                   href="/projects"
-                  className="group relative inline-flex h-12 items-center justify-center bg-foreground px-8 font-mono text-sm font-medium text-background transition-all hover:bg-primary focus:outline-none"
+                  className="group relative inline-flex h-12 items-center justify-center bg-foreground px-8 font-mono text-sm font-medium text-background transition-all hover:bg-primary focus:outline-none whitespace-nowrap"
                 >
                   <span className="relative z-10 flex items-center">
                     [ View_Projects ]
@@ -101,7 +101,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex h-12 items-center justify-center border border-border bg-transparent px-8 font-mono text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary focus:outline-none"
+                  className="inline-flex h-12 items-center justify-center border border-border bg-transparent px-8 font-mono text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary focus:outline-none whitespace-nowrap"
                 >
                   ( Contact_Me )
                 </Link>
@@ -112,7 +112,7 @@ export default function Home() {
             <div className="w-full flex justify-center lg:justify-end relative">
               {/* Floating Terminal Window */}
               <div className="theme-invert relative w-full max-w-[400px] aspect-[4/5] rounded-xl border border-border/50 bg-background shadow-2xl shadow-black/40 flex flex-col group overflow-hidden transform hover:-translate-y-1 transition-transform duration-500">
-                
+
                 {/* macOS Style Window Chrome */}
                 <div className="flex items-center px-4 py-3 bg-muted/50 border-b border-border/50">
                   <div className="flex space-x-2">
@@ -124,37 +124,37 @@ export default function Home() {
                     <FiTerminal className="mr-2 h-3 w-3" /> mg-architect ~ zsh
                   </div>
                 </div>
-                
+
                 {/* Telemetry Display */}
                 <div className="relative flex-1 bg-background overflow-hidden font-mono text-sm leading-relaxed text-foreground/70 p-5 flex flex-col">
                   {/* Scanline overlay */}
                   <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.02)_50%,rgba(255,255,255,0.02)_50%,rgba(0,0,0,0))] bg-[length:100%_4px] pointer-events-none opacity-20 z-20"></div>
-                  
+
                   {/* Scrolling Content - duplicated to create seamless loop */}
                   <div className="animate-telemetry space-y-6 pt-2 relative z-30">
                     {Array.from({ length: 2 }).map((_, i) => (
                       <div key={i} className="space-y-6 pb-6">
                         <div>
-                          <span className="text-primary font-bold">MG-ARCHITECT~$</span> <span className="text-foreground font-medium">init --core-systems</span><br/>
-                          <span>[OK] Bootstrapping architectural patterns...</span><br/>
+                          <span className="text-primary font-bold">MG-ARCHITECT~$</span> <span className="text-foreground font-medium">init --core-systems</span><br />
+                          <span>[OK] Bootstrapping architectural patterns...</span><br />
                           <span>[OK] LangChain/LangGraph initialized.</span>
                         </div>
                         <div>
-                          <span className="text-primary font-bold">MG-ARCHITECT~$</span> <span className="text-foreground font-medium">run audit --mode=strict</span><br/>
-                          <span>&gt; analyzing architecture telemetry...</span><br/>
-                          <span>&gt; verifying vector pipelines...</span><br/>
+                          <span className="text-primary font-bold">MG-ARCHITECT~$</span> <span className="text-foreground font-medium">run audit --mode=strict</span><br />
+                          <span>&gt; analyzing architecture telemetry...</span><br />
+                          <span>&gt; verifying vector pipelines...</span><br />
                           <span className="text-foreground font-bold">STATUS: ZERO TECH DEBT.</span>
                         </div>
                         <div>
-                          <span className="text-primary font-bold">MG-ARCHITECT~$</span> <span className="text-foreground font-medium">scale deployment --env=prod</span><br/>
-                          <span>[WARN] Manual limits overridden.</span><br/>
-                          <span>&gt; injecting AI routing logic...</span><br/>
+                          <span className="text-primary font-bold">MG-ARCHITECT~$</span> <span className="text-foreground font-medium">scale deployment --env=prod</span><br />
+                          <span>[WARN] Manual limits overridden.</span><br />
+                          <span>&gt; injecting AI routing logic...</span><br />
                           <span className="text-primary font-bold">[READY FOR USERS]</span>
                         </div>
                         <div>
-                          <span className="text-primary font-bold">MG-ARCHITECT~$</span> <span className="text-foreground font-medium">tail -f ops.log</span><br/>
-                          <span>&gt; Latency: 12ms</span><br/>
-                          <span>&gt; DX Velocity: +30%</span><br/>
+                          <span className="text-primary font-bold">MG-ARCHITECT~$</span> <span className="text-foreground font-medium">tail -f ops.log</span><br />
+                          <span>&gt; Latency: 12ms</span><br />
+                          <span>&gt; DX Velocity: +30%</span><br />
                           <span>&gt; Agentic Loop: Nominal</span>
                         </div>
                       </div>
@@ -163,7 +163,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </section>
@@ -183,7 +183,7 @@ export default function Home() {
               View_Archive <FiArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
-          
+
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
             {recentPosts.map((post) => (
               <div
@@ -192,7 +192,7 @@ export default function Home() {
               >
                 {/* Accent hover line */}
                 <div className="absolute top-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full z-10"></div>
-                
+
                 <div className="aspect-[16/9] w-full overflow-hidden border-b border-border relative">
                   <Image
                     src={post.imageUrl}
@@ -239,7 +239,7 @@ export default function Home() {
               <div className="text-primary font-mono text-xs uppercase tracking-widest">/ Capability Matrix</div>
               <h2 className="fluid-h2 font-bold tracking-tighter text-foreground">Technical Arsenal.</h2>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-px bg-border sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 border border-border">
               {(
                 [
@@ -281,17 +281,17 @@ export default function Home() {
       <section className="py-20 md:py-32 bg-background relative overflow-hidden">
         {/* Vermilion Accent geometric shape */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 translate-x-20 -z-10"></div>
-        
+
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex flex-col items-start justify-center space-y-8 max-w-4xl mx-auto text-left border-l-2 border-primary pl-8 md:pl-12">
             <h2 className="fluid-h1 font-bold tracking-tighter">Initiate Link.</h2>
             <p className="fluid-p text-muted-foreground font-light max-w-2xl">
               Systems require continuous optimization. If you have a complex architectural challenge or an AI-integration initiative, let's architect the solution.
             </p>
-            <div className="flex flex-col min-[400px]:flex-row gap-4 pt-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full items-center sm:justify-start">
               <Link
                 href="/contact"
-                className="group relative inline-flex h-14 items-center justify-center bg-foreground px-10 font-mono text-sm font-medium text-background transition-all hover:bg-primary w-full sm:w-auto"
+                className="group relative inline-flex h-14 items-center justify-center bg-foreground px-10 font-mono text-sm font-medium text-background transition-all hover:bg-primary whitespace-nowrap"
               >
                 <span className="relative z-10 flex items-center">
                   [ Execute_Contact ]
