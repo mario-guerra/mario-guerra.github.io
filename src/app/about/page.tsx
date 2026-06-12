@@ -23,10 +23,10 @@ export default function AboutPage() {
                   I'm Mario Guerra. For the last 15 years, I've built products, APIs, and AI systems.
                 </p>
                 <p>
-                  At Microsoft, I led TypeSpec—an open-source API definition language. Over a third of Azure services use it to generate SDKs, cutting their development and review time by 30%.
+                  At Microsoft, I led TypeSpec—an open-source API definition language. Today, nearly all Azure services use it to generate SDKs, cutting their development and review time by over 30%.
                 </p>
                 <p>
-                  Today, I focus on AI. I build products that automate the tedious parts of software development, so you can focus on solving real problems instead of fighting your tools.
+                  Today, I focus on AI. I build products that automate the tedious parts of your work, so you can focus on solving real problems.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -79,12 +79,12 @@ export default function AboutPage() {
               <div className="relative w-full max-w-[400px] aspect-[4/5] border border-border bg-card p-4 flex flex-col group">
                 <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-primary -translate-x-px -translate-y-px"></div>
                 <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-primary translate-x-px translate-y-px"></div>
-                
+
                 <div className="flex justify-between items-center mb-4 text-[10px] font-mono text-muted-foreground uppercase border-b border-border/50 pb-2">
                   <span>ID: MG-77X</span>
                   <span>STATUS: ACTIVE</span>
                 </div>
-                
+
                 <div className="relative flex-1 bg-muted overflow-hidden">
                   <Image
                     src={avatarImage}
@@ -112,7 +112,7 @@ export default function AboutPage() {
                 My core technical skills and areas of expertise
               </p>
             </div>
-            
+
             <div className="space-y-8">
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">Technical Expertise</h3>
@@ -124,7 +124,7 @@ export default function AboutPage() {
                   ))}
                 </div>
               </div>
-              
+
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">Product & Leadership</h3>
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 My professional journey
               </p>
             </div>
-            
+
             <div className="space-y-8">
               <div className="relative border-l border-border pl-6">
                 <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
@@ -167,7 +167,7 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="relative border-l border-border pl-6">
                 <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
                 <div className="space-y-2">
@@ -198,7 +198,7 @@ export default function AboutPage() {
                 Highlights from my portfolio
               </p>
             </div>
-            
+
             <div className="space-y-8">
               <div className="relative border-l border-border pl-6">
                 <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
@@ -212,7 +212,7 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="relative border-l border-border pl-6">
                 <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
                 <div className="space-y-2">
@@ -225,7 +225,7 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="relative border-l border-border pl-6">
                 <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
                 <div className="space-y-2">
@@ -238,7 +238,7 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="relative border-l border-border pl-6">
                 <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
                 <div className="space-y-2">
