@@ -161,7 +161,7 @@ export default function AboutPage() {
                   </div>
                   <p className="text-base font-medium">IntelePeer</p>
                   <p className="text-sm text-muted-foreground">
-                    Architected and built the company's AI Agent Delivery Platform, shipping the full production stack and delivering the first live customer deployment in just three weeks. Created the <Link href="/blog/the-solo-protocol" className="text-primary hover:underline">SOLO methodology</Link> to drive repeatable, production-grade AI development.
+                    Architected and built the company's AI Agent Delivery Platform, shipping the full production stack and delivering the first live customer deployment in just three weeks. Created the <Link href="/blog/the-solo-protocol" className="text-primary hover:underline">SOLO protocol</Link> to drive repeatable, production-grade AI development.
                   </p>
                 </div>
               </div>
