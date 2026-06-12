@@ -12,7 +12,6 @@ import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
 const navItems = [
   { name: "Home", path: "/" },
   { name: "Projects", path: "/projects" },
-  { name: "Resume", path: "/resume" },
   { name: "Blog", path: "/blog" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },

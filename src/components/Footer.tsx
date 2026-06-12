@@ -75,9 +75,7 @@ export default function Footer() {
               <Link href="/projects" className="text-sm text-foreground/80 hover:text-primary">
                 Projects
               </Link>
-              <Link href="/resume" className="text-sm text-foreground/80 hover:text-primary">
-                Resume
-              </Link>
+
               <Link href="/blog" className="text-sm text-foreground/80 hover:text-primary">
                 Blog
               </Link>

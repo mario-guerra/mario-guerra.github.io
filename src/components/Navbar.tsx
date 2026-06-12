@@ -24,11 +24,7 @@ export default function Navbar() {
               Home
             </Link>
           </li>
-          <li>
-            <Link href="/resume" className="hover:underline">
-              Resume
-            </Link>
-          </li>
+
           <li>
             <Link href="/blog" className="hover:underline">
               Blog
