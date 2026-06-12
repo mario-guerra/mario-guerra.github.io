@@ -82,8 +82,7 @@ export default function Home() {
                 </h1>
 
                 <p className="fluid-p max-w-2xl text-muted-foreground font-light">
-                  I architect intelligent tools and systems that transform how teams build products and services,
-                  converting complex workflows into intuitive, high-leverage experiences for builders and operators.
+                  I build AI systems that handle the boring stuff, so you can focus on solving real problems.
                 </p>
               </div>
 
