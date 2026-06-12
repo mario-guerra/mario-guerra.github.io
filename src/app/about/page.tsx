@@ -15,18 +15,18 @@ export default function AboutPage() {
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Me</h1>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                  Product leader translating technical complexity into seamless developer experiences. Proven record of driving 30%+ productivity gains by combining developer-first principles with strategic AI innovation.
+                  I build products that help you ship faster and waste less time.
                 </p>
               </div>
               <div className="max-w-[600px] space-y-4 text-foreground/90">
                 <p>
-                  Hello! I'm Mario Guerra, a Technical Product Leader with over 15 years of experience driving innovation in developer tools, APIs, AI-driven solutions, and scalable infrastructure.
+                  I'm Mario Guerra. For the last 15 years, I've built products, APIs, and AI systems.
                 </p>
                 <p>
-                  Formerly at Microsoft, I led the TypeSpec API Definition Language project, an open-source language that has been adopted by over a third of Azure services to produce SDKs across multiple programming languages, cutting development and review time by 30%.
+                  At Microsoft, I led TypeSpec—an open-source API definition language. Over a third of Azure services use it to generate SDKs, cutting their development and review time by 30%.
                 </p>
                 <p>
-                  I specialize in creating AI-enhanced products that measurably boost productivity and accelerate software delivery. By integrating human-centered design with cutting-edge AI capabilities, I transform complex development workflows into intuitive, efficient, and reliable experiences.
+                  Today, I focus on AI. I build products that automate the tedious parts of software development, so you can focus on solving real problems instead of fighting your tools.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
