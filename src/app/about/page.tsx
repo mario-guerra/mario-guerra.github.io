@@ -156,14 +156,28 @@ export default function AboutPage() {
                 <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold">Principal Product Engineer — AI Strategy</h3>
+                    <span className="text-sm text-muted-foreground">2025 - Present</span>
+                  </div>
+                  <p className="text-base font-medium">IntelePeer</p>
+                  <p className="text-sm text-muted-foreground">
+                    Architected and built the company's AI Agent Delivery Platform, shipping the full production stack and delivering the first live customer deployment in just three weeks. Created the SOLO methodology to drive repeatable, production-grade AI development.
+                  </p>
+                </div>
+              </div>
+
+              <div className="relative border-l border-border pl-6">
+                <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
                     <h3 className="text-lg font-semibold">Founder & AI Architect</h3>
-                    <span className="text-sm text-muted-foreground">2024 - Present</span>
+                    <span className="text-sm text-muted-foreground">2025 - Present</span>
                   </div>
                   <p className="text-base font-medium">
                     IgnitionAI <a href="https://ignitionai.xyz" target="_blank" rel="noopener noreferrer" className="ml-1 text-primary hover:underline font-mono text-xs">(ignitionai.xyz)</a>
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    An AI consultancy that deploys senior engineering agents to architect and launch products in days, not weeks. 
+                    An AI consultancy that deploys senior engineering agents to architect and launch products in days, not weeks.
                     Helping startups and SMBs turn ideas into launch-ready tools with measurable ROI.
                   </p>
                 </div>
@@ -174,7 +188,7 @@ export default function AboutPage() {
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-semibold">Senior Product Manager - TypeSpec API Definition Language</h3>
-                    <span className="text-sm text-muted-foreground">2021 - Present</span>
+                    <span className="text-sm text-muted-foreground">2021 - 2025</span>
                   </div>
                   <p className="text-base font-medium">Microsoft</p>
                   <p className="text-sm text-muted-foreground">
