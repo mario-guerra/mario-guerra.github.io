@@ -26,7 +26,7 @@ export default function AboutPage() {
                   At Microsoft, I led TypeSpec—an open-source API definition language. Today, nearly all Azure services use it to generate SDKs, cutting their development and review time by over 30%.
                 </p>
                 <p>
-                  Today, I focus on AI. I build products that automate the tedious parts of your work, so you can focus on solving real problems.
+                  Currently, I focus on AI. I build products that automate the tedious parts of your work, so you can focus on solving real problems.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
