@@ -46,7 +46,6 @@
     "typescript": "^5"
   },
   "overrides": {
-    "postcss": "$postcss",
-    "js-yaml": "^4.1.2"
+    "postcss": "$postcss"
   }
 }
