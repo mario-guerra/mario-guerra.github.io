@@ -11,12 +11,12 @@ const projects = [
   {
     id: 1,
     title: "Orchid — Orchestration Interactive Debugger",
-    description: "A local-first proxy and visual debugger for AI pipelines and autonomous agents. It intercepts LLM API traffic at the transport layer to record prompts, payloads, and decisions to a local SQLite database, offering step-by-step visual debugging and deterministic offline replay testing via the Model Context Protocol (MCP).",
+    description: "A local-first debugger and cost management tool for AI pipelines and autonomous agents. It captures LLM/API traffic at the transport layer and records it to a local SQLite database, offering step-by-step agentic debugging via MCP and deterministic offline replay testing.",
     tags: ["Model Context Protocol", "Local-First", "AI Debugging", "Developer Tools", "SQLite"],
     imageUrl: "/images/projects/orchid-image.png",
     githubUrl: "https://github.com/mario-guerra/orchid-trace",
     liveUrl: "https://orchidtrace.xyz",
-    featured: false,
+    featured: true,
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const projects = [
     imageUrl: "/images/blog/solo-protocol.png",
     githubUrl: "https://github.com/mario-guerra/solo-protocol-release",
     liveUrl: "/blog/the-solo-protocol",
-    featured: true,
+    featured: false,
   },
   {
     id: 3,
