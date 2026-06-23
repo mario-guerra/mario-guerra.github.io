@@ -235,16 +235,7 @@ export default function AboutPage() {
                 <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">
-                      <a 
-                        href="https://orchidtrace.xyz" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="hover:underline transition-colors"
-                      >
-                        Orchid
-                      </a> — Orchestration Interactive Debugger
-                    </h3>
+                    <h3 className="text-lg font-semibold">Orchid — Orchestration Interactive Debugger</h3>
                     <span className="text-sm text-muted-foreground">IgnitionAI</span>
                   </div>
                   <p className="text-sm text-muted-foreground">
