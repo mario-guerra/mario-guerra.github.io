@@ -240,7 +240,7 @@ export default function AboutPage() {
                         href="https://orchidtrace.xyz" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="text-primary hover:underline transition-colors"
+                        className="hover:underline transition-colors"
                       >
                         Orchid
                       </a> — Orchestration Interactive Debugger
