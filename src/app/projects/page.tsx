@@ -10,6 +10,16 @@ import { useState } from "react";
 const projects = [
   {
     id: 1,
+    title: "Orchid — Orchestration Interactive Debugger",
+    description: "A local-first proxy and visual debugger for AI pipelines and autonomous agents. It intercepts LLM API traffic at the transport layer to record prompts, payloads, and decisions to a local SQLite database, offering step-by-step visual debugging and deterministic offline replay testing via the Model Context Protocol (MCP).",
+    tags: ["Model Context Protocol", "Local-First", "AI Debugging", "Developer Tools", "SQLite"],
+    imageUrl: "/images/projects/orchid-image.png",
+    githubUrl: "https://github.com/mario-guerra/orchid-trace",
+    liveUrl: "https://orchidtrace.xyz",
+    featured: false,
+  },
+  {
+    id: 2,
     title: "The SOLO Protocol",
     description: "A comprehensive framework for shifting from 'vibes-based' AI coding to production-grade engineering. It orchestrates AI agents through structured Planning, Execution, Debug, and Memory loops to ensure security, maintainability, and quality.",
     tags: ["Agentic AI", "Software Architecture", "Methodology", "Prompt Engineering"],
@@ -19,7 +29,7 @@ const projects = [
     featured: true,
   },
   {
-    id: 2,
+    id: 3,
     title: "Modern Portfolio Website",
     description: "A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS, created entirely using AI pair programming with Cline + GPT-4.1 and GitHub Copilot + Claude 3.7.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Markdown", "Responsive Design"],
@@ -29,7 +39,7 @@ const projects = [
     featured: false,
   },
   {
-    id: 3,
+    id: 4,
     title: "VibeSpec",
     description: "Vibespec is an AI-powered agent that helps you create API definitions using TypeSpec from natural language descriptions. It converts your service ideas into structured, well-documented TypeSpec definitions that are ready to implement.",
     tags: ["Azure Foundry", "Anthropic", "TypeSpec", "Python"],
@@ -39,23 +49,13 @@ const projects = [
     featured: false,
   },
   {
-    id: 4,
+    id: 5,
     title: "AI-Powered Audio Translation Service",
     description: "A translation service that converts audio recordings between languages using Azure AI services, designed with TypeSpec as the blueprint and AI-assisted development.",
     tags: ["TypeSpec", "Anthropic", "API Design", "AI-Assisted Development", "Rust"],
     imageUrl: "/images/blog/building-a-translation-service-with-typespec-and-ai-a-blueprint-approach/TypeSpec-AI-Translation-Service.jpeg",
     githubUrl: "https://github.com/mario-guerra/translation-service",
     liveUrl: "/blog/building-a-translation-service-with-typespec-and-ai-a-blueprint-approach",
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "Orchid — Orchestration Interactive Debugger",
-    description: "A local-first proxy and visual debugger for AI pipelines and autonomous agents. It intercepts LLM API traffic at the transport layer to record prompts, payloads, and decisions to a local SQLite database, offering step-by-step visual debugging and deterministic offline replay testing via the Model Context Protocol (MCP).",
-    tags: ["Model Context Protocol", "Local-First", "AI Debugging", "Developer Tools", "SQLite"],
-    imageUrl: "/images/projects/orchid.png",
-    githubUrl: "https://github.com/mario-guerra/orchid-trace",
-    liveUrl: "https://orchidtrace.xyz",
     featured: false,
   },
   {
