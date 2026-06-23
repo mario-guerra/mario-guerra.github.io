@@ -50,12 +50,12 @@ const projects = [
   },
   {
     id: 5,
-    title: "The Sliding Content Window",
-    description: "A Python-based document summarization tool that uses Azure Foundry and a sliding context window technique to generate cohesive summaries of large documents without exceeding token limits.",
-    tags: ["Python", "Azure Foundry", "NLP", "Document Processing"],
-    imageUrl: "/images/blog/the-sliding-content-window-document-summarization-with-azure-openai/Summarizing-Documents-with-Azure-OpenAI.jpg",
-    githubUrl: "https://github.com/mario-guerra/azure-openai-doc-summarizer",
-    liveUrl: "/blog/the-sliding-content-window-document-summarization-with-azure-openai",
+    title: "Orchid — Orchestration Interactive Debugger",
+    description: "A local-first proxy and visual debugger for AI pipelines and autonomous agents. It intercepts LLM API traffic at the transport layer to record prompts, payloads, and decisions to a local SQLite database, offering step-by-step visual debugging and deterministic offline replay testing via the Model Context Protocol (MCP).",
+    tags: ["Model Context Protocol", "Local-First", "AI Debugging", "Developer Tools", "SQLite"],
+    imageUrl: "/images/projects/orchid.png",
+    githubUrl: "https://github.com/mario-guerra/orchid-trace",
+    liveUrl: "https://orchidtrace.xyz",
     featured: false,
   },
   {
