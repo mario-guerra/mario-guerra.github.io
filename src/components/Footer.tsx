@@ -77,7 +77,7 @@ export default function Footer() {
               </Link>
 
               <Link href="/blog" className="text-sm text-foreground/80 hover:text-primary">
-                Blog
+                Writing
               </Link>
             </div>
           </div>

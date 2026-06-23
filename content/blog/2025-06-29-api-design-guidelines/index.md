@@ -3,7 +3,7 @@ title: "API Design Guidelines"
 excerpt: "Technical guidelines for designing high-quality, maintainable, and performant REST APIs."
 date: "2025-06-29"
 author: ""
-category: ""
+category: "API Design"
 tags: [blog]
 blogpost: false
 coverImage: "/images/blog/api-design-guidelines/API_Design.jpeg"

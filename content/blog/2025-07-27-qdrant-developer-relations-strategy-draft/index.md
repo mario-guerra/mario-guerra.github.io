@@ -6,6 +6,7 @@ author: Mario Guerra
 category: DevRel Strategy
 tags: [blog, devrel, strategy, community]
 blogpost: false
+draft: true
 coverImage: /images/blog/qdrant-developer-relations-strategy-draft/qdrant-devrel-plan-draft.jpeg
 ---
 

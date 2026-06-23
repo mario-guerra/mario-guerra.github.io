@@ -3,10 +3,10 @@ title: "Rise of the Product Engineer"
 excerpt: "How a new hybrid role uses rapid prototyping, customer sessions, and AI-assisted development to de-risk product decisions and accelerate innovation."
 date: "2025-08-22"
 author: "Mario Guerra"
-category: ""
+category: "Development"
 tags: [AI tools, prototyping, product management, innovation, user feedback]
 blogpost: true
-coverImage: "/images/blog/rise-of-the-product-engineer/rise-of-the-product-engineer.jpeg"
+coverImage: "/images/blog/rise-of-the-product-engineer/rise-of-the-product-engineer.png"
 ---
 
 Have you ever wished you could short circuit the long feedback loop between idea and production? You talk to a customer, you sketch a solution, and then weeks later the team ships something that does not match the original insight. I have been on both sides of that loop and the same thought keeps coming back. If we want to move faster and reduce risk, we need a role that can both listen and build on the spot. That role is practical and nimble. It pairs customer work with hands-on prototyping. It's what is increasingly being called a _product engineer_.

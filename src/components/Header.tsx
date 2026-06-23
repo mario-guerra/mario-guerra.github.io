@@ -12,7 +12,7 @@ import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
 const navItems = [
   { name: "Home", path: "/" },
   { name: "Projects", path: "/projects" },
-  { name: "Blog", path: "/blog" },
+  { name: "Writing", path: "/blog" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
 ];
@@ -52,20 +52,23 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex md:items-center md:space-x-6">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              href={item.path}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
-                pathname === item.path
-                  ? "text-foreground"
-                  : "text-foreground/60"
-              )}
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isActive = pathname === item.path || (item.path !== "/" && pathname.startsWith(item.path));
+            return (
+              <Link
+                key={item.path}
+                href={item.path}
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary",
+                  isActive
+                    ? "text-foreground"
+                    : "text-foreground/60"
+                )}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
           <button
             onClick={toggleTheme}
             className="flex h-9 w-9 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground"
@@ -99,21 +102,24 @@ export default function Header() {
           className="fixed inset-x-0 top-16 z-50 m-2 origin-top rounded-md border border-border bg-background p-6 shadow-lg md:hidden"
         >
           <nav className="flex flex-col space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                href={item.path}
-                className={cn(
-                  "text-base font-medium transition-colors hover:text-primary",
-                  pathname === item.path
-                    ? "text-foreground"
-                    : "text-foreground/60"
-                )}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.path || (item.path !== "/" && pathname.startsWith(item.path));
+              return (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className={cn(
+                    "text-base font-medium transition-colors hover:text-primary",
+                    isActive
+                      ? "text-foreground"
+                      : "text-foreground/60"
+                  )}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
             <div className="flex items-center pt-4">
               <span className="mr-2 text-sm font-medium">
                 {resolvedTheme === "dark" ? "Light Mode" : "Dark Mode"}

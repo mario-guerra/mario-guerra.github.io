@@ -3,7 +3,7 @@ title: "Making APIs Consumable by AI Agents"
 excerpt: "Strategies and best practices for designing APIs that can be effectively discovered, understood, and utilized by AI agents and LLMs."
 date: "2025-06-29"
 author: ""
-category: ""
+category: "API Design"
 tags: [blog]
 blogpost: false
 coverImage: "/images/blog/making-apis-consumable-by-ai-agents/Making_APIs_Consumable_by_AI_Agents.jpeg"

@@ -45,7 +45,6 @@ export default function Home() {
     id: index + 1,
     title: post.title,
     excerpt: post.excerpt,
-    date: new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
     readTime: post.readTime || "5 min read",
     imageUrl: post.coverImage || `https://placehold.co/800x450/${getColorForCategory(post.category)}/ffffff?text=${encodeURIComponent(post.category)}`,
     category: post.category,
@@ -201,9 +200,8 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6 lg:p-8">
-                  <div className="flex items-center justify-between gap-2 pb-4 text-xs font-mono">
+                  <div className="flex items-center gap-2 pb-4 text-xs font-mono">
                     <span className="text-primary uppercase tracking-wider">{post.category}</span>
-                    <span className="text-muted-foreground">{post.date}</span>
                   </div>
                   <h3 className="text-xl font-bold mb-4 line-clamp-2">
                     <Link href={`/blog/${post.slug}`} className="hover:text-primary transition-colors focus:outline-none">

@@ -62,9 +62,12 @@ export function getAllPosts() {
         author: data.author || '',
         blogpost: data.blogpost || data.featured || false, // Support both blogpost and legacy featured flag
         tags: data.tags || [],
+        draft: data.draft || false,
         readTime
       };
     })
+    // Filter out drafts
+    .filter(post => !post.draft)
     // Sort posts by date in descending order
     .sort((a, b) => (new Date(b.date) as any) - (new Date(a.date) as any));
 
@@ -92,6 +95,10 @@ export async function getPostBySlug(slug: string) {
 
   // Use gray-matter to parse the post metadata section
   const { data, content } = matter(fileContents);
+
+  if (data.draft === true) {
+    return null;
+  }
 
   // Use remark to convert markdown into HTML string with heading anchors (rehype)
   const processedContent = await remark()

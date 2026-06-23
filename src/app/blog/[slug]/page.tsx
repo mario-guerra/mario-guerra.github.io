@@ -66,12 +66,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       {/* Post Header */}
       <div className="mx-auto max-w-4xl mb-12">
         <div className="flex flex-wrap items-center gap-2 mb-4">
-          <Link
-            href={`/blog?category=${post.category}`}
-            className="inline-flex items-center justify-center rounded-full border border-primary bg-primary/10 px-4 py-1 text-sm font-medium text-primary shadow-sm transition-colors hover:bg-primary/20"
-          >
-            {post.category}
-          </Link>
+          {post.category && (
+            <Link
+              href={`/blog#${post.category.toLowerCase()}`}
+              className="inline-flex items-center justify-center rounded-full border border-primary bg-primary/10 px-4 py-1 text-sm font-medium text-primary shadow-sm transition-colors hover:bg-primary/20"
+            >
+              {post.category}
+            </Link>
+          )}
 
           {!post.shortContent && (
             <div className="flex items-center text-sm text-foreground/70">

@@ -3,7 +3,7 @@ title: "API Lifecycle Management"
 excerpt: "Guidelines for implementing, maintaining, and evolving APIs throughout their lifecycle with developers at the center."
 date: "2025-06-29"
 author: ""
-category: ""
+category: "API Design"
 tags: [blog]
 blogpost: false
 coverImage: "/images/blog/api-lifecycle-management/API_Lifecycle_Management.jpeg"

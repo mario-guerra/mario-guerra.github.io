@@ -3,7 +3,7 @@ title: "API Strategy and Governance"
 excerpt: "Strategic guidance for establishing and managing an effective API program within an organization."
 date: "2025-06-29"
 author: ""
-category: ""
+category: "API Design"
 tags: [blog]
 blogpost: false
 coverImage: "/images/blog/api-strategy-and-governance/API_Strategy_Governance.jpeg"

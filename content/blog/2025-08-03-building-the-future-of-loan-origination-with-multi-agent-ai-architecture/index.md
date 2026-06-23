@@ -6,6 +6,7 @@ author: Mario Guerra
 category: AI Architecture
 tags: [ai, multi-agent, fintech, loan-origination, rag, architecture]
 blogpost: false
+draft: true
 coverImage: /images/blog/building-the-future-of-loan-origination-with-multi-agent-ai-architecture/multi-agent.jpeg
 ---
 

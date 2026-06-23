@@ -27,7 +27,7 @@ export default function Navbar() {
 
           <li>
             <Link href="/blog" className="hover:underline">
-              Blog
+              Writing
             </Link>
           </li>
           <li>
