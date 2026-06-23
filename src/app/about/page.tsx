@@ -240,7 +240,7 @@ export default function AboutPage() {
                         href="https://orchidtrace.xyz" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="hover:underline hover:text-primary transition-colors"
+                        className="text-primary hover:underline transition-colors"
                       >
                         Orchid
                       </a> — Orchestration Interactive Debugger
@@ -248,7 +248,7 @@ export default function AboutPage() {
                     <span className="text-sm text-muted-foreground">IgnitionAI</span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Created <a href="https://orchidtrace.xyz" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-primary transition-colors">Orchid</a>, a local-first proxy and visual debugger for AI pipelines. Intercepts API traffic at the transport layer to record LLM prompts, tool payloads, and decisions to a local SQLite database. Integrates with the Model Context Protocol (MCP) to expose trace queries to agents, enabling step-by-step visual debugging and deterministic offline replay testing.
+                    Created <a href="https://orchidtrace.xyz" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium transition-colors">Orchid</a>, a local-first proxy and visual debugger for AI pipelines. Intercepts API traffic at the transport layer to record LLM prompts, tool payloads, and decisions to a local SQLite database. Integrates with the Model Context Protocol (MCP) to expose trace queries to agents, enabling step-by-step visual debugging and deterministic offline replay testing.
                   </p>
                 </div>
               </div>
