@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPosts } from "@/lib/posts";
+import { getPostBySlug, getAllPosts, getPostSlugs } from "@/lib/posts";
 import { FiCalendar, FiClock, FiTag } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,6 +9,12 @@ export const dynamic = 'force-static';
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
+  if (process.env.NODE_ENV === 'development') {
+    const slugs = getPostSlugs();
+    return slugs.map((slug) => ({
+      slug,
+    }));
+  }
   const posts = getAllPosts();
   return posts.map((post) => ({
     slug: post.slug,
