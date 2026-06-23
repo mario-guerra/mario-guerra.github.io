@@ -6,6 +6,7 @@ import VersionToggle from "@/components/VersionToggle";
 import "./styles.css";
 
 export const dynamic = 'force-static';
+export const dynamicParams = false;
 
 // Generate static params for all blog posts
 export async function generateStaticParams() {
