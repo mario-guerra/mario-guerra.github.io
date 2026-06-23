@@ -20,7 +20,7 @@ export default function AboutPage() {
               </div>
               <div className="max-w-[600px] space-y-4 text-foreground/90">
                 <p>
-                  I'm Mario Guerra. For the last 15 years, I've built products, APIs, and AI systems.
+                  I'm Mario Guerra. For the last 18 years, I've built products, APIs, and AI systems.
                 </p>
                 <p>
                   At Microsoft, I led TypeSpec—an open-source API definition language. Today, nearly all Azure services use it to generate SDKs, cutting their development and review time by over 30%.
@@ -231,6 +231,28 @@ export default function AboutPage() {
             </div>
 
             <div className="space-y-8">
+              <div className="relative border-l border-border pl-6">
+                <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold">
+                      <a 
+                        href="https://orchidtrace.xyz" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="hover:underline hover:text-primary transition-colors"
+                      >
+                        Orchid
+                      </a> — Orchestration Interactive Debugger
+                    </h3>
+                    <span className="text-sm text-muted-foreground">IgnitionAI</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Created Orchid, a local-first proxy and visual debugger for AI pipelines. Intercepts API traffic at the transport layer to record LLM prompts, tool payloads, and decisions to a local SQLite database. Integrates with the Model Context Protocol (MCP) to expose trace queries to agents, enabling step-by-step visual debugging and deterministic offline replay testing.
+                  </p>
+                </div>
+              </div>
+
               <div className="relative border-l border-border pl-6">
                 <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
                 <div className="space-y-2">
