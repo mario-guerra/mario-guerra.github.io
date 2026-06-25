@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ClientAnalytics from "@/components/ClientAnalytics";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -91,7 +90,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
-        <ClientAnalytics />
         <ThemeProvider>
           <div className="flex min-h-screen flex-col relative">
             <div className="fixed inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:100px_100px] pointer-events-none"></div>
