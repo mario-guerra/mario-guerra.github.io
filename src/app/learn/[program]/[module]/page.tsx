@@ -41,6 +41,17 @@ export async function generateMetadata({ params }: { params: Promise<{ program: 
   return {
     title: `Module ${moduleData.moduleNumber}: ${moduleData.title} | ${programMeta.title}`,
     description: moduleData.description,
+    openGraph: {
+      title: `Module ${moduleData.moduleNumber}: ${moduleData.title} | ${programMeta.title}`,
+      description: moduleData.description,
+      images: programMeta.coverImage ? [programMeta.coverImage] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Module ${moduleData.moduleNumber}: ${moduleData.title} | ${programMeta.title}`,
+      description: moduleData.description,
+      images: programMeta.coverImage ? [programMeta.coverImage] : [],
+    },
   };
 }
 

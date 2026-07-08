@@ -14,6 +14,34 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ program: string }> }) {
+  const { program: programSlug } = await params;
+  const meta = getProgramMeta(programSlug);
+
+  if (!meta) {
+    return {
+      title: "Program Not Found",
+      description: "The requested learning program could not be found.",
+    };
+  }
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      images: meta.coverImage ? [meta.coverImage] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: meta.title,
+      description: meta.description,
+      images: meta.coverImage ? [meta.coverImage] : [],
+    },
+  };
+}
+
 interface ProgramPageProps {
   params: Promise<{
     program: string;
