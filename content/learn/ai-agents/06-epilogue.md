@@ -85,3 +85,16 @@ Add this project to the **Projects** section of your resume. Customize the techn
 
 **Q: How does your app prevent the agent from infinitely executing tool callbacks?**
 > *"I implemented a loop-guard counter within the callback execution logic. If the agent makes more than 3 recursive tool execution requests in a single turn, the script automatically breaks the loop and raises an exception. This protects our API limits and prevents terminal hangs."*
+
+**Q: How did you secure your API endpoints from unauthorized actions?**
+> *"I implemented stateless JWT (JSON Web Token) authentication. When a client logs in, the server hashes and verifies their password using bcrypt and generates a signed token. On subsequent requests, a FastAPI middleware dependency extracts the token from the HTTP Authorization header, decodes it, and scopes all SQL queries specifically to the user's authenticated ID, preventing cross-user data leakage."*
+
+**Q: Why did you migrate the database from SQLite to Postgres for deployment?**
+> *"SQLite is local and file-based. Serverless cloud engines like Render and GCP Cloud Run deploy ephemeral container instances that scale down to zero when idle. If I used SQLite, the database file would be reset or lost every time the container restarted. Moving to a cloud PostgreSQL instance (Neon) separates database state from ephemeral compute nodes, ensuring data persistence."*
+
+**Q: How did you test your LLM agent integration without burning through API token limits during automated builds?**
+> *"I wrote integration tests using Python's `unittest.mock` library. I mocked the Gemini `genai.Client` responses to simulate model tool-call payloads and response schemas. This allowed the test suite to assert routing logic and tool callback execution deterministically, in milliseconds, with zero API cost and zero internet dependencies."*
+
+**Q: How is security maintained in your automated CI/CD pipeline when deploying to the cloud?**
+> *"Instead of hardcoding access credentials inside our repository or docker containers, all secrets (like the Postgres DATABASE_URL and the JWT cryptographic key) are configured as environment variables inside the cloud provider's console. For automated deployments, GitHub Actions leverages encrypted repo secrets and IAM role-bound Service Accounts, preventing credential leaks in git history."*
+
