@@ -1,0 +1,9 @@
+{
+  "title": "1. SOLO Protocol Learning Program",
+  "slug": "solo-fundamentals",
+  "description": "Learn agentic coding with the SOLO (Single Operator Loop Orchestration) Protocol — a structured program for CS students.",
+  "author": "Mario Guerra",
+  "version": "1.0",
+  "targetAudience": "Computer Science student, knows Python, new to agentic coding",
+  "coverImage": "/images/projects/solo-learning.png"
+}

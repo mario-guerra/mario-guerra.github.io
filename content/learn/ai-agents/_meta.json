@@ -1,0 +1,9 @@
+{
+  "title": "5. AI Agent Development",
+  "slug": "ai-agents",
+  "description": "Construct intelligent, autonomous systems using state-of-the-art agent architectures, structured JSON schemas, function-calling tool registries, and stateful memory loops.",
+  "author": "Mario Guerra",
+  "version": "1.0",
+  "targetAudience": "Computer Science students, understands basic Python, JSON, and APIs",
+  "coverImage": "/images/projects/ai-agents.png"
+}

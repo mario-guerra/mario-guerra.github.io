@@ -1,0 +1,9 @@
+{
+  "title": "2. API Design",
+  "slug": "api-design",
+  "description": "Learn how web APIs work, design clean and stable interfaces, and implement state persistence using FastAPI and SQLite.",
+  "author": "Mario Guerra",
+  "version": "1.0",
+  "targetAudience": "Computer Science student, understands basic Python and SOLO loops",
+  "coverImage": "/images/projects/api-design.png"
+}

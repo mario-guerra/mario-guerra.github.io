@@ -68,6 +68,16 @@ const projects = [
     liveUrl: "/blog/building-intelligent-chatbots-with-microsoft-teams-data",
     featured: false,
   },
+  {
+    id: 7,
+    title: "SOLO Learning Program",
+    description: "A structured course that teaches Computer Science students how to build robust, production-grade systems using agentic coding and the SOLO Protocol loops.",
+    tags: ["Agentic AI", "Education", "SOLO Protocol", "Python"],
+    imageUrl: "/images/projects/solo-learning.png",
+    githubUrl: "https://github.com/mario-guerra/solo-protocol-release",
+    liveUrl: "/learn/solo-fundamentals/",
+    featured: true,
+  },
 ];
 
 export default function ProjectsPage() {

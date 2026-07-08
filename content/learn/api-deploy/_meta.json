@@ -1,0 +1,9 @@
+{
+  "title": "4. Cloud Deployment",
+  "slug": "api-deploy",
+  "description": "Containerize your web API with Docker, migrate persistence to serverless Postgres, and automate cloud deployments to Render or GCP Cloud Run using GitHub Actions.",
+  "author": "Mario Guerra",
+  "version": "1.0",
+  "targetAudience": "Computer Science students, completed API Design & Authentication courses",
+  "coverImage": "/images/projects/api-deploy.png"
+}

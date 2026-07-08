@@ -1,0 +1,9 @@
+{
+  "title": "3. Authentication & Security",
+  "slug": "api-auth",
+  "description": "Secure your web APIs using secure bcrypt password hashing, environment variables, stateless JWT token authorization, middleware gatekeeping, and OWASP defensive practices.",
+  "author": "Mario Guerra",
+  "version": "1.0",
+  "targetAudience": "Computer Science students, completed API Design course",
+  "coverImage": "/images/projects/api-auth.png"
+}

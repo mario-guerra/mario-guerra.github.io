@@ -145,6 +145,9 @@ The workflows are essentially a **power-up**. They add layers of abstraction on 
 
 ## Getting started
 
+> [!NOTE]
+> **New to agentic coding?** We've produced a structured 8-week [SOLO Learning Program](/learn/solo-fundamentals/) designed for students and developers to learn every loop and pillar of the protocol hands-on.
+
 The SOLO Protocol is available as a collection of slash commands that work with Cursor, Antigravity, and any agentic IDE that supports slash commands. Drop the workflow files into the appropriate directory for your IDE, and the commands become available in your chat interface.
 
 Start with a small project. Run through the **Planning Loop** once to get a feel for how the critique and revise cycle works. Pay attention to what the AI surfaces during critique that it didn't consider in the original plan.
