@@ -31,7 +31,7 @@ const projects = [
   {
     id: 3,
     title: "Agentic Developer Curriculum",
-    description: "A comprehensive, structured 5-part curriculum designed to bridge the gap between academic computer science and professional agentic software engineering. It guides students through foundational developer loops, REST API design, JWT security, Docker containerization, cloud deployment pipelines, and multi-agent coordination systems.",
+    description: "A structured 5-part curriculum bridging academic computer science and agentic engineering. Guides students from foundational coding loops through API design, JWT security, Docker, CI/CD deployment, and multi-agent supervisor orchestrators.",
     tags: ["Agentic AI", "FastAPI", "Docker", "DevOps", "Education", "Systems Engineering"],
     imageUrl: "/images/projects/agentic-curriculum.png",
     githubUrl: "https://github.com/mario-guerra/mario-guerra.github.io",
