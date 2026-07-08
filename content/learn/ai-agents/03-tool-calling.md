@@ -34,45 +34,66 @@ Never let an agent access tools without defining boundaries. Following **Pillar 
 
 1. Create a script named `agent_tools.py`.
 2. **Step A: Plan the Tool Registry.** Open Copilot Chat and type:
-   > Follow #file:workflows/architect.md — Plan to register Python file-writing functions as tools using the `google-genai` SDK.
-   > - Write a function `add_study_task(title: str, hours: float) -> str` that writes task details to a local JSON file `tasks.json`.
-   > - Write a function `read_study_tasks() -> list[dict]` that reads task logs.
-   > - Register both functions in the `tools` configuration list during a model generation call.
+   > Follow #file:workflows/architect.md — Plan to register Python REST-client functions as tools using the `google-genai` SDK.
+   > - Write a function `add_study_task(title: str, hours: float) -> str` that sends an authenticated HTTP `POST` request to the local FastAPI development server at `http://127.0.0.1:8000/tasks`.
+   > - Load `API_USERNAME`, `API_PASSWORD`, and `API_BASE_URL` from the local `.env` file using `python-dotenv`.
+   > - Implement a token retrieval helper that logs in via `POST /login` and returns the JWT authorization header.
+   > - Register this function as a tool in the model configuration list.
 3. **Step B: Critique execution safety.** In the same conversation, type:
-   > Follow #file:workflows/critique.md — Critique the tool calling architecture. How does the script handle situations where the LLM passes invalid argument types (like passing a string instead of a float for hours)? How do we intercept and sanitize input variables?
+   > Follow #file:workflows/critique.md — Critique the tool calling architecture. How does the script handle situations where the local FastAPI server is offline? How are 401 Unauthorized or 400 Bad Request status codes parsed and reported back to the agent?
 4. **Step C: Revise.**
-   > Follow #file:workflows/revise.md — Revise the code to add validation checks inside the tool functions and gracefully pass exceptions back to the model context.
+   > Follow #file:workflows/revise.md — Revise the code to add validation checks, catch `requests.exceptions.ConnectionError`, and gracefully pass error logs back to the model context.
 5. **Step D: Implement.**
    > Follow #file:workflows/code.md — Write the code in `agent_tools.py`.
-6. Verify your implementation uses the standard tool registration format:
+6. Verify your implementation uses the standard tool registration format and hits the REST API endpoints:
    ```python
-   import json
    import os
+   import requests
+   from dotenv import load_dotenv
    from google import genai
    from google.genai import types
 
+   load_dotenv()
+
    client = genai.Client()
+   BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")
+
+   def get_jwt_token() -> str:
+       """Logs in using credentials and returns a valid JWT token."""
+       username = os.getenv("API_USERNAME")
+       password = os.getenv("API_PASSWORD")
+       response = requests.post(
+           f"{BASE_URL}/login",
+           data={"username": username, "password": password}
+       )
+       if response.status_code != 200:
+           raise Exception("Authentication failed on the API server.")
+       return response.json()["access_token"]
 
    # 1. Define tools with explicit docstrings and types
    def add_study_task(title: str, hours: float) -> str:
        """
-       Logs a study task to the local JSON file. 
+       Sends a request to the FastAPI server to log a study task in the database.
        Use this whenever the student asks to log, save, record, or track a task.
        """
        if not title.strip():
-           return "Error: task title cannot be empty."
+          return "Error: task title cannot be empty."
        
-       task = {"title": title, "hours": hours}
-       tasks = []
-       if os.path.exists("tasks.json"):
-           with open("tasks.json", "r") as f:
-               tasks = json.load(f)
-       
-       tasks.append(task)
-       with open("tasks.json", "w") as f:
-           json.dump(tasks, f, indent=2)
-       
-       return f"Success: Logged task '{title}' ({hours} hours)."
+       try:
+           token = get_jwt_token()
+           headers = {"Authorization": f"Bearer {token}"}
+           response = requests.post(
+               f"{BASE_URL}/tasks",
+               json={"title": title, "hours": hours},
+               headers=headers
+           )
+           if response.status_code == 201:
+               return f"Success: Logged task '{title}' ({hours} hours) to database."
+           return f"Failed: Server responded with status code {response.status_code}."
+       except requests.exceptions.ConnectionError:
+           return "Error: Could not connect to the API server. Make sure it is running locally."
+       except Exception as e:
+           return f"Error: {e}"
 
    # 2. Register tools during execution
    def run_agent(prompt: str):
@@ -93,16 +114,13 @@ Never let an agent access tools without defining boundaries. Following **Pillar 
                
                if name == "add_study_task":
                    result = add_study_task(title=args["title"], hours=float(args["hours"]))
-                   
-                   # Send result back to model to get final statement
-                   # (Standard agent callback loop)
                    print(result)
    ```
-7. Run the script prompting: *"Add 3 hours of biology homework."* Open `tasks.json` and verify the row was logged automatically.
+7. Start your local FastAPI server from Course 3 (`uvicorn main:app --reload`), run the agent script with the prompt: *"Add 3 hours of biology homework."*, and verify the task appears in your local SQLite/Postgres database.
 
 ---
 
 ### Checkpoint
 Create `checkpoint_03.md`:
-- Paste your Python function definition containing the detailed docstrings.
-- Paste a copy of the JSON output written inside `tasks.json` by the model call.
+- Paste your Python function definition containing the HTTP request and header configuration.
+- Paste the console output verifying the task was logged successfully via the API.

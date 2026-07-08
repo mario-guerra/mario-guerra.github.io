@@ -34,30 +34,32 @@ Never let an agent operate blindly on user assets. Under **Pillar 03: Security-F
 
 1. Create a script named `agent_coordinator.py`.
 2. **Step A: Plan the Orchestration Layout.** Open Copilot Chat and type:
-   > Follow #file:workflows/architect.md — Plan a multi-agent coordinator script `agent_coordinator.py` using `google-genai` and `memory.py`.
+   > Follow #file:workflows/architect.md — Plan a multi-agent coordinator script `agent_coordinator.py` using `google-genai` and the API connection classes.
    > - Build a Triage Router function that classifies user prompts into 'PLAN' or 'AUDIT'. If the classification is ambiguous, fallback default to 'PLAN'.
    > - The Router must print a routing log prefix to the terminal: `[Triage Router] Routing request to: [Agent Name]`.
    > - The Planner Agent generates study plans matching our Pydantic schema.
-   > - Add a Human-in-the-Loop CLI gate: print the proposed tasks, halt execution using `input()`, and write to `tasks.json` only if the user types 'y'.
+   > - Add a Human-in-the-Loop CLI gate: print the proposed tasks, halt execution using `input()`, and execute authenticated `POST /tasks` HTTP queries to write the plan to the cloud database only if the user types 'y'.
 3. **Step B: Critique agent boundaries.** In the same conversation, type:
-   > Follow #file:workflows/critique.md — Critique the multi-agent coordinator plan. How do we prevent the Triage Router from hallucinating commands? How is the HITL confirmation sanitized to handle case differences or whitespace inputs?
+   > Follow #file:workflows/critique.md — Critique the multi-agent coordinator plan. How do we handle situations where some task requests succeed but others fail mid-write? How are API credential timeouts caught?
 4. **Step C: Revise.**
    > Follow #file:workflows/revise.md — Revise the code to include standard routing logs, fallback validations, and clean whitespace stripping on console inputs.
 5. **Step D: Implement.**
    > Follow #file:workflows/code.md — Write the python code in `agent_coordinator.py`.
 6. Review your orchestration engine layout, verifying the routing and HITL validation checks:
    ```python
+   import os
+   import requests
    from google import genai
    from google.genai import types
    from planner import SyllabusPlan
    from memory import ChatMemory
-   import os
+   from agent_tools import get_jwt_token
 
    client = genai.Client()
    memory = ChatMemory()
+   BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")
 
    def triage_router(prompt: str) -> str:
-       # Ask the model to classify intent
        response = client.models.generate_content(
            model='gemini-2.5-flash',
            contents=prompt,
@@ -66,7 +68,6 @@ Never let an agent operate blindly on user assets. Under **Pillar 03: Security-F
            )
        )
        intent = response.text.strip().upper()
-       # Fallback default boundary
        if intent not in ["PLAN", "AUDIT"]:
            intent = "PLAN"
        
@@ -77,7 +78,6 @@ Never let an agent operate blindly on user assets. Under **Pillar 03: Security-F
        intent = triage_router(user_prompt)
        
        if intent == "PLAN":
-           # Call the Planner Agent
            response = client.models.generate_content(
                model='gemini-2.5-flash',
                contents=user_prompt,
@@ -93,10 +93,20 @@ Never let an agent operate blindly on user assets. Under **Pillar 03: Security-F
            for t in plan.tasks:
                print(f" - {t.task_title} ({t.estimated_hours}h)")
            
-           confirm = input("\nAccept proposed plan and write to tasks file? (y/n): ").strip().lower()
+           confirm = input("\nAccept proposed plan and write to cloud database? (y/n): ").strip().lower()
            if confirm == 'y':
-               # Call file write operations
-               print("[Success] Plan saved to data store.")
+               try:
+                   token = get_jwt_token()
+                   headers = {"Authorization": f"Bearer {token}"}
+                   for t in plan.tasks:
+                       requests.post(
+                           f"{BASE_URL}/tasks",
+                           json={"title": t.task_title, "hours": t.estimated_hours},
+                           headers=headers
+                       )
+                   print("[Success] Plan successfully committed to the database.")
+               except Exception as e:
+                   print(f"[Error] Failed to write plan to API: {e}")
            else:
                print("[Cancelled] User rejected plan. No writes executed.")
    ```
