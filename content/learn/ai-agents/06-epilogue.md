@@ -18,22 +18,25 @@ You started with a clean terminal environment, learning the basic loops of the S
 This is the complete system you designed and implemented across all five courses:
 
 ```
-                                  [ THE CLOUD BOUNDARY ]
-                                             │
- ┌──────────────────────┐                    │      ┌──────────────────────┐
- │  Local CLI Tracker   │                    │      │ Deployed Web Service │
- │  (Python Console)    │                    │      │ (Render / Cloud Run) │
- └──────────┬───────────┘                    │      └──────────┬───────────┘
-            │                                │                 │
-            │ (Pydantic Schema / Tool Calls) │                 │ (SQL Queries)
-            ├────────────────────────────────┼────────────────►│
-            │                                │                 ▼
-            ▼                                │       ┌──────────────────┐
- ┌──────────────────────┐                    │       │  Neon PostgreSQL │
- │  Gemini 2.5 Flash    │                    │       │  (Cloud Database)│
- │  (AI Studio Engine)  │                    │       └──────────────────┘
- └──────────────────────┘                    │
-                                             │
+                      [ THE CLOUD BOUNDARY ]
+                                 │
+                                 │       [ Google Cloud ]
+ ┌─────────────────────┐         │   ┌──────────────────────┐
+ │  Local CLI Tracker  ├─────────┼──►│  Gemini 2.5 Flash    │
+ │  (Python Console)   │         │   │  (AI Studio API)     │
+ └──────────┬──────────┘         │   └──────────────────────┘
+            │                    │
+            │                    │       [ Render / GCP ]
+            │                    │   ┌──────────────────────┐
+            │                    │   │ Deployed Web Service │
+            └────────────────────┼──►│ (FastAPI App Engine) │
+                                 │   └──────────┬───────────┘
+                                 │              │
+                                 │              ▼ (Postgres SQL)
+                                 │   ┌──────────────────────┐
+                                 │   │   Neon PostgreSQL    │
+                                 │   │   (Cloud Database)   │
+                                 │   └──────────────────────┘
 ```
 
 1. **Foundational Layer (SOLO):** A test-driven local Python CLI application that reads and records schedules.
