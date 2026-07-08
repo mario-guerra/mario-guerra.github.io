@@ -82,10 +82,3 @@ Create `checkpoint_05.md`:
 - Paste the test case in `test_main.py` verifying rate limiting.
 - Explain in 1 sentence why rate-limiting is essential for protecting the `/login` route.
 
----
-
-### Next Step
-Your Task Organizer REST API is secure, validated, and hardened against brute-force login attempts. However, it still only runs locally on your machine (`http://127.0.0.1:8000`).
-
-Move on to **[Course 4: Cloud Deployment & DevOps](/learn/api-deploy/)** to learn Docker containerization and host your secure backend API live on production cloud servers!
-

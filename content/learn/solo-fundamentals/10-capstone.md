@@ -60,10 +60,3 @@ All of these must be pushed to your GitHub repository:
    - Which pillar had the biggest impact on code quality?
    - What would you do differently next time?
 
----
-
-### Next Step
-Now that you have mastered the foundational SOLO loops, you are ready to transition your standalone Python scripts into network-accessible services.
-
-Move on to **[Course 2: API Design](/learn/api-design/)** to learn HTTP mechanics and start persisting state using FastAPI and SQLite!
-

@@ -91,10 +91,3 @@ Create `checkpoint_05.md`:
 - Paste the test summary output of `pytest -v`.
 - Explain how using a separate test database file (or transactional rollback) ensures that test runs remain reproducible and reliable.
 
----
-
-### Next Step
-Your Task Organizer REST API is fully functioning, parameterized, and covered by automated tests. However, right now, anyone in the world can write to your database or delete your tasks.
-
-Proceed to **[Course 3: Authentication & Security](/learn/api-auth/)** to protect your endpoints with user registration, secure bcrypt hashing, and JWT tokens!
-
