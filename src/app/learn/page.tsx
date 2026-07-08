@@ -84,7 +84,7 @@ export default function LearnIndexPage() {
 
                   <div className="aspect-[16/10] md:aspect-auto w-full h-full min-h-[300px] overflow-hidden border-b md:border-b-0 md:border-r border-border relative">
                     <Image
-                      src={featuredProgram.coverImage || "/images/projects/solo-learning.png"}
+                      src={featuredProgram.coverImage || "/images/projects/agentic-curriculum.png"}
                       alt={featuredProgram.title}
                       fill
                       priority
@@ -140,7 +140,7 @@ export default function LearnIndexPage() {
 
                         <div className="aspect-[16/9] w-full overflow-hidden border-b border-border relative">
                           <Image
-                            src={program.coverImage || "/images/projects/solo-learning.png"}
+                            src={program.coverImage || "/images/projects/agentic-curriculum.png"}
                             alt={program.title}
                             fill
                             className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[30%] group-hover:grayscale-0"
