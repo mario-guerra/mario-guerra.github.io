@@ -30,13 +30,13 @@ const projects = [
   },
   {
     id: 3,
-    title: "Modern Portfolio Website",
-    description: "A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS, created entirely using AI pair programming with Cline + GPT-4.1 and GitHub Copilot + Claude 3.7.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Markdown", "Responsive Design"],
-    imageUrl: "/images/avatars/Chad_Jipiti_Avatar.jpg",
-    githubUrl: "https://github.com/mario-guerra/portfolio-website",
-    liveUrl: "https://marioguerra.xyz/portfolio-website",
-    featured: false,
+    title: "Agentic Developer Curriculum",
+    description: "A comprehensive, structured 5-part curriculum designed to bridge the gap between academic computer science and professional agentic software engineering. It guides students through foundational developer loops, REST API design, JWT security, Docker containerization, cloud deployment pipelines, and multi-agent coordination systems.",
+    tags: ["Agentic AI", "FastAPI", "Docker", "DevOps", "Education", "Systems Engineering"],
+    imageUrl: "/images/projects/agentic-curriculum.png",
+    githubUrl: "https://github.com/mario-guerra/mario-guerra.github.io",
+    liveUrl: "/learn",
+    featured: true,
   },
   {
     id: 4,
@@ -67,16 +67,6 @@ const projects = [
     githubUrl: "https://github.com/mario-guerra/teams-channel-content-export",
     liveUrl: "/blog/building-intelligent-chatbots-with-microsoft-teams-data",
     featured: false,
-  },
-  {
-    id: 7,
-    title: "SOLO Learning Program",
-    description: "A structured course that teaches Computer Science students how to build robust, production-grade systems using agentic coding and the SOLO Protocol loops.",
-    tags: ["Agentic AI", "Education", "SOLO Protocol", "Python"],
-    imageUrl: "/images/projects/solo-learning.png",
-    githubUrl: "https://github.com/mario-guerra/solo-protocol-release",
-    liveUrl: "/learn/solo-fundamentals/",
-    featured: true,
   },
 ];
 
