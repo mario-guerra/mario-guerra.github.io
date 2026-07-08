@@ -9,6 +9,17 @@ export const dynamic = 'force-static';
 export const metadata: Metadata = {
   title: "Learning",
   description: "Practical, structured programs designed to bridge the gap between academic CS and professional engineering.",
+  openGraph: {
+    title: "Learning | Mario Guerra",
+    description: "Practical, structured programs designed to bridge the gap between academic CS and professional engineering.",
+    images: ["/images/projects/agentic-curriculum.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Learning | Mario Guerra",
+    description: "Practical, structured programs designed to bridge the gap between academic CS and professional engineering.",
+    images: ["/images/projects/agentic-curriculum.png"],
+  },
 };
 
 export default function LearnIndexPage() {
