@@ -1,5 +1,5 @@
 ---
-title: "Capstone Project"
+title: "SOLO CLI Project"
 moduleNumber: 10
 slug: "capstone"
 description: "Integrate every SOLO pillar and loop to build a program of your choice from scratch."
@@ -8,7 +8,7 @@ pillar: "all"
 checkpoint: true
 ---
 
-# Capstone Project: Build Something You Actually Want
+# SOLO CLI Project: Build Something You Actually Want
 
 **Goal:** Use every SOLO loop to build a small Python CLI project of your choice from scratch.
 
@@ -46,7 +46,7 @@ Choose something you'd actually use. Here are ideas, but feel free to design you
 
 ---
 
-### Capstone Deliverables
+### Project Deliverables
 All of these must be pushed to your GitHub repository:
 1. **Working program** — a clean script someone can clone and run.
 2. **SPEC.md** — your handwritten specification.
@@ -59,3 +59,11 @@ All of these must be pushed to your GitHub repository:
    - Where did SOLO save you time vs. just asking the AI to build it?
    - Which pillar had the biggest impact on code quality?
    - What would you do differently next time?
+
+---
+
+### Next Step
+Now that you have mastered the foundational SOLO loops, you are ready to transition your standalone Python scripts into network-accessible services.
+
+Move on to **[Course 2: API Design](/learn/api-design/)** to learn HTTP mechanics and start persisting state using FastAPI and SQLite!
+
