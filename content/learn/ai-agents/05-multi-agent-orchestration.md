@@ -114,7 +114,43 @@ Never let an agent operate blindly on user assets. Under **Pillar 03: Security-F
 
 ---
 
+### How to Mock Gemini API in Tests
+
+Testing agents must not make real network API requests. Doing so slows down builds, wastes money, and risks rate limit drops. 
+
+Instead, you use Python's `unittest.mock.patch` decorator to intercept calls to the global `client` object in your script and mock the returned class properties:
+
+Create a file `test_coordinator.py`:
+```python
+from unittest.mock import MagicMock, patch
+from agent_coordinator import triage_router
+
+@patch("agent_coordinator.client")
+def test_triage_router_routes_to_plan(mock_client):
+    # 1. Create a mock response object mirroring SDK response structures
+    mock_response = MagicMock()
+    mock_response.text = "PLAN"
+    
+    # 2. Configure the mocked client to return our mock response
+    mock_client.models.generate_content.return_value = mock_response
+
+    # 3. Call the function and assert it handles the routing accurately
+    result = triage_router("I need to study math")
+    assert result == "PLAN"
+    
+    # 4. Verify that the SDK generate_content was called exactly once
+    mock_client.models.generate_content.assert_called_once()
+```
+
+Run your agent tests:
+```bash
+pytest -v test_coordinator.py
+```
+
+---
+
 ### Checkpoint
 Create `checkpoint_05.md`:
 - Paste a copy of your console logs showing the triage path routing prefix `[Triage Router] Routing request to: PLAN Agent` followed by the proposed tasks and the HITL prompt.
-- Explain in 1 sentence how the Human-in-the-Loop design protects local file systems from malformed model writes.
+- Explain in 1 sentence how the Human-in-the-Loop design protects database stores from malformed model writes.
+- Paste your passing mock test suite logs from running `pytest -v test_coordinator.py`.
