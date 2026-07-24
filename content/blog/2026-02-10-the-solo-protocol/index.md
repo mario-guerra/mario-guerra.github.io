@@ -75,7 +75,14 @@ This is where the **`/Critique`** command comes in. I borrowed this idea from Go
 
 The critique surfaces issues that would otherwise bite me during implementation. Then I run the **`/Revise`** command to update the plan based on those findings. I might loop through critique and revise several times for complex features.
 
-Only after I'm satisfied with the plan do I run the **`/Tickets`** command. This generates sprint tickets with clear dependencies, so the AI knows exactly what order to build things. I end up with a complete planning package before a single line of code gets written.
+### The Pre-Flight Evolution: `/Happy`
+
+Recently, I noticed a subtle failure mode: models often "satisfice." They check off boxes, survive the Critique-Revise gauntlet, and declare confidence simply because they passed the test, not because they're actually ready to build. 
+
+To fix this, I evolved the workflow by adding the **`/Happy`** command as a final pre-flight confidence audit. Unlike the structured, rubric-heavy prompts of the other workflows, `/Happy` is intentionally freeform and conversational. It strips away checkboxes and forces the model out of the "analyst" persona and directly into the implementer's shoes, demanding honest self-reflection. *Are you truly confident you can build this, or are you just guessing?* If the model hesitates or flags ambiguity, the plan goes back to the drawing board.
+
+Only after the AI is unequivocally confident in its implementation plan do I run the **`/Tickets`** command. This generates sprint tickets with clear dependencies, so the AI knows exactly what order to build things. I end up with a complete planning package before a single line of code gets written.
+
 
 ---
 
