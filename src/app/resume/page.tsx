@@ -297,7 +297,7 @@ export default function Resume() {
             },
             {
               title: "@azure Functionality in GitHub Copilot",
-              description: "Contributed to LLM-driven API integrations, enhancing developer productivity through context-aware code suggestions with secure data handling."
+              description: "Prototyped a RAG-based solution to improve the model's responses, enhancing developer productivity through context-aware code suggestions with secure data handling."
             },
             {
               title: "AI Document Summarization (Personal Project)",
@@ -684,8 +684,8 @@ export default function Resume() {
                   <div className="space-y-3 rounded-lg border border-border p-4">
                     <h3 className="text-lg font-semibold">@azure Functionality in GitHub Copilot</h3>
                     <p className="text-foreground/80">
-                      Contributed to LLM-driven API integrations, enhancing developer productivity through context-aware code 
-                      suggestions with secure data handling.
+                      Prototyped a RAG-based solution to improve the model's responses, enhancing developer productivity 
+                      through context-aware code suggestions with secure data handling.
                     </p>
                   </div>
                   

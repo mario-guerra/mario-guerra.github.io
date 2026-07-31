@@ -1,8 +1,133 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiArrowRight, FiFileText, FiLinkedin, FiGithub, FiMail, FiYoutube } from "react-icons/fi";
+import { FiArrowRight, FiLinkedin, FiGithub, FiMail, FiYoutube } from "react-icons/fi";
 import { SiX } from "react-icons/si";
 import avatarImage from "../../../public/images/avatars/Mario_Guerra_avatar_new.png";
+
+const experience = [
+  {
+    role: "Principal Product Engineer, AI Strategy & Architecture",
+    company: "IntelePeer/Aqurio",
+    period: "2025 - Present",
+    summary:
+      "Own AI product strategy and the engineering execution behind it, from architecture through production rollout.",
+    projects: [
+      {
+        name: "AI Agent Delivery Platform",
+        description:
+          "Architected and built the company's AI Agent Delivery Platform, shipping the full production stack and delivering the first live customer deployment in just three weeks.",
+      },
+      {
+        name: "Patient Engagement Platform",
+        description:
+          "Designed a healthcare patient-engagement platform on Temporal, Python, and PostgreSQL, with messaging workflows built for scalable, compliance-aware patient outreach.",
+      },
+    ],
+  },
+  {
+    role: "Founder & AI Architect",
+    company: "IgnitionAI",
+    companyUrl: "https://ignitionai.xyz",
+    period: "2025 - Present",
+    summary:
+      "An AI consultancy that deploys senior engineering agents to architect and launch products in days, not weeks. Helping startups and SMBs turn ideas into launch-ready tools with measurable ROI.",
+    projects: [
+      {
+        name: "Orchid, Orchestration Interactive Debugger",
+        description: (
+          <>
+            Created{" "}
+            <a
+              href="https://orchidtrace.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium transition-colors"
+            >
+              Orchid
+            </a>
+            , a local-first proxy and visual debugger for AI pipelines. Captures API traffic at the transport layer to
+            record LLM prompts, tool payloads, and decisions to a local SQLite database. Integrates with the Model
+            Context Protocol (MCP) to expose trace queries to agents, enabling step-by-step visual debugging and
+            deterministic offline replay testing.
+          </>
+        ),
+      },
+      {
+        name: "SOLO Protocol",
+        description: (
+          <>
+            Created{" "}
+            <Link href="/blog/the-solo-protocol" className="text-primary hover:underline font-medium transition-colors">
+              SOLO
+            </Link>{" "}
+            (Single Operator Loop Orchestration), a framework that turns AI coding assistants into a production-grade
+            engineering team of one. Slash-command workflows enforce spec-driven design, security-first architecture,
+            and test-driven development, so every feature is architected, critiqued, and revised before a line of code
+            is written.
+          </>
+        ),
+      },
+    ],
+  },
+  {
+    role: "Senior Product Manager, TypeSpec API Definition Language",
+    company: "Microsoft",
+    period: "2021 - 2025",
+    summary:
+      "Led product vision and strategy for TypeSpec, an open-source API definition language transforming API development. Guided Azure service teams as a member of the Azure API Stewardship Board, and defined the KPIs used to measure product success and iterate on real-world usage.",
+    projects: [
+      {
+        name: "TypeSpec 1.0 Launch",
+        description: (
+          <>
+            Led the zero-to-one launch of{" "}
+            <a
+              href="https://typespec.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium transition-colors"
+            >
+              TypeSpec
+            </a>
+            , delivering an API definition language that achieved 8-10x code reduction and 30% faster review times,
+            delivering measurable developer productivity.
+          </>
+        ),
+      },
+      {
+        name: "@azure Functionality in GitHub Copilot",
+        description:
+          "Prototyped a RAG-based solution to improve the model's responses, enhancing developer productivity through context-aware code suggestions with secure data handling.",
+      },
+    ],
+  },
+  {
+    role: "Principal Engineering Manager, Hexagon DSP Tools",
+    company: "Qualcomm",
+    period: "2008 - 2021",
+    summary:
+      "Led the development of tools and platforms for Qualcomm's Hexagon DSP, the core of Snapdragon modem and Neural Processing Unit technology. Served as de-facto product manager for Hexagon tools used by first-party software teams, improving on-time delivery by 35% through data-driven development processes.",
+    projects: [],
+  },
+  {
+    role: "Independent R&D",
+    company: "Personal Projects",
+    period: "Ongoing",
+    summary: "Self-directed work exploring where LLMs actually hold up in production.",
+    projects: [
+      {
+        name: "RAG-Enhanced Chatbots with Microsoft Teams Data",
+        description:
+          "Built RAG-enhanced chatbots using Graph API and Azure Foundry, leveraging LLMs to optimize workflows and demonstrate API-driven user support with secure data exchange.",
+      },
+      {
+        name: "AI Document Summarization",
+        description:
+          "Developed an LLM-based solution to summarize large documents, optimizing data pipelines for efficient, secure processing with a sliding window approach.",
+      },
+    ],
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -102,199 +227,71 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="bg-muted/40 py-16 md:py-24">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="mx-auto max-w-4xl space-y-8">
-            <div className="text-center">
-              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Skills & Expertise</h2>
-              <p className="mt-2 text-muted-foreground">
-                My core technical skills and areas of expertise
-              </p>
-            </div>
-
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">Technical Expertise</h3>
-                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
-                  {["APIs", "TypeSpec", "OpenAPI", "LLMs", "RAG", "Distributed Systems", "Python", "C/C++", "Rust", "Azure", "Cloud Computing", "LLMOps", "Prompt Management", "Data Processing", "Qdrant", "Power BI", "DevOps", "CI/CD", "GitHub", "Security Standards"].map((skill) => (
-                    <div key={skill} className="rounded-md bg-card p-3 text-center text-sm shadow-sm">
-                      {skill}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">Product & Leadership</h3>
-                <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
-                  {["Developer Tools", "API-First Strategy", "Cross-Functional Leadership", "Product Strategy", "Roadmapping", "Data-Driven Decisions", "Developer Advocacy", "Community Engagement", "User Research", "Requirements Gathering", "Stakeholder Alignment", "KPI Definition"].map((skill) => (
-                    <div key={skill} className="rounded-md bg-card p-3 text-center text-sm shadow-sm">
-                      {skill}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
+      {/* Experience & Impact Section */}
       <section className="py-16 md:py-24">
         <div className="container px-4 md:px-6 mx-auto">
-          <div className="mx-auto max-w-4xl space-y-8">
-            <div className="text-center">
-              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Experience</h2>
-              <p className="mt-2 text-muted-foreground">
-                My professional journey
+          <div className="mx-auto max-w-4xl">
+            <div className="space-y-4 mb-12 md:mb-16">
+              <div className="text-primary font-mono text-xs uppercase tracking-widest">/ Track Record</div>
+              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">Experience &amp; Impact.</h2>
+              <p className="text-muted-foreground font-light max-w-2xl">
+                Where I've worked and what I shipped there.
               </p>
             </div>
 
-            <div className="space-y-8">
-              <div className="relative border-l border-border pl-6">
-                <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">Principal Product Engineer — AI Strategy</h3>
-                    <span className="text-sm text-muted-foreground">2025 - Present</span>
-                  </div>
-                  <p className="text-base font-medium">IntelePeer</p>
-                  <p className="text-sm text-muted-foreground">
-                    Architected and built the company's AI Agent Delivery Platform, shipping the full production stack and delivering the first live customer deployment in just three weeks. Created the <Link href="/blog/the-solo-protocol" className="text-primary hover:underline">SOLO protocol</Link> to drive repeatable, production-grade AI development.
-                  </p>
-                </div>
-              </div>
+            <div className="relative space-y-12">
+              {/* Continuous timeline spine */}
+              <div className="absolute left-0 top-2 bottom-2 w-px bg-border" aria-hidden="true"></div>
 
-              <div className="relative border-l border-border pl-6">
-                <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">Founder & AI Architect</h3>
-                    <span className="text-sm text-muted-foreground">2025 - Present</span>
-                  </div>
-                  <p className="text-base font-medium">
-                    IgnitionAI <a href="https://ignitionai.xyz" target="_blank" rel="noopener noreferrer" className="ml-1 text-primary hover:underline font-mono text-xs">(ignitionai.xyz)</a>
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    An AI consultancy that deploys senior engineering agents to architect and launch products in days, not weeks.
-                    Helping startups and SMBs turn ideas into launch-ready tools with measurable ROI.
-                  </p>
-                </div>
-              </div>
+              {experience.map((job) => (
+                <div key={`${job.company}-${job.role}`} className="group relative pl-6 md:pl-8">
+                  {/* Timeline node */}
+                  <div className="absolute left-0 top-[7px] h-2.5 w-2.5 -translate-x-1/2 border border-primary bg-background transition-colors duration-300 group-hover:bg-primary"></div>
 
-              <div className="relative border-l border-border pl-6">
-                <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">Senior Product Manager - TypeSpec API Definition Language</h3>
-                    <span className="text-sm text-muted-foreground">2021 - 2025</span>
+                  <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between md:gap-6">
+                    <h3 className="text-lg font-bold tracking-tight md:text-xl">{job.role}</h3>
+                    <span className="shrink-0 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                      {job.period}
+                    </span>
                   </div>
-                  <p className="text-base font-medium">Microsoft</p>
-                  <p className="text-sm text-muted-foreground">
-                    Leading product vision and strategy for TypeSpec, an open-source API definition language transforming API development.
-                    Guiding Azure service teams as a member of the Azure API Stewardship Board, driving best practices for API development.
-                    Defining KPIs to measure product success and iterating based on real-world usage.
-                  </p>
-                </div>
-              </div>
 
-              <div className="relative border-l border-border pl-6">
-                <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">Principal Software Engineer / Manager</h3>
-                    <span className="text-sm text-muted-foreground">2008 - 2021</span>
-                  </div>
-                  <p className="text-base font-medium">Qualcomm</p>
-                  <p className="text-sm text-muted-foreground">
-                    Led the development of tools and platforms for Qualcomm's Hexagon DSP, the core of Snapdragon modem and Neural Processing Unit technology.
-                    Served as de-facto product manager for Hexagon tools used by first-party software development teams.
-                    Improved on-time delivery by 35% through the implementation of data-driven development processes.
+                  <p className="mt-1 font-mono text-sm uppercase tracking-wider text-primary">
+                    {job.companyUrl ? (
+                      <a
+                        href={job.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline"
+                      >
+                        {job.company}
+                      </a>
+                    ) : (
+                      job.company
+                    )}
                   </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Key Projects Section */}
-      <section className="bg-muted/40 py-16 md:py-24">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="mx-auto max-w-4xl space-y-8">
-            <div className="text-center">
-              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Key Projects</h2>
-              <p className="mt-2 text-muted-foreground">
-                Highlights from my portfolio
-              </p>
-            </div>
+                  <p className="mt-3 text-sm font-light leading-relaxed text-muted-foreground">{job.summary}</p>
 
-            <div className="space-y-8">
-              <div className="relative border-l border-border pl-6">
-                <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">Orchid — Orchestration Interactive Debugger</h3>
-                    <span className="text-sm text-muted-foreground">IgnitionAI</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Created <a href="https://orchidtrace.xyz" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium transition-colors">Orchid</a>, a local-first proxy and visual debugger for AI pipelines. Captures API traffic at the transport layer to record LLM prompts, tool payloads, and decisions to a local SQLite database. Integrates with the Model Context Protocol (MCP) to expose trace queries to agents, enabling step-by-step visual debugging and deterministic offline replay testing.
-                  </p>
+                  {job.projects.length > 0 && (
+                    <div className="mt-6 grid gap-px bg-border border border-border sm:grid-cols-2">
+                      {job.projects.map((project) => (
+                        <article
+                          key={project.name}
+                          className="relative flex flex-col bg-background p-5 transition-colors duration-300 hover:bg-secondary/40"
+                        >
+                          <span className="font-mono text-[10px] uppercase tracking-widest text-primary">
+                            / Project
+                          </span>
+                          <h4 className="mt-2 text-sm font-bold tracking-tight">{project.name}</h4>
+                          <p className="mt-2 text-sm font-light leading-relaxed text-muted-foreground">
+                            {project.description}
+                          </p>
+                        </article>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              </div>
-
-              <div className="relative border-l border-border pl-6">
-                <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">TypeSpec 1.0 Launch</h3>
-                    <span className="text-sm text-muted-foreground">Microsoft</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Led the zero-to-one launch of TypeSpec, delivering an API definition language that achieved 8-10x code reduction and 30% faster review times, delivering measurable developer productivity.
-                  </p>
-                </div>
-              </div>
-
-              <div className="relative border-l border-border pl-6">
-                <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">RAG-Enhanced Chatbots with Microsoft Teams Data</h3>
-                    <span className="text-sm text-muted-foreground">Personal Project</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Built RAG-enhanced chatbots using Graph API and Azure Foundry, leveraging LLMs to optimize workflows and demonstrate API-driven user support with secure data exchange.
-                  </p>
-                </div>
-              </div>
-
-              <div className="relative border-l border-border pl-6">
-                <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">@azure Functionality in GitHub Copilot</h3>
-                    <span className="text-sm text-muted-foreground">Microsoft</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Contributed to LLM-driven API integrations, enhancing developer productivity through context-aware code suggestions with secure data handling.
-                  </p>
-                </div>
-              </div>
-
-              <div className="relative border-l border-border pl-6">
-                <div className="absolute -left-[7px] top-[5px] h-3.5 w-3.5 rounded-full border-2 border-primary bg-background"></div>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold">AI Document Summarization</h3>
-                    <span className="text-sm text-muted-foreground">Personal Project</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    Developed an LLM-based solution to summarize large documents, optimizing data pipelines for efficient, secure processing with a sliding window approach.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -305,22 +302,12 @@ export default function AboutPage() {
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center max-w-4xl mx-auto">
             <div className="space-y-2">
-              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Let's Connect</h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground">
-                Interested in collaborating on API design, developer tools, or AI-powered solutions? Check out my full resume or get in touch.
-              </p>
+              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Let's Build Something Amazing</h2>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
               <Link
-                href="/resume"
-                className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-              >
-                View Resume
-                <FiFileText className="ml-2 h-4 w-4" />
-              </Link>
-              <Link
                 href="/contact"
-                className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
               >
                 Contact Me
                 <FiArrowRight className="ml-2 h-4 w-4" />
