@@ -1,12 +1,12 @@
 ---
 title: "Temporal in Ten Minutes"
 excerpt: "Learn how Temporal makes distributed systems easier by handling fault tolerance, state persistence, and workflow orchestration automatically in just ten minutes."
-date: "2025-06-16"
+date: "2026-02-01"
 author: "Mario Guerra"
 category: "Distributed Systems"
 tags: ["temporal", "workflow-orchestration", "microservices", "distributed-systems", "technology"]
 blogpost: true
-coverImage: "/images/blog/temporal-in-ten-minutes/distributed-system.jpg"
+coverImage: "/images/blog/temporal-in-ten-minutes/distributed-system.png"
 ---
 
 Picture this: it is 2 AM and your e-commerce checkout system crashes mid-transaction.
@@ -27,7 +27,7 @@ Write the business process you want to happen. Temporal persists its progress, c
 
 </div>
 
-That is the practical appeal of Temporal. It is not magic, and it does not make distributed systems painless. It does make a hard, repetitive category of work much more manageable.
+That is the practical appeal of Temporal. It isn't magic, and it doesn't make distributed systems painless. It does make a hard, repetitive category of work much more manageable.
 
 ## What is Temporal?
 
@@ -186,6 +186,6 @@ Pick an SDK for the language your services already use: [Go](https://docs.tempor
 
 ## Final thoughts
 
-Temporal is not a shortcut around good distributed-systems design. It is a foundation for it.
+Temporal is *not* a shortcut around good distributed-systems design. It is a foundation for it.
 
 For processes that need to survive unreliable networks, service failures, and long waits, it gives you a durable record of what happened and a reliable way to continue. That means fewer 2 AM investigations and more time spent on the business behavior your system is supposed to deliver.
