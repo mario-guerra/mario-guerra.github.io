@@ -6,7 +6,7 @@ author: "Mario Guerra"
 category: "Development"
 tags: ["AI", "Development", "SOLO protocol", "Agentic coding"]
 blogpost: true
-coverImage: "/images/blog/solo-protocol.png"
+coverImage: "/images/blog/solo-protocol/solo-protocol.png"
 ---
 
 > It's not about replacing AI autonomy with manual oversight, it's about adding just enough structure to transform sloppy AI output into software that's actually production-worthy.
@@ -65,7 +65,7 @@ I built SOLO on six principles that guide every interaction with the AI. None of
 
 Before any code gets written, every feature runs through what I call the **Planning Loop**. This is a sequence of workflows initiated by "slash" (`/`) commands that force the AI through a rigorous planning process.
 
-![Planning Loop Diagram](/images/blog/solo-planning-loop.png)
+![Planning Loop Diagram](/images/blog/solo-protocol/solo-planning-loop.png)
 
 I start with the **`/Architect`** command. I'm asking the AI to act as a principal software architect, designing the system blueprint and API contracts based on my requirements.
 
@@ -90,7 +90,7 @@ Only after the AI is unequivocally confident in its implementation plan do I run
 
 With solid planning artifacts in hand, I move into the **Execution Loop**. The **`/Code`** command invokes a principal software engineer persona with test-driven development baked in.
 
-![Execution Loop Diagram](/images/blog/solo-execution-loop.png)
+![Execution Loop Diagram](/images/blog/solo-protocol/solo-execution-loop.png)
 
 For refactoring existing code, I use a variant called **`/Code++`**. I actually stumbled on this by accident. I was working on a complex refactor, and the AI spontaneously decided to create a reference implementation first, then use that as a guide for modifying the existing code. The results were so much better that I formalized it into a workflow.
 
@@ -122,7 +122,7 @@ The Debug Loop isn't a linear path. It's an iterative cycle between investigatio
 
 ## The memory loop
 
-![The Memory Loop — A digital phoenix rising from software ashes](/images/blog/solo-memory-loop.png)
+![The Memory Loop — A digital phoenix rising from software ashes](/images/blog/solo-protocol/solo-memory-loop.png)
 
 One of the most important parts of SOLO is the **Memory Loop**, which handles context preservation across sessions.
 
